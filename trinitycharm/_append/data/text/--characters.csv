@@ -1,0 +1,2 @@
+ID,Levelpack,Character,Overworld Sprite,Difficulty,Icon,Select Normal Sprite,Select Normal Sprite Offset,Select Endgame Sprite,Select Endgame Sprite Offset,Initial Description,Middle Description,Endgame Description,Post Endgame Description
+diceydungeons_homeslice,diceydungeons,Homeslice,overworld_warrior,1,characters/warrior/charicon_warrior,cutscenes/warrior/warrior_idle.json,0|75,cutscenes/warrior/warrior_worried_idle.json,25|75,[quote]Homeslice[quote],[quote]Homeslice[quote],[quote]Homeslice[quote],[quote]Homeslice[quote]

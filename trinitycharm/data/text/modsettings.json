@@ -1,0 +1,11 @@
+{
+	"starting gold": 0,
+	"extra starting health": 0,
+	"enable press 1 to 6 to roll dice": true,
+	"enable press p to take damage": true,
+	"enable press o to fully heal": true,
+	"enable hold z to teleport": true,
+	"enable right click to instanty win": true,
+	"disable safety checks": false,
+	"disable missing sfx checks": false
+}
