@@ -1,0 +1,19 @@
+function whatever(x) { attack(x.basevalue); x.animatereroll(rand([1|2|3|4|5|6])|self.screenposition()); };
+
+var dicelist = []; for(mydice in dicelist) { if(mydice.available) { dicelist.push(mydice); } }
+
+dicelist.sort(function(a|b) return a.basevalue - b.basevalue);
+
+for(mydice in dicelist) { if(mydice.basevalue > dicelist[0].basevalue) { mydice.remove(); } }
+
+var dicelistcopy = dicelist.copy();
+
+for(mydice in dicelist) { if(mydice.burn) { mydice.remove(); } }
+for(mydice in dicelist) { if(mydice.blind) { mydice.remove(); } }
+
+if(dicelist.length > 0) { whatever(dicelist[0]); }
+
+else dicelist = dicelistcopy.copy();
+
+
+if(dicelist.length > 0) { whatever(dicelist[0]); }

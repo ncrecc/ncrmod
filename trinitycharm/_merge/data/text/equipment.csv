@@ -1,6 +1,0 @@
-Name,Description,Size,Script: On Execute,Gadget,Slots,NEED TOTAL?,Category,Colour,Upgrade,Weaken,Alternate Status Trigger,SFX,Uses?,Cast Backwards?,Single use?,Parallel Universe,Special?,Error Immune,Show Gold,Appears For Parts,Hide Reuseable,Witch Spell,Script: Before Combat,Script: After Combat,Script: Before Start Turn,Script: On Start Turn,Script: On any equipment use,Script: On any countdown reduce,Script: End Turn,Script: Before execute,Script: On Snap,Script: On Fury
-Inventor Gadgets,(special),2,,,,,ITEM,GRAY,,,,none,0,NO,NO,NO,YES,NO,NO,NO,NO,,self.setvar(~underwhelm~|6);,,self.setvar(~phillip~|false);,,if(self.hasstatus(~ncr_lessfluff~)) { removestatusself(~ncr_lessfluff~); },,,,,
-Buster Sword,Do [sword]<d6> damage[;]|immune to errors,1,attack(d);,Plasma Gun,NORMAL,,WEAPON,GRAY,add2,complicate,,,0,NO,NO,NO,NO,YES,NO,NO,NO,,,,,,,,,,,
-Ultima Weapon,Do [sword]<d6> damage[;]|double on jackpot,1,if (self.roll_jackpot > 0){ attack(d * 2); } else { attack(d); },Plasma Gun,NORMAL,,WEAPON,YELLOW,add2,complicate,,,0,NO,NO,NO,NO,NO,NO,NO,NO,,,,,,,,,,,
-Concatenate,CPU counter +<d6>,1,adjustrobotcounter(d);,,NORMAL,,ITEM,,change_power,complicate,,,0,YES,NO,YES,NO,NO,NO,NO,NO,,,,,,,,,,,
-Concatenate_upgraded,CPU counter +<d6>|[gray](Reuseable),1,adjustrobotcounter(d);,,NORMAL,,ITEM,,,,,,-1,YES,NO,YES,NO,NO,NO,NO,NO,,,,,,,,,,,
