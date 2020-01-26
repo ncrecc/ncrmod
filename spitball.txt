@@ -14,3 +14,5 @@ the notion of cards that don't work unless you're also holding another specific 
 megamorpher: always shows up for scrap, gadget "upgrades" if spared this battle ala transformer
 
 emulator: copy a gadget from a random equipment you're holding. after "copying", resets back to emulator on the next turn. would use inventor gadgets _merge shenanigans
+
+test
