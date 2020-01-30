@@ -21499,5 +21499,15 @@
 					"value": 0.4
 			}
 		}]
+	},
+	"hammer_up": {
+		"playsounds": [{
+			"file": "sfx/hammer_up"
+		}]
+	},
+	"hammer_down": {
+		"playsounds": [{
+			"file": "sfx/hammer_down"
+		}]
 	}
 }
