@@ -6,7 +6,7 @@ var otherstuff = [];
 var goodotherstuff = [];
 
 //Floor 1:
-items = [pick(["Big Knife", "Welder", "Revolver", "Bone Club"]), rand(["Scrap Nettle", "Scrap Bump", "Scrap Club", "Scrap Book", "Scrap Spear" "Scrap Kettle", "Scrap Metal", "Scrap Petal"])]; //would have included fk-47 but that is super broken right now
+items = [pick(["Big Knife", "Welder", "Revolver", "Bone Club"]), rand(["Scrap Shield", "Scraptula"])]; //would have included fk-47 but that is super broken right now
 gooditems = [pick(["Gadsby Gun", "Spark", "Snowflake", "Buzzer", "Whisper", "Slime Ball", "Knitting Needle", "Mosquito Bite", "Spannersword"])];
 if(chance(1)) { gooditems = ["AWESOMESWORD"]; }
 otherstuff = [];
@@ -32,7 +32,7 @@ otherstuff = [
   health()
 ];
 goodotherstuff = [
-  shop(shuffle(["upgrade", shoplist1.pop(), rand(["Scrap Metal", "Scrap Nettle", "Scrap Bump", "Scrap Club", "Scrap Book", "Scrap Spear", "Scrap Kettle", "Scrap Petal"])]), shuffle([2, 3, 4]))
+  shop(shuffle(["upgrade", shoplist1.pop(), rand(["Scrap Shield", "Scraptula"])]), shuffle([2, 3, 4]))
 ];
 
 addfloor("small")
@@ -42,11 +42,11 @@ addfloor("small")
 
 //Floor 3:
 var midtierdrops = shuffle(["Vanity Mirror", "Keyhole", "Gas Lamp", "Operator", "Sucker Punch"]);
-items = [rand(["Scrap Nettle", "Scrap Bump", "Scrap Club", "Scrap Book", "Scrap Spear", "Scrap Kettle", "Scrap Petal"])];
+items = [rand(["Scrap Shield", "Scraptula"])];
 items.push(pick(["Kale Bat", "Starspear", "Two Handed Spike", "Tension", "Cookie Cake", "Biohazard", "Baby's First Counting Book"]));
 gooditems = [midtierdrops.pop()];
 		
-var commonlist2 = ["Sickle", "Bumpbomb", "Platinum Blade", "Going Really Fast", "Heat Pump", "Whipcrack", "Gyrate Hook", "Virtue Grip", "Healing Crystal", rand(["Scrap Nettle", "Scrap Bump", "Scrap Club", "Scrap Book", "Scrap Spear" "Scrap Kettle", "Scrap Metal", "Scrap Petal"]), pick(["Hamment@I", "Hamment@S", "Whisp@W", "Whisp@F"]), pick(["Hunting Knife@small", "Hunting Knife@large"])];
+var commonlist2 = ["Sickle", "Bumpbomb", "Platinum Blade", "Going Really Fast", "Heat Pump", "Whipcrack", "Gyrate Hook", "Virtue Grip", "Healing Crystal", rand(["Scrap Nettle", "Scrap Bump", "Scrap Club", "Scrap Book", "Scrap Spear" "Scrap Kettle", "Scrap Metal", "Scraptula"]), pick(["Hamment@I", "Hamment@S", "Whisp@W", "Whisp@F"]), pick(["Hunting Knife@small", "Hunting Knife@large"])];
 shuffle(commonlist2);
 		
 otherstuff = [health()];
