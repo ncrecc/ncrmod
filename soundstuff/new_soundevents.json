@@ -21509,5 +21509,10 @@
 		"playsounds": [{
 			"file": "sfx/hammer_down"
 		}]
+	},
+	"yakety": {
+		"playsounds": [{
+			"file": "sfx/yakety"
+		}]
 	}
 }

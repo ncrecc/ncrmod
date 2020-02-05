@@ -107,7 +107,7 @@ goodotherstuff = [];
 var lastfloor = addfloor("boss");
 
 if (getfinalboss() == "Drake"){
-  items.push(pick(["Steel Sword"]));
+  items.push(["Steel Sword"]);
 }
 
 lastfloor
