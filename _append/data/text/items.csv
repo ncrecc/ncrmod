@@ -22,7 +22,7 @@ Scabbard+ (4/4),Get Sacrificial Blade+ (once),,giveequipment(~Sacrificial Blade@
 Deep Breath,Trash all dice[;] gain [heal]3 each,,for (mydice in self.dicepool){ if (mydice.available()){ mydice.removedice(self.screenposition()); attackself(-3); }} // actually an official item that was scrapped - see https://github.com/TerryCavanagh/diceydungeonsbeta/issues/264
 Delude,Inflict [vanish]1 vanish,,//inflict(~ncr_vanish~); sfx(~_vanish~);
 Strobe Light,Vanish a random amount,,//var r = rand([1|1|1|1|2|2|2|3|3|4|5]); inflict(~ncr_vanish~| r); sfx(~_vanish~);
-Hadoken,Do [vanish]3 vanish damage,,//attack(3|VANISH); sfx(~_vanish~);
+Hadouken,Do [vanish]3 vanish damage,,//attack(3|VANISH); sfx(~_vanish~);
 Briar Bush,Gain [thorns]2 thorns,,inflictself(THORNS|2); sfx(~_thorns~);
 Aura Channeling,Vanish duplicate dice,,//inflict(VANISH);
 THE [200%]GASDGFET,[200%]THE [300%]SBETST [200%]GDAGET IN DICE DUNGENS,,attack(2); sfxdamage(target|999);
@@ -39,3 +39,4 @@ Razor Blade,Split all dice,,var dicelist = []; for (mydice in self.dicepool){ if
 Emulator,Copy a card's gadget,,//wip
 Gadget Roll,Reroll a dice (3 uses),,var availdice = []; for (mydice in self.dicepool){ if (mydice.available()){ availdice.push(mydice); } } if(availdice.length > 0) { shuffle(availdice); availdice[0].animatereroll(rand([1|2|3|4|5|6]) | self.screenposition());  } if(self.getvar(~grolluses~) > 0) { self.setvar(~grolluses~|self.getvar(~grolluses~) - 1); } for(myskill in self.getskillcard().skills) { if(myskill.name == ~Gadget Roll~) { var a = ~~ + self.getvar(~grolluses~); trace(a); var b = ~~ + (self.getvar(~grolluses~) + 1); trace(b); var m = myskill.description.split(b); trace(m); myskill.description = m.join(a); } } if(self.getvar(~grolluses~) > 0) { Gadget.reactivate(self|~Gadget Roll~); }
 Mirror Smash,-3 [heart][;] get dice (3 uses),,pierceattackself(3); givedice(); sfx(~magic_gaindice~); if(self.getvar(~smashuses~) > 0) { self.setvar(~smashuses~|self.getvar(~smashuses~) - 1); } for(myskill in self.getskillcard().skills) { if(myskill.name == ~Mirror Smash~) { var a = ~~ + self.getvar(~smashuses~); trace(a); var b = ~~ + (self.getvar(~smashuses~) + 1); trace(b); var m = myskill.description.split(b); trace(m); myskill.description = m.join(a); } } if(self.getvar(~smashuses~) > 0) { Gadget.reactivate(self|~Mirror Smash~); }
+Hustle,Boost limit charge by 2,,self.limitvalue += 2; if(self.limitvalue > self.limitmax) self.limitvalue = self.limitmax; sfx(~_cure~);
