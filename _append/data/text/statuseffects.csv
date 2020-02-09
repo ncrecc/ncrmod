@@ -12,3 +12,5 @@ ncr_internalvanish,Vanish,vanish,Only used internally[;] decreases for each dice
 ncr_lessfluff,Less_Fluff,cog,The next card you use is immediately gadgetized.,NO,NO,YES,NO,NO
 ncr_injection,Script_Injection,cog,Next card you use will give you a new dice[;]| in addition to its normal effect.,NO,YES,NO,NO,NO
 ncr_invisiblehook,Invisible_Hook,silence,You shouldn't be seeing this[;] it's an internal thing.,NO,YES,NO,NO,YES
+ncr_hyper,Hyperspeed,confuse,Convert the next status you inflict to its Parallel Universe version.,NO,YES,YES,NO,NO
+alternate_ncr_hyper,Hyperspeed?,confuse,Convert the next status you inflict to its non-Parallel Universe version.,NO,YES,YES,NO,NO
