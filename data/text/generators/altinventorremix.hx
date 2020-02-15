@@ -6,8 +6,8 @@ var otherstuff = [];
 var goodotherstuff = [];
 
 //Floor 1:
-items = [pick(["Big Knife", "Switchblade", "Technology", "Bone Club"]), rand(["Scrap Slingshot", "Scrap Trap", "Scrapstick", "Scrap Crystal", "Scraptula", "Scrap Lamp"])]; //would have included fk-47 but that is super broken right now
-gooditems = [pick(["Gadsby Gun", "Spark", "Snowflake", "Buzzer", "Whisper", "Slime Ball", "Knitting Needle", "Mosquito Bite", "Spannersword"])];
+items = [pick(["Switchblade", "Bone Club"]), rand(["Scrap Slingshot", "Scrap Trap", "Scrapstick", "Scrap Crystal", "Scraptula", "Scrap Lamp"])]; //would have included fk-47 but that is super broken right now
+gooditems = [pick(["Gadsby Gun", "Slime Ball"])];
 if(chance(1)) { gooditems = ["AWESOMESWORD"]; }
 otherstuff = [];
 goodotherstuff = [];
@@ -18,9 +18,9 @@ addfloor("small")
   .generate();
   
 //Floor 2:
-var commonlist1 = ["Wrongo", "Table Flip", "Icebox", "Ice Nine", "Sacrificial Blade@3", "Berliner", "Berlin Massachusetts Key", "Slim Jim", "Cubby", "Presto", "Broadkunai"];
+var commonlist1 = ["Spearhead", "Wrongo", "Table Flip", "Icebox", "Ice Nine", "Sacrificial Blade@3", "Berlin Massachusetts Key", "Slim Jim", "Cubby", "Broadkunai"];
 if(chance(30)) commonlist1.push("Dripping Yellow Madness");
-var shoplist1 = ["Tragic Entrance", "Buzzsaw", "Swing Me Another 6", "Smartwatch", "Überbump", "Innovate", "Big Knife", "Bronze Dagger"];
+var shoplist1 = ["Berliner", "Tragic Entrance", "Buzzsaw", "Swing Me Another 6", "Smartwatch", "Überbump", "Innovate", "Big Knife", "Bronze Dagger"];
 if (chance(30)) shoplist1.push("Warhammer");
 commonlist1 = shuffle(commonlist1);
 shoplist1 = shuffle(shoplist1);
@@ -42,7 +42,7 @@ addfloor("small")
   .generate();
 
 //Floor 3:
-var midtierdrops = shuffle(["Chainsmoke", "Seize", "Vanity Mirror", "Keyhole", "Gas Lamp", "Operator", "Sucker Punch"]);
+var midtierdrops = shuffle(["Chainsmoke", "Vanity Mirror", "Gas Lamp", "Operator", "Sucker Punch"]);
 items = [rand(["Scrap Slingshot", "Scrap Trap", "Scrapsies", "Scrapstick", "Scrap Lamp", "Scrap Crystal", "Scraptula"])];
 items.push(pick(["Kale Bat", "Starspear", "Two Handed Spike", "Tension", "Cookie Cake", "Biohazard", "Baby's First Counting Book"]));
 gooditems = [midtierdrops.pop()];
@@ -70,7 +70,7 @@ var zombobmoz = false;
 if(chance(6.25)) { var zombobmoz = true; }
 
 if(zombobmoz != true) {
-	items = [pick(["Spark", "Snowflake", "Buzzer", "Whisper", "Knitting Needle", "Mosquito Bite", "Slime Ball"])];
+	items = [pick(["Keyhole", "Seize", "Sharp Straw"])];
 }
 else {
 	items = [pick(["Zombocom", "Obmozcom"])];
