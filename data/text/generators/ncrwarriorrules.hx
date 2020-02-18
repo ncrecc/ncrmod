@@ -2,6 +2,6 @@ Remix.reset();
 Remix.mode = "challenge";
 Remix.settotalremixes(3);
 
-Remix.offer(2, '', ['The Warrior?']);
-Remix.offer(3, '', ['Warlock?']);
-Remix.offer(4, '', ['Banshee?']);
+Remix.offer(2, '', ['Copycat?']);
+Remix.offer(3, '', ['Aurora?']);
+Remix.offer(4, '', ['Rhino Beetle?']);

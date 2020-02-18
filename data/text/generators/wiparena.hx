@@ -1,35 +1,42 @@
 //Floor 1
-addfloor('arena_last')
+addfloor('go_down_now')
   .setlocation('NCRARENA')
-  .addenemies(['Aoife'], [])
   .generate();
   
+/*
 //Floor 2:
-addfloor('arena_last')
+addfloor('go_down_now')
   .setlocation('NCRARENA')
-  .addenemies(['Aoife'], [])
   .generate();
 
 //Floor 3:
-addfloor('arena_last')
+addfloor('go_down_now')
   .setlocation('NCRARENA')
-  .addenemies(['Aoife'], [])
   .generate();
   
 //Floor 4:
-addfloor('arena_last')
+addfloor('go_down_now')
   .setlocation('NCRARENA')
-  .addenemies(['Aoife'], [])
   .generate();
   
 //Floor 5:
-addfloor('arena_last')
+addfloor('go_down_now')
   .setlocation('NCRARENA')
-  .addenemies(['Aoife'], [])
   .generate();
+*/
 
 //Floor 6:
-addfloor('arena_last')
-  .setlocation('NCRARENA')
+var lastfloor = addfloor('arena_thing');
+for (node in lastfloor.nodes) {
+  node.x += 220;
+  node.y -= 110;
+}
+lastfloor
+  .setlocation('NCRGAMESHOW')
+  .addotherstuff([teammate("Warrior"), teammate("Thief"), teammate("Witch"), teammate("Robot")], [])
   .addenemies(['Aoife'], [])
   .generate();
+for (node in lastfloor.nodes) {
+  node.x -= 220;
+  node.y += 110;
+}

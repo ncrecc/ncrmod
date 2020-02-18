@@ -19,7 +19,7 @@ addfloor("small")
   
 //Floor 2:
 var commonlist1 = ["Table Flip", "Icebox", "Ice Nine", "Sacrificial Blade@3", "Switchblade", "Berliner", "Berlin Massachusetts Key", "Slim Jim", "Cubby", "Presto", "Leather Armor", "Bump", "Healing Crystal", "Lockpick", "Spike", "Broadkunai", "Keyblade", "Hi Vis Jacket", "Saw Wave", "Elastic Heart", "Berlin Key", "Double Edge", "Blast Chiller", "Tetraphobia"];
-var shoplist1 = ["Swing Me Another 6", "Smartwatch", "Vanity Mirror", "Überbump", "Innovate", "Big Knife", "Dagger", "Boomerang", "Crystal Sword", "Venus Fly Trap", "Keyblade", "Nunchucks", "Big Stick", "Rubber Mallet", "Change Machine", "Screwdriver", "Giant Spatula", "Bronze Dagger", pick(["Gold Dagger", "Silver Dagger"])];
+var shoplist1 = ["Swing Me Another 6", "Smartwatch", "Vanity Mirror", "Uberbump", "Innovate", "Big Knife", "Dagger", "Boomerang", "Crystal Sword", "Venus Fly Trap", "Keyblade", "Nunchucks", "Big Stick", "Rubber Mallet", "Change Machine", "Screwdriver", "Giant Spatula", "Bronze Dagger", pick(["Gold Dagger", "Silver Dagger"])];
 if (chance(30)) shoplist1.push("Six Shooter");
 if (chance(30)) shoplist1.push("Sledgehammer");
 if (chance(30)) shoplist1.push("Warhammer");
@@ -86,7 +86,7 @@ addfloor("normal")
   .generate();
   
 //Floor 5:
-items = [pick(["Freeze Frame", "Spectre Charm", "Tear Down This Wall", "Particle Accelerator", "Holy Water", "Mirrorang", "Scorpion", "Lucky 7", "Rotten Egg@6", "Transformer@1", "Plasma Cannon", "Hookshot", "Lightning Rod"])];
+items = [pick(["Freeze Frame", "Tear Down This Wall", "Particle Accelerator", "Holy Water", "Mirrorang", "Scorpion", "Lucky 7", "Rotten Egg@6", "Transformer@1", "Plasma Cannon", "Hookshot", "Lightning Rod"])];
 gooditems = [midtierdrops.pop()];
 		
 otherstuff = [health(), health()];
