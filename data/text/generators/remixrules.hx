@@ -4,7 +4,6 @@ Remix.reset();
 
 var player = getplayername();
 
-//Making a function to check this because I'm dumb and keep getting it wrong
 function isenemyindungeon(enemyname){
   var enemylist = getenemylistindungeon();
   if(enemylist.indexOf(enemyname) == -1) return false;
@@ -12,124 +11,87 @@ function isenemyindungeon(enemyname){
 }
 
 //Generic setup: define some remixes that should never occur at the same time
-Remix.preventclash(['Lady Luck', 'Rat King']); //Upgraded equipment + super enemies don't work together
-Remix.preventclash(['Snowman', 'Baby Squid', 'Fireman']); //More than one status effect dealer is messy
-Remix.preventclash(['Singer', 'Bounty Hunter']); //Avoid more than one dice roll rule change for the player
-Remix.preventclash(['Warlock', 'Banshee']); //Don't have both Warlock and a remix that changes to PU rules
-Remix.preventclash(['Vacuum', 'Drake']); //These both increase enemy health
-Remix.preventclash(['Skeleton', 'Scathach']); //This isn't a fun combination, best to prevent it
+Remix.preventclash(['Kraken?', 'Sorceress?']); //the former effectively negates the latter due to how blind currently works with ai
+Remix.preventclash(['Skeleton?', 'Rhino Beetle?']); //both directly deal damage to you. probably cruel
+Remix.preventclash(['Marshmallow?', 'The Witch?']); //can't have multiple restrictions on your rolls
+Remix.preventclash(['Sorceress?', 'Cowboy?']); //neither can the enemy
+Remix.preventclash(['Rat King?', 'Lady Luck']); //one upgrades a random enemy equipment, one upgrades all enemy equipment. redundancy is bad. redundancy is bad
 
-//Some remixes are very game defining, and it's better if they only come up very occasionally
-var veryrare = ['Sticky Hands'];
-if(player != 'Robot') veryrare.push('Wisp'); //Robot is offered Wisp elsewhere
-if(player != 'Thief') veryrare.push('Crystalina'); //Thief is offered Crystalina elsewhere
-if(player != 'Warrior') veryrare.push('Sneezy'); //Warrior is offered Sneezy elsewhere
 
-if(player == 'Thief' || player == 'Jester') veryrare.push('Keymaster'); 
-if(player != 'Witch' && player != 'Jester') veryrare.push('Ned'); //Jester and Witch shouldn't get Ned, Val or Yolanda
-if(player != 'Witch' && player != 'Jester') veryrare.push('Yolanda'); //Jester and Witch shouldn't get Ned, Val or Yolanda
-if(player != 'Witch' && player != 'Jester'){
-  if(!isenemyindungeon('Drake')){ //Don't offer Val if Drake is the boss
-    veryrare.push('Val'); //Jester and Witch shouldn't get Ned, Val or Yolanda  
-  }
-}
+var veryrare = ['Sorceress?', 'Kraken?', 'Warlock?'];
+if(player != 'Witch' && player != 'Jester') veryrare.push('Copycat?'); //copycat? doesn't work with witch & jester for the same reason val doesn't work
+
 veryrare = shuffle(veryrare);
 
-var curselist = ['Dire Wolf', 'Banshee'];
-var firelist = ['Buster'];
-curselist = shuffle(curselist);
-firelist = shuffle(firelist);
-
-var standardlist = ['Snowman', 'Baby Squid', 'Rat King', 'Hothead', 'Fireman', 'Vacuum', 'Slime'];
-if(player != 'Robot') standardlist.push('Singer'); //Robot shouldn't get Singer
-if(player == 'Robot') standardlist.push('Robobot'); //Robot only remix
-if(player == 'Warrior') standardlist.push('Keymaster'); //Warrior's more likely to get Keymaster
-
-if(isenemyindungeon('Buster')){
-  standardlist.push(firelist.pop());
-}
+var standardlist = ['Aurora?', 'Banshee?', 'Fireman?', 'Alchemist?'];
+if(player != 'Thief') standardlist.push('Keymaster?'); //conventional thief actively benefits from keymaster?
 
 var secondremixlist = [];
 
-var earlytwists = ['Wolf Puppy', 'Mimic', 'Cactus', 'Rose', 'Pirate', 'Warlock'];
-//Thief, Jester and Warrior *can* get keymaster, but it's in the veryrare list or standard lists instead
-if(player != 'Thief' && player != 'Jester' && player != 'Warrior') earlytwists.push('Keymaster'); 
-if(player == 'Thief') earlytwists.push('The Thief'); //Finders Keepers rules
-if(player == 'Inventor') earlytwists.push('The Inventor'); //PU Scrap rules
-//if(player == 'Robot') earlytwists.push('The Robot'); //You Choose You Lose rules
-//if(player == 'Witch') earlytwists.push('The Witch'); //Expect the unexpected rules
+var earlytwists = ['Bounty Hunter?', 'Drain Monster?', 'Rat King?'];
+if(player == 'Thief') earlytwists.push('The Thief?'); //uptick
+if(player == 'Inventor') earlytwists.push('The Inventor?'); //double scrap
+if(player == 'Robot') earlytwists.push('The Robot?'); //more jackpot rewards
+if(player == 'Witch') earlytwists.push('The Witch?'); //countdown
+//jester's is a midtwist. because i said so
+if(player == 'Warrior') earlytwists.push('The Warrior?'); //shifting skillcard
 
-if(player != 'Witch' && player != 'Jester'){ //Let's consider adding Marshmallow
-  //Witch and Jester can't support Marshmallow just yet, I still need to make sure equipment swapping
-  //doesn't break on spellbooks and decks before I set it live
-  //We add Marshmallow to the early twist list if
-  // - Buster or Madison is the boss
-  // - Or we're fighting at *least* three of the fire/ice enemies of level 3 or higher
+if(player != 'Witch' && player != 'Jester'){ 
+  //wisp? follows similar logic to marshmallow but more inclusive since there are no vanish-only enemies
   
   if(isenemyindungeon('Buster') || isenemyindungeon('Madison')){
-    earlytwists.push('Marshmallow');
+    earlytwists.push('Wisp?');
   }else{
-    var marshmallowcount = 0;
-    if(isenemyindungeon('Yeti')) marshmallowcount++;
-    if(isenemyindungeon('Snowman')) marshmallowcount++;
-    if(isenemyindungeon('Fireman')) marshmallowcount++;
-    if(isenemyindungeon('Wisp')) marshmallowcount++;
-    if(marshmallowcount >= 3){
-      earlytwists.push('Marshmallow');
+    var wispcount = 0;
+    if(isenemyindungeon('Alchemist')) wispcount++;
+    if(isenemyindungeon('Fireman')) wispcount++;
+    if(isenemyindungeon('Wisp')) wispcount++;
+    if(isenemyindungeon('Wicker Man')) wispcount++;
+    if(wispcount >= 3){
+      earlytwists.push('Wisp?');
     }
   }
 }
 
-var latelist = ['Sorceress', 'Bully', 'Bounty Hunter', 'Kraken'];
-if(!isenemyindungeon('Scathach')){
-  standardlist.push('Cowboy'); //Don't offer the Cowboy rule if Scathach is the boss
+//should we include sneezy? ?
+if(player != 'Jester'){ //sneezy? benefits jester muuuuch less than other classes
+	var sneezecount = 0;
+	//gather countdown enemies. enemies who would particularly benefit from this rule count as two enemies, and bosses count as 3
+	if(isenemyindungeon('Buster')) sneezecount += 3;
+	if(isenemyindungeon('Beatrice')) sneezecount += 3;
+	if(isenemyindungeon('Sticky Hands')) sneezecount++;
+	if(isenemyindungeon('Dryad')) sneezecount++;
+	if(isenemyindungeon('Wicker Man')) sneezecount++;
+	if(isenemyindungeon('Sneezy')) sneezecount += 2;
+	if(isenemyindungeon('Aurora')) sneezecount += 2;
+	if(isenemyindungeon('Alchemist')) sneezecount += 2;
+	if(isenemyindungeon('Vampire')) sneezecount++;
+	if(isenemyindungeon('Rat King')) sneezecount += 2;
+	if(isenemyindungeon('Crystalina')) sneezecount += 2;
+	if(isenemyindungeon('Rotten Apple')) sneezecount++;
+	if(isenemyindungeon('Cornelius')) sneezecount++;
+	if(isenemyindungeon('Wisp')) sneezecount++;
+	if(isenemyindungeon('Singer')) sneezecount++;
+	if(isenemyindungeon('Audrey')) sneezecount++;
+	if(isenemyindungeon('Aoife')) sneezecount++;
+	if(isenemyindungeon('Cowboy')) sneezecount++;
+	if(isenemyindungeon('Handyman')) sneezecount++;
+	if(isenemyindungeon('Kraken')) sneezecount++;
+	if(sneezecount > 5 && sneezecount < 15) { //if too many enemies would benefit from this rule, drop it. don't be cruel
+		earlytwists.push('Sneezy?');
+	}
 }
-if(player == 'Robot'){
-  standardlist.push('Wisp'); //Robot should be *more* likely to get Wisp
-}
+		
 
-if(player == 'Witch' || player == 'Jester'){ //Witch and Jester get offered Paper Knight in the late list
-  latelist.push('Paper Knight');
-}else if(player != 'Robot'){ //Everyone else (except Robot) gets offered either Skeleton or Paper Knight
-  latelist.push(pick(['Skeleton', 'Paper Knight']));
-}
+var midtwists = ['Wizard?', 'Rotten Apple?', 'Cowboy?'];
+if(player == 'Robot' && chance(66)) midtwists.push('Buster?'); //robot only, a little weird so odds are lowered
+if(player == 'Jester') midtwists.push('The Jester?'); //swap pu cards with normal cards & vice-versa. midtwist because you're more likely to be in possession of backup cards by then
+if(player != 'Jester' && player != 'Witch' && player != 'Robot') midtwists.push('Marshmallow?'); //jester and witch would get screwed over hard by this, and it wouldn't even make sense for robot. actually i don't play witch so i'm not sure how hard she would be affected by this? but it sounds like it would majorly limit her start-of-turn options
+if(chance(33)) { if(chance(50)) midtwists.push('Ned?'); else midtwists.push('Val?'); } //ned and val are equally likely, so the optimal strategy is never just to only ever cross floors after putting equipment you like in the backpack/putting equipment you want upgraded in the equipped grid. also goes in midtwists instead of veryrare because this is probably not something you'd want to get early on
+if(chance(33)) { midtwists.push('Yolanda?'); } //yolanda is also a midtwist as getting it later on probably makes it less likely you'll accidentally go broke
 
-if(player == 'Thief') latelist.push('Crystalina'); //Thief is more likely to get Crystalina
-if(player == 'Warrior') latelist.push('Sneezy'); //Warrior is more likely to get Sneezy
-
-var midtwists = ['Alchemist']; 
-if(!isenemyindungeon('Scathach')){
-  midtwists.push('Wizard'); //Don't offer the Wizard rule if Scathach is the boss
-}
-if(!isenemyindungeon('Cornelius')){
-  midtwists.push('Space Marine'); //Don't offer the Space Marine rule if Cornelius is in the level, it's a bit cruel
-}
-if(chance(33)) midtwists.push('Loud Bird'); //Make this a bit rarer
-if(chance(33)) midtwists.push('Scathach'); //Make this a bit rarer
-
-//Frog needs to exclude enemy equipment before it can be included, also a better plan for inventor limits
-
-var cursecount = 0;
-if(isenemyindungeon('Banshee')) cursecount++;
-if(isenemyindungeon('Dire Wolf')) cursecount++;
-if(isenemyindungeon('Kraken')) cursecount++;
-if(isenemyindungeon('Skeleton')) cursecount++;
-if(cursecount >= 3 || isenemyindungeon('Scathach')){ //If there are more than 3 curse enemies or Scathach is the boss, offer a curse remix
-  latelist.push(curselist.pop());
-}
-
-var poisoncount = 0;
-if(isenemyindungeon('Haunted Jar')) poisoncount++;
-if(isenemyindungeon('Rat King')) poisoncount++;
-if(isenemyindungeon('Drain Monster')) poisoncount++;
-if(isenemyindungeon('Dire Wolf')) poisoncount++;
-if(isenemyindungeon('Drake')) poisoncount++;
-if(poisoncount >= 2){
-  latelist.push('Haunted Jar');
-}
-
-var veryhardlist = ['Cornelius', 'Drake', 'Madison', 'Beatrice'];
-if(isenemyindungeon('Beatrice')) veryhardlist.push('Handyman');
+var veryhardlist = ['Vacuum?', 'Cornelius?', 'Loud Bird?', 'Skeleton?'];
+if(player != 'Jester') veryhardlist.push('Rhino Beetle?'); //rhino beetle would screw over jester whenever they use their limit break
 
 //Really simple first draft, shuffle all the lists, assign them randomly
 earlytwists = shuffle(earlytwists);
@@ -149,16 +111,16 @@ var finaloffer2 = [standardlist.pop(), standardlist.pop(), earlytwists.pop()];
 for(r in standardlist){
   secondremixlist.push(r);
 }
-if(chance(25)){
-  secondremixlist.push('Rotten Apple'); //This one is brutal, keep it rare!
-}
-if(secondremixlist.indexOf('Rat King') > -1) secondremixlist.remove('Rat King'); //Rat King needs to appear as the first remix
+var latelist = ['Scathach?', 'Mimic?', 'Aoife?', 'Singer?'];
+if(player == 'Jester' || player == 'Inventor") latelist.push('Handyman?'); //blueprints aren't as useful to other classes as they are to jester and inventor
+
 secondremixlist = shuffle(secondremixlist);
 var finaloffer3 = [secondremixlist.pop(), secondremixlist.pop()];
 var finaloffer4 = [latelist.pop(), latelist.pop(), latelist.pop()];
 while(latelist.length > 0) veryhardlist.push(latelist.pop());
 veryhardlist = shuffle(veryhardlist);
 var finaloffer5 = [veryhardlist.pop(), veryhardlist.pop(), veryhardlist.pop()];
+
 
 //Insert twists!
 if(chance(80)){

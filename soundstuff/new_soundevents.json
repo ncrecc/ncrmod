@@ -1057,10 +1057,10 @@
 			"tag": "",
 			"volume": {
 				"fade": 0,
-				"max": 1,
+				"max": 0.8,
 				"min": 0,
 				"random": false,
-				"value": 1
+				"value": 0.8
 			}
 		}]
 	},
@@ -20481,7 +20481,7 @@
 	"music_cutscene_lesscheery": {
 		"playsounds": [{
 			"channel": 1,
-			"file": "music/cutscene/cutscene_lesscheery",
+			"file": "music/cutscene/cutscene_fulldice",
 			"loop": true,
 			"volume": {
 				"fade": 1,
@@ -21471,6 +21471,74 @@
 			"effect": "",
 			"file": "sfx/permadice",
 			"filter": "",
+			"loop": false,
+			"panning": {
+				"fade": 0,
+				"max": 0,
+				"min": 0,
+				"random": false,
+				"value": 0
+			},
+			"pitch": {
+				"fade": 0,
+				"max": 1,
+				"min": 0,
+				"random": false,
+				"value": 1
+			},
+			"position": 0,
+			"syncbpm": 0,
+			"tag": "",
+			"volume": {
+				"fade": 0,
+				"max": 1,
+				"min": 0,
+				"random": false,
+				"value": 1
+			}
+		}]
+	},
+	"rhinogrunt": {
+		"playsounds": [{
+			"channel": 0,
+			"delay": 0,
+			"effect": "",
+			"filter": "",
+			"folder": "voiceovers/rhino_beetle/action",
+			"loop": false,
+			"panning": {
+				"fade": 0,
+				"max": 0,
+				"min": 0,
+				"random": false,
+				"value": 0
+			},
+			"pitch": {
+				"fade": 0,
+				"max": 1,
+				"min": 0,
+				"random": false,
+				"value": 1
+			},
+			"position": 0,
+			"syncbpm": 0,
+			"tag": "",
+			"volume": {
+				"fade": 0,
+				"max": 1,
+				"min": 0,
+				"random": false,
+				"value": 1
+			}
+		}]
+	},
+	"alchgrunt": {
+		"playsounds": [{
+			"channel": 0,
+			"delay": 0,
+			"effect": "",
+			"filter": "",
+			"folder": "voiceovers/alchemist/action",
 			"loop": false,
 			"panning": {
 				"fade": 0,
