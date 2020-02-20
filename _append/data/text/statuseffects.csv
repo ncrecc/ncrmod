@@ -6,7 +6,7 @@ ncr_lightswitch3,Light_Switch_3,dice,Roll an extra 3 next turn.,NO,NO,NO,YES,NO
 ncr_lightswitch4,Light_Switch_4,dice,Roll an extra 4 next turn.,NO,NO,NO,YES,NO
 ncr_lightswitch5,Light_Switch_5,dice,Roll an extra 5 next turn.,NO,NO,NO,YES,NO
 ncr_lightswitch6,Light_Switch_6,dice,Roll an extra 6 next turn.,NO,NO,NO,YES,NO
-ncr_vanishall,Vanish_all,vanish,Duplicate dice are immediately destroyed.,NO,NO,NO,YES,NO
+ncr_vanishall,Vanish_all,vanish,Duplicate dice are immediately destroyed.,NO,NO,YES,NO,NO
 ncr_vanish,Vanish,vanish,Duplicate dice are destroyed[;] up to <value> time(s).,NO,YES,YES,NO,NO
 ncr_internalvanish,Vanish,vanish,Only used internally[;] decreases for each dice vanished.|You shouldn't be seeing this description.,NO,YES,YES,NO,YES
 ncr_lessfluff,Less_Fluff,cog,The next card you use is immediately gadgetized.,NO,NO,YES,NO,NO
