@@ -1,0 +1,2 @@
+Name,Description,Requirements,Script
+Unfocused,Set all dice to the same random value,,var randvalue = rand([1|2|3|4|5|6]); var c = 0; for (mydice in self.dicepool){ if (mydice.available()){ mydice.animatereroll(randvalue| self.screenposition()| c * 0.05); c++; } }

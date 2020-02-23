@@ -28,13 +28,15 @@ if(player != 'Thief') standardlist.push('Keymaster?'); //conventional thief acti
 
 var secondremixlist = [];
 
-var earlytwists = ['Bounty Hunter?', 'Drain Monster?', 'Rat King?'];
+var earlytwists = ['Rat King?'];
+if(chance(50)) { //these are too common
 if(player == 'Thief') earlytwists.push('The Thief?'); //uptick
 if(player == 'Inventor') earlytwists.push('The Inventor?'); //double scrap
 if(player == 'Robot') earlytwists.push('The Robot?'); //more jackpot rewards
 if(player == 'Witch') earlytwists.push('The Witch?'); //countdown
 //jester's is a midtwist. because i said so
 if(player == 'Warrior') earlytwists.push('The Warrior?'); //shifting skillcard
+}
 
 if(player != 'Witch' && player != 'Jester'){ 
   //wisp? follows similar logic to marshmallow but more inclusive since there are no vanish-only enemies
@@ -44,6 +46,8 @@ if(player != 'Witch' && player != 'Jester'){
   }else{
     var wispcount = 0;
     if(isenemyindungeon('Alchemist')) wispcount++;
+    if(isenemyindungeon('Pirate')) wispcount++;
+    if(isenemyindungeon('Marshmallow')) wispcount++;
     if(isenemyindungeon('Fireman')) wispcount++;
     if(isenemyindungeon('Wisp')) wispcount++;
     if(isenemyindungeon('Wicker Man')) wispcount++;
@@ -81,8 +85,36 @@ if(player != 'Jester'){ //sneezy? benefits jester muuuuch less than other classe
 		earlytwists.push('Sneezy?');
 	}
 }
-		
 
+//should we include bounty hunter? ???
+var bountycounty = 0;
+if(isenemyindungeon('Handyman')) bountycounty++;
+if(isenemyindungeon('Pirate')) bountycounty++;
+if(isenemyindungeon('Marshmallow')) bountycounty++;
+if(isenemyindungeon('Fireman')) bountycounty++;
+if(isenemyindungeon('Wisp')) bountycounty++;
+if(isenemyindungeon('Wicker Man')) bountycounty++;
+if(isenemyindungeon('Aurora')) bountycounty++;
+if(isenemyindungeon('Buster')) bountycounty += 2;
+if(isenemyindungeon('Beatrice')) bountycounty += 2;
+if(isenemyindungeon('Madison')) bountycounty += 2;
+if(bountycounty >= 4 && bountycounty <= 7){
+  earlytwists.push('Bounty Hunter?');
+}
+
+//what about drain monster?? ????
+var draincount = 0;
+if(isenemyindungeon('Stereohead')) draincount++;
+if(isenemyindungeon('Singer')) draincount++;
+if(isenemyindungeon('Loud Bird')) draincount++;
+if(isenemyindungeon('Dire Wolf')) draincount++;
+if(isenemyindungeon('Haunted Jar')) draincount++;
+if(isenemyindungeon('Audrey')) draincount += 2;
+if(isenemyindungeon('Drake')) draincount++;
+if(draincount >= 3 && draincount <= 6){
+  earlytwists.push('Drain Monster?');
+}
+		
 var midtwists = ['Wizard?', 'Rotten Apple?', 'Cowboy?'];
 if(player == 'Robot' && chance(66)) midtwists.push('Buster?'); //robot only, a little weird so odds are lowered
 if(player == 'Jester') midtwists.push('The Jester?'); //swap pu cards with normal cards & vice-versa. midtwist because you're more likely to be in possession of backup cards by then
@@ -98,6 +130,10 @@ earlytwists = shuffle(earlytwists);
 standardlist.push(earlytwists.pop());
 standardlist = shuffle(standardlist);
 
+var latelist = ['Mimic?', 'Aoife?', 'Singer?'];
+if(player == 'Jester' || player == 'Inventor') latelist.push('Handyman?'); //blueprints aren't as useful to other classes as they are to jester and inventor
+if(player != 'Jester' || player != 'Robot') latelist.push('Scathach?'); 
+
 midtwists = shuffle(midtwists);
 latelist.push(midtwists.pop());
 latelist.push(midtwists.pop()); //Add an extra mid twist to the late list to make it more interesting
@@ -111,8 +147,6 @@ var finaloffer2 = [standardlist.pop(), standardlist.pop(), earlytwists.pop()];
 for(r in standardlist){
   secondremixlist.push(r);
 }
-var latelist = ['Scathach?', 'Mimic?', 'Aoife?', 'Singer?'];
-if(player == 'Jester' || player == 'Inventor") latelist.push('Handyman?'); //blueprints aren't as useful to other classes as they are to jester and inventor
 
 secondremixlist = shuffle(secondremixlist);
 var finaloffer3 = [secondremixlist.pop(), secondremixlist.pop()];

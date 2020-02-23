@@ -23,7 +23,7 @@ items = [switchbonetech.pop(), rand(["Scrap Slingshot", "Scrap Crystal", "Scrap 
 gooditems = [pick(["Uberbump", "Slim Jim", "Welder"])];
 otherstuff = [];
 goodotherstuff = [];
-if(chance(12.25)) { items[1] = "Zombo"; }
+if(chance(6.25)) { items[1] = "Zombo"; }
 else { scraplist.remove(items[1]); }
 
 addfloor("small")
@@ -34,7 +34,6 @@ addfloor("small")
 trace("floor 1 done");
 
 //Floor 2:
-var autohookorhuntingknife = 1;
 var spearswing = pick(["Spearhead", "Swing Me Another 6"]);
 
 var brgimmicks = ["Under Pressure", "Whipcrack", "Undermine"];
@@ -55,22 +54,24 @@ function cleanwhips(x,y) {
 	} trace("hi");
 };
 
-var gimmickorwhip = 1;
+var gimmickorwhip = rand([0|1]);
 
 var gimmickwhipgiven = false;
 
 var shielddrops = shuffle(["Industrial Press", "Defense Mechanism", "Rickety Shield"]);  
 
-var commonlist1 = ["Revolver", "Tear Down This Wall", "Vanity Mirror", "Innovate", "Gyrate Hook", "Junk Sword", "Bumpbomb", "Heat Pump", scraplist.pop()];
-if(chance(50)) commonlist1.push("Dripping Yellow Madness");
+var commonlist1 = [spearswing, "Sharp Straw", "Gadsby Gun", switchbonetech.pop(), "Icebox", "Ice Nine", "Sacrificial Blade@3", pick(["Berlin Massachusetts Key", "Table Flip"]), "Cubby", "Broadkunai"];
+if(chance(20)) { commonlist1.remove("Ice Nine"); commonlist1.push("PyrotechnIX"); } //good pun
+if(gimmickorwhip == 1) { commonlist1.push(whips.pop()); cleanwhips(commonlist1[commonlist1.length - 1], whips); }
+else { commonlist1.push(brgimmicks.pop()); }
 
 var shoplist1 = ["Virtue Grip", switchbonetech.pop(), "Lightstick", "No Pain No Gain", "Berliner", "Tragic Entrance", "Buzzsaw", "Smartwatch", "Bronze Dagger"];
-if (chance(50)) shoplist1.push("Warhammer");
+if (chance(30)) shoplist1.push("Warhammer");
 commonlist1 = shuffle(commonlist1);
 shoplist1 = shuffle(shoplist1);
 
 items = [];
-if(chance(30)) items.push(commonlist1.pop());
+if(chance(20)) items.push(commonlist1.pop());
 gooditems = [commonlist1.pop(), chance(30) ? shielddrops.pop() : commonlist1.pop()];
 
 otherstuff = [
@@ -88,23 +89,20 @@ addfloor("small")
 
 trace("floor 2 done");
 
+var autohookorhuntingknife = 1;
+
 //Floor 3:
 
+if(gimmickorwhip == 1 && commonlist1.indexOf("Hamment@I") == -1 && commonlist1.indexOf("Hamment@S") == -1 && commonlist1.indexOf("Whisp@F") == -1 && commonlist1.indexOf("Whisp@W") == -1) { gimmickwhipgiven = true; } //aaaaaaaaaaaaaaaaaaaaaaaaaaaa there has to be a better way to do this
+if(gimmickorwhip == 0 && commonlist1.indexOf("Under Pressure") == -1 && commonlist1.indexOf("Whipcrack") == -1 && commonlist1.indexOf("Undermine") == -1) { gimmickwhipgiven = true; }
+
 var midtierdrops = shuffle(["Technology", "Chainsmoke", "Keyhole", "Gas Lamp", "Operator", "Sucker Punch"]);
+if(chance(20)) { midtierdrops.push("Flicker"); }
 items = [rand(["Scrap Trap", "Scrapsies", "Scrapstick", "Scrap Slam"])];
 scraplist.remove(items[0]);
 items.push(chance(17.5) ? shielddrops.pop() : pick(["Kale Smoothie", "Starspear", "Biohazard"]));
 gooditems = [midtierdrops.pop()];
 		
-
-var commonlist2 = [spearswing, "Sharp Straw", "Gadsby Gun", switchbonetech.pop(), "Icebox", "Ice Nine", "Sacrificial Blade@3", pick(["Berlin Massachusetts Key", "Table Flip"]), "Cubby", "Broadkunai"];
-if(chance(30)) { commonlist2.remove("Ice Nine"); commonlist2.push("PyrotechnIX"); } //good pun
-if(gimmickorwhip == 1) { commonlist2.push(whips.pop()); cleanwhips(commonlist1[commonlist1.length - 1], whips); }
-else { commonlist2.push(brgimmicks.pop()); }
-
-if(gimmickorwhip == 1 && commonlist2.indexOf("Hamment@I") == -1 && commonlist2.indexOf("Hamment@S") == -1 && commonlist2.indexOf("Whisp@F") == -1 && commonlist2.indexOf("Whisp@W") == -1) { gimmickwhipgiven = true; } //aaaaaaaaaaaaaaaaaaaaaaaaaaaa there has to be a better way to do this
-if(gimmickorwhip == 0 && commonlist2.indexOf("Under Pressure") == -1 && commonlist2.indexOf("Whipcrack") == -1 && commonlist2.indexOf("Undermine") == -1) { gimmickwhipgiven = true; }
-
 var includewhipgimmick = [];
 if(gimmickwhipgiven == false) {
 if(gimmickorwhip == 1) {
@@ -114,11 +112,14 @@ cleanwhips(includewhipgimmick[0],whips);
 includewhipgimmick.push(brgimmicks.pop());
 } }
 
+var commonlist2 = ["Revolver", "Tear Down This Wall", "Vanity Mirror", "Starspear", "Innovate", "Gyrate Hook", "Junk Sword", "Bumpbomb", "Heat Pump", scraplist.pop()];
+if(chance(30)) commonlist2.push("Dripping Yellow Madness");
+
 if(includewhipgimmick.length > 0) { commonlist2.push(includewhipgimmick.pop()); }
 if(autohookorhuntingknife == 1) { commonlist2.push(pick(["Hunting Knife@small", "Hunting Knife@large"])); }
 else { commonlist2.push("Autohook"); }
-if (chance(30)) commonlist2.push("Lava Quenching");
-if (chance(60)) { commonlist2.push("Velocity"); commonlist2.push("Platinum Blade"); }
+if (chance(20)) commonlist2.push("Lava Quenching");
+if (chance(50)) { commonlist2.push("Velocity"); commonlist2.push("Platinum Blade"); }
 shuffle(commonlist2);
 
 otherstuff = [health()];
@@ -161,7 +162,7 @@ addfloor("normal")
 trace("floor 4 done");
   
 //Floor 5:
-items = [pick([commonlist1.pop(), "Hot Table", "Mirrorang", "Baby's First Counting Book"]), scraplist.pop()];
+items = [pick([brgimmicks.pop(), "Hot Table", "Mirrorang", "Baby's First Counting Book"]), scraplist.pop()];
 gooditems = [pick([midtierdrops.pop(), commonlist2.pop()])];
 		
 otherstuff = [health(), health()];

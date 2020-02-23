@@ -20496,6 +20496,24 @@
 			"loop": true
 		}]
 	},
+	"music_cutscene_fulldice": {
+		"playsounds": [{
+			"channel": 1,
+			"file": "music/cutscene/cutscene_fulldice",
+			"loop": true,
+			"volume": {
+				"fade": 1,
+				"max": 1,
+				"min": 0,
+				"random": false,
+				"value": 1
+			}
+		}, {
+			"channel": 1,
+			"file": "music/cutscene/crowd",
+			"loop": true
+		}]
+	},
 	"music_titlescreen": {
 		"playsounds": [{
 			"channel": 1,

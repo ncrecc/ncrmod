@@ -1,0 +1,89 @@
+// SETUP
+
+#include endepisodegraphics_ladyluck.txt
+
+// HELPER FUNCTIONS	
+
+function signanimate(sign) {
+	var s = sign.show("turn");
+	//s.onComplete(function() { resume(); sign.show("loop"); });
+	//pause();
+	while(!s.completed) {
+		// do nothing
+	}
+	sign.show("loop");
+}
+
+function spinthewheel(sign, wheel) {
+  var s = sign.show("turn");
+	//s.onComplete(function() { resume(); sign.show("loop"); });
+	//pause();
+	while(!s.completed) {
+		// do nothing
+	}
+	sign.hide();
+	
+  wheel.x = 30;
+  wheel.y = -30;
+  play("spinthewheel");
+	var s = wheel.show("spin1");
+	//s.onComplete(function() { resume(); sign.show("loop"); });
+	//pause();
+	while(!s.completed) {
+		// do nothing
+	}
+	wheel.hide();
+}
+
+// ACTORS
+actor("Lady Luck", screenwidthmid + 400, 100, Col.YELLOW, LEFT, TOP, "chat_ladyluck", "characters/misc/charicon_ladyluck");
+
+// INTRO
+
+play("music_challengescreen");
+
+changebackground("intro_sign");
+
+sign.y = -screenheight;
+ladyluck_sign.y = -screenheight;
+sign.show("loop");
+ladyluck_sign.show("idle");
+
+Actuate.tween(sign, 2, { y: 0 }).ease(Expo.easeOut);
+Actuate.tween(ladyluck_sign, 2, { y: 0 }).ease(Expo.easeOut);
+
+wait(0.5);
+
+fadein();
+
+wait(1.5);
+
+ladyluck_sign.show("talking"); 
+actor("Lady Luck", screenwidthmid, 100, Col.YELLOW, LEFT, TOP, "chat_ladyluck", "characters/misc/charicon_ladyluck");
+speak("Lady Luck", "Welcome to ncrmod.");
+ladyluck_sign.show("idle");
+wait(1.5);
+ladyluck_sign.show("talking");
+actor("Lady Luck", screenwidthmid, 100, Col.YELLOW, LEFT, TOP, "chat_ladyluck", "characters/misc/charicon_ladyluck");
+speak("Lady Luck", "This is ncrmod.");
+ladyluck_sign.show("idle");
+wait(0.5);
+ladyluck_sign.show("talking");
+actor("Lady Luck", screenwidthmid, 100, Col.YELLOW, LEFT, TOP, "chat_ladyluck", "characters/misc/charicon_ladyluck");
+speak("Lady Luck", "Welcome.");
+ladyluck_sign.show("idle");
+wait(3);
+ladyluck_sign.show("talking");
+actor("Lady Luck", screenwidthmid, 100, Col.YELLOW, LEFT, TOP, "chat_ladyluck", "characters/misc/charicon_ladyluck");
+speak("Lady Luck", "This is ncrmod. Welcome to ncrmod.");
+ladyluck_sign.show("idle");
+wait(2);
+ladyluck_sign.show("talking");
+actor("Lady Luck", screenwidthmid, 100, Col.YELLOW, LEFT, TOP, "chat_ladyluck", "characters/misc/charicon_ladyluck");
+speak("Lady Luck", "You can do anything in ncrmod. Anything at all.");
+speak("Lady Luck", "The only limit is yourself.");
+ladyluck_sign.show("idle");
+
+play("cutscene_audience");
+
+startgamefromcutscene();
