@@ -95,7 +95,7 @@ items = [rand(["Scrap Trap", "Scrapsies", "Scrapstick", "Scrap Slam"])];
 scraplist.remove(items[0]);
 items.push(chance(17.5) ? shielddrops.pop() : pick(["Kale Smoothie", "Starspear", "Biohazard"]));
 gooditems = [midtierdrops.pop()];
-		
+
 
 var commonlist2 = [spearswing, "Sharp Straw", "Gadsby Gun", switchbonetech.pop(), "Icebox", "Ice Nine", "Sacrificial Blade@3", pick(["Berlin Massachusetts Key", "Table Flip"]), "Cubby", "Broadkunai"];
 if(chance(30)) { commonlist2.remove("Ice Nine"); commonlist2.push("PyrotechnIX"); } //good pun

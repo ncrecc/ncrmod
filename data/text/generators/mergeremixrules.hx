@@ -28,9 +28,11 @@ Remix.preventclash(['Kraken?', 'Baby Squid']); //kraken? blinds all dice, baby s
 Remix.preventclash(['Wizard', 'Cornelius?']); //mean & redundant
 Remix.preventclash(['Rotten Apple?', 'Cornelius']); //-10 max hp plus a rule that deducts 1 max hp after each fight is probably cruel
 Remix.preventclash(['Skeleton?', 'Cornelius']); //"take 10 damage immediately" & -10 max hp. mean
-Remix.preventclash(['Singer?', 'Singer']); //the former negates the latter
+Remix.preventclash(['Singer?', 'Singer']); //the former negates the latter, mostly
 Remix.preventclash(['Copycat?', 'Val']); //both involve item swaps. just in case
 Remix.preventclash(['Wisp?', 'Wisp']); //when you have vanish all (i.e. regular vanish), being inflicted with finite vanish has no effect
+Remix.preventclash(['Wisp?', 'Copycat?']); //ai doesn't play well with equipment that involves executing an item script, which is pretty much every vanish item
+//Remix.preventclash(['Keymaster?', 'Crystalina']); //if this is really a problem someone else will point it out eventually
 
 
 
@@ -111,9 +113,6 @@ if(player != 'Witch' && player != 'Jester'){
     earlytwists.push('Wisp?');
   }else{
     var wispcount = 0;
-    if(isenemyindungeon('Alchemist')) wispcount++;
-    if(isenemyindungeon('Pirate')) wispcount++;
-    if(isenemyindungeon('Marshmallow')) wispcount++;
     if(isenemyindungeon('Fireman')) wispcount++;
     if(isenemyindungeon('Wisp')) wispcount++;
     if(isenemyindungeon('Wicker Man')) wispcount++;
@@ -206,7 +205,7 @@ earlytwists = shuffle(earlytwists);
 standardlist.push(earlytwists.pop());
 standardlist = shuffle(standardlist);
 
-var latelist = ['Scathach?', 'Mimic?', 'Aoife?', 'Singer?', 'Sorceress', 'Bully', 'Bounty Hunter', 'Kraken'];
+var latelist = ['Mimic?', 'Aoife?', 'Singer?', 'Sorceress', 'Bully', 'Bounty Hunter', 'Kraken'];
 if(player == 'Jester' || player == 'Inventor') latelist.push('Handyman?'); //blueprints aren't as useful to other classes as they are to jester and inventor
 if(!isenemyindungeon('Scathach')){
   standardlist.push('Cowboy'); //Don't offer the Cowboy rule if Scathach is the boss
@@ -220,6 +219,7 @@ if(player == 'Witch' || player == 'Jester'){ //Witch and Jester get offered Pape
 }else if(player != 'Robot'){ //Everyone else (except Robot) gets offered either Skeleton or Paper Knight
   latelist.push(pick(['Skeleton', 'Paper Knight']));
 }
+if(player != 'Jester' && player != 'Robot') latelist.push('Scathach?'); 
 
 if(player == 'Thief') latelist.push('Crystalina'); //Thief is more likely to get Crystalina
 if(player == 'Warrior') latelist.push('Sneezy'); //Warrior is more likely to get Sneezy

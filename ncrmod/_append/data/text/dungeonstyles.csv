@@ -1,0 +1,3 @@
+ID,Levelpack,Name,Overworld,Combat,Equipment,Grid,Atmos,Shadow In Grid?,Boss?,Finale?,Request Only?
+diceydungeons_ncrarena,diceydungeons,ncrArena,overworld/boss,combat/boss,overworld/boss,dungeon,atmos_ncrarena,NO,NO,NO,YES
+diceydungeons_ncrgameshowboss,diceydungeons,ncrGameshow,overworld/gameshow,combat/gameshow,equipment/gameshow,gameshow,atmos_gameshow,NO,YES,NO,YES

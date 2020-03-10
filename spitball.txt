@@ -1,6 +1,3 @@
-more dicehistory-based countdown items
-do damage equal to double last dice inserted, triple if filled perfectly (this is maybe too far)
-
 gold jester
 aleady have some of this designed: wall street shuffle, golden gun, snake oil
 
@@ -13,6 +10,4 @@ the notion of cards that don't work unless you're also holding another specific 
 
 megamorpher: always shows up for scrap, gadget "upgrades" if spared this battle ala transformer
 
-emulator: copy a gadget from a random equipment you're holding. after "copying", resets back to emulator on the next turn. would use inventor gadgets _merge shenanigans
-
-test
+lock jester: some items make them roll locked dice for free, and then other items let them unlock those locked dice.

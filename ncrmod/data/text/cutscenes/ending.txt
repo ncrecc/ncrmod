@@ -1,0 +1,254 @@
+// SETUP
+
+#include ladyluckbignormalonly.txt
+
+setdatapath("data/graphics/cutscenes/endgame/scene_2/");
+
+addbackground("intro", {sprites: ["background.png"]});
+
+var ladyluckgraphics = {
+	normal: {
+		animation: "ladyluck_pose1_normal.json",
+		pack: "pack.pck",
+		speed: 1,
+		loop: true
+	},
+	smug: {
+		animation: "ladyluck_pose1_smug.json",
+		pack: "pack.pck",
+		speed: 1,
+		loop: false
+	},
+	thinking: {
+		animation: "ladyluck_pose1_thinking.json",
+		pack: "pack.pck",
+		speed: 1,
+		loop: false
+	},
+	upset: {
+		animation: "ladyluck_pose1_upset.json",
+		pack: "pack.pck",
+		speed: 1,
+		loop: false
+	},
+	pose_two: {
+		animation: "ladyluck_pose2.json",
+		pack: "pack.pck",
+		speed: 1,
+		loop: false
+	},
+	pose_three: {
+		animation: "ladyluck_pose3.json",
+		pack: "pack.pck",
+		speed: 1,
+		loop: false
+	}
+}
+
+var charactergraphics = {
+	appear: {
+		animation: "characters_appear.json",
+		pack: "pack.pck",
+		speed: 1,
+		loop: false
+	},
+	idle: {
+		animation: "characters_idle.json",
+		pack: "pack.pck",
+		speed: 1,
+		loop: true
+	}
+}
+
+var confettigraphics = {
+	normal: {
+		animation: "confetti.json",
+		pack: "pack.pck",
+		speed: 1,
+		loop: true
+	}
+}
+
+var ladyluck = addsprite("ladyluck", 1, ladyluckgraphics);
+var characters = addsprite("characters", 1, charactergraphics);
+var confetti = addsprite("confetti", 2, confettigraphics);
+
+play("music_cutscene_cheery");
+changebackground("intro");
+
+ladyluck.y = -screenheight;
+ladyluck.show("pose_three");
+confetti.show("normal");
+
+fadein();
+
+wait(1.0);
+
+characters.show("appear");
+wait(1.8);
+characters.show("idle", true);
+
+actor("Warrior", screenwidth - 1100, 700, Col.LIGHTBLUE, CENTER, BOTTOM, "chat_warrior", "characters/warrior/charicon_warrior");
+actor("Thief", screenwidthmid + (screenwidthmid / 2) - 200, screenheight - 500, Col.multiplylightness(Col.GREEN, 1.25), CENTER, TOP, "chat_thief", "characters/thief/charicon_thief");
+actor("Robot", 800, 700, 0xDDDDDD, TOP, BOTTOM, "chat_robot", "characters/robot/charicon_robot");
+actor("Inventor", (screenwidthmid / 2) + 200, screenheight - 500, 0xffe48d, CENTER, TOP, "chat_inventor", "characters/inventor/charicon_inventor");
+actor("Witch", screenwidth - 700, 100, 0xb496ec, RIGHT, TOP, "chat_witch", "characters/witch/charicon_witch");
+actor("Jester", 700, 100, Col.multiplylightness(Col.RED, 1.25), LEFT, TOP, "chat_jester", "characters/jester/charicon_jester");
+
+var player = getplayername();
+
+var audience = actor("Audience", screenwidthmid, 60, Col.WHITE, CENTER, TOP);
+audience.title = "";
+
+actor("Lady Luck", screenwidthmid, 40, Col.YELLOW, CENTER, TOP, "chat_ladyluck", "characters/misc/charicon_ladyluck");
+
+wait(0.5);
+
+if(player != "Witch"){
+  speak("Witch", "You found us!");
+}
+
+if(player != "Inventor"){
+  speak("Inventor", "You did it! And you brought the minions!");
+}
+
+if(player != "Robot"){
+  speak("Robot", "You didn’t give up! I’m|so happy to see you!");
+}
+
+//ladyluck.show("normal");
+speak(player, "Wait, confetti?");
+speak(player, "What’s happening?");
+speak(player, "Why are those lights flashing?");
+
+ladyluck.show("pose_three");
+Actuate.tween(ladyluck, 1, { y: 0 }).ease(Sine.easeOut);
+wait(1.0);
+
+speak("Lady Luck", "Because you won, you big silly billy!", "sly");
+ladyluck.show("smug");
+speak("Lady Luck", "You refused to abandon your friends!");
+speak("Lady Luck", "You put aside your differences with the minions!");
+speak("Lady Luck", "... and you gave up your worldly desires and beat me!", "normal");
+
+speak("Thief", "...and you’re... you’re not angry?");
+ 
+ladyluck.show("normal");
+speak("Lady Luck", "Oh my dear, no, of course not!", "sly");
+speak("Lady Luck", "You’ve done BRILLIANTLY.");
+speak("Lady Luck", "Gosh, when was the last time we had a real live victory?");
+speak("Lady Luck", "Jester darling, can you fetch the records?", "sly");
+
+speak("Jester", "No! I’m not your minion any more!");
+speak("Jester", "And we don’t have any records anyway!");
+
+ladyluck.show("pose_two");
+actor("Lady Luck", screenwidthmid, 150, Col.YELLOW, CENTER, TOP, "chat_ladyluck", "characters/misc/charicon_ladyluck");
+speak("Lady Luck", "Oh, hmmm, are you sure?");
+speak("Lady Luck", "Tiny pink octopus! Go and see if you can find any records!");
+actor("Lady Luck", screenwidthmid, 100, Col.YELLOW, CENTER, TOP, "chat_ladyluck", "characters/misc/charicon_ladyluck");
+speak("Lady Luck", "I’ve been waiting SO long for someone to actually|win this game, you wouldn’t BELIEVE.");
+ladyluck.show("normal");
+actor("Lady Luck", screenwidthmid, 40, Col.YELLOW, CENTER, TOP, "chat_ladyluck", "characters/misc/charicon_ladyluck");
+
+speak("Jester", "I feel like it would have happened sooner if you hadn’t|MADE THE GAME SO HARD and DIDN’T CHEAT!");
+
+ladyluck.show("smug");
+speak("Lady Luck", "But then what would have happened to your|journey of self-realisation?");
+ladyluck.show("pose_three");
+speak("Lady Luck", "Now, everyone pose for a photo...");
+
+wait(0.3);
+screenshake();
+
+speak("Lady Luck", "...beaaaauuutiful.");
+ladyluck.show("smug");
+speak("Lady Luck", "SUCH a magnificent little bundle of fighters.");
+ladyluck.show("normal");
+speak("Lady Luck", "Come on, one more, I want something to remember|you by when you’re gone!");
+
+speak(player, "When we’re gone... So... we’re free to go? All of us?");
+
+speak("Lady Luck", "Of course!");
+
+speak("Warrior", "...but I don’t get to be super strong?");
+
+speak("Lady Luck", "No.");
+
+speak("Witch", "And I don’t get my followers?");
+
+ladyluck.show("smug");
+speak("Lady Luck", "No. Your prize is self-knowledge, darling, I|thought we’d covered that.");
+
+speak("Witch", "ALSO, I can’t help but notice that|I’m still a giant walking dice?");
+
+speak("Lady Luck", "Yes? And? Is there some sort of problem?");
+ladyluck.show("pose_three");
+speak("Lady Luck", "Now, one more big smile! Say cheese!");
+
+wait(0.3);
+screenshake();
+
+wait(1);
+speak("Robot", "...");
+speak("Robot", "Okay. Look.");
+speak("Robot", "I can deal with having to sleep.");
+speak("Robot", "And I’ve kinda gotten used to the dice thing.");
+speak("Robot", "But what about the minions? Are they free to go as well?");
+
+speak("Inventor", "Yeah, we would never have made it out without them.");
+
+ladyluck.show("normal");
+speak("Lady Luck", "Honestly my loves, they’re all very settled here.");
+speak("Lady Luck", "They might grumble a little, but they have families and|vegetable gardens and everything.");
+
+speak("Warrior", "That’s not the point! They fought with us!");
+speak("Warrior", "And they won!");
+
+ladyluck.show("thinking");
+speak("Lady Luck", "...ah, I suppose you’re right. They were VERY brave.");
+speak("Lady Luck", "I’ll tell you what, they can leave if they really want to.");
+speak("Lady Luck", "And if they don’t then I’ll see if that|employee suggestion box opens.");
+ladyluck.show("normal");
+speak("Lady Luck", "I miiiiight increase everyone’s holiday leave...");
+
+speak("Jester", "WHAT holiday leave?");
+
+ladyluck.show("smug");
+speak("Lady Luck", "From nothing, my dear. I’ll increase it from nothing!");
+ladyluck.show("normal");
+speak("Lady Luck", "My goodness, can’t you just enjoy your confetti?");
+
+wait(0.5);
+speak("Jester", "...");
+speak("Jester", "...okay. I guess it’s pretty good confetti.");
+
+fadeout();
+while(isfading()) {
+	// do nothing
+}
+
+changebackground("equipment_gameshow");
+
+ladyluck.hide();
+characters.hide();
+
+ladyluck_big.x = -screenwidth;
+
+fadein();
+
+ladyluck_big.show("idle");
+Actuate.tween(ladyluck_big, 1, { x: 0 }).ease(Sine.easeOut);
+wait(1);
+
+ladyluck_big.show("talking");
+actor("Lady Luck", screenwidthmid - 400, screenheightmid, Col.YELLOW, LEFT, BOTTOM, "chat_ladyluck", "characters/misc/charicon_ladyluck");
+speak("Lady Luck", "Conglaturation!!!");
+speak("Lady Luck", "You have completed a great game.");
+speak("Lady Luck", "And prooved the justice of our culture.");
+speak("Lady Luck", "Now go and rest our heroes!");
+ladyluck_big.show("idle");
+
+play("stopallmusic");
+play("music_cutscene_finale");
+endingcredits();

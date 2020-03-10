@@ -97,7 +97,7 @@ if(gimmickorwhip == 1 && commonlist1.indexOf("Hamment@I") == -1 && commonlist1.i
 if(gimmickorwhip == 0 && commonlist1.indexOf("Under Pressure") == -1 && commonlist1.indexOf("Whipcrack") == -1 && commonlist1.indexOf("Undermine") == -1) { gimmickwhipgiven = true; }
 
 var midtierdrops = shuffle(["Technology", "Chainsmoke", "Keyhole", "Gas Lamp", "Operator", "Sucker Punch"]);
-if(chance(20)) { midtierdrops.push("Flicker"); }
+if(chance(8)) { midtierdrops.push("Flicker"); }
 items = [rand(["Scrap Trap", "Scrapsies", "Scrapstick", "Scrap Slam"])];
 scraplist.remove(items[0]);
 items.push(chance(17.5) ? shielddrops.pop() : pick(["Kale Smoothie", "Starspear", "Biohazard"]));
