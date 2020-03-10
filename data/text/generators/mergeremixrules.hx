@@ -213,6 +213,7 @@ if(!isenemyindungeon('Scathach')){
 if(player == 'Robot'){
   standardlist.push('Wisp'); //Robot should be *more* likely to get Wisp
 }
+standardlist = shuffle(standardlist);
 
 if(player == 'Witch' || player == 'Jester'){ //Witch and Jester get offered Paper Knight in the late list
   latelist.push('Paper Knight');
