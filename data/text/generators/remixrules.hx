@@ -31,10 +31,9 @@ Remix.preventclash(['Skeleton?', 'Cornelius']); //"take 10 damage immediately" &
 Remix.preventclash(['Singer?', 'Singer']); //the former negates the latter, mostly
 Remix.preventclash(['Copycat?', 'Val']); //both involve item swaps. just in case
 Remix.preventclash(['Wisp?', 'Wisp']); //when you have vanish all (i.e. regular vanish), being inflicted with finite vanish has no effect
-Remix.preventclash(['Wisp?', 'Copycat?']); //ai doesn't play well with equipment that involves executing an item script, which is pretty much every vanish item
+//Remix.preventclash(['Wisp?', 'Copycat?']); //only particular vanish equipment really causes problems, and preventing wisp? from appearing with copycat? won't prevent vanish items in general from appearing with copycat?.
 //Remix.preventclash(['Keymaster?', 'Crystalina']); //if this is really a problem someone else will point it out eventually
-
-
+Remix.preventclash(['Wisp?', 'Marshmallow']); //i have no clue what happens if two rules try to swap the same equipment, e.g. flame spell for illusion spell AND flame spell for freeze spell
 
 var veryrare = ['Sorceress?', 'Kraken?', 'Warlock?', 'Sticky Hands'];
 if(player != 'Witch' && player != 'Jester') veryrare.push('Copycat?'); //copycat? doesn't work with witch & jester for the same reason val doesn't work
@@ -114,7 +113,7 @@ if(player != 'Witch' && player != 'Jester'){
   }else{
     var wispcount = 0;
     if(isenemyindungeon('Fireman')) wispcount++;
-    if(isenemyindungeon('Wisp')) wispcount++;
+    if(isenemyindungeon('Wisp')) wispcount += 2;
     if(isenemyindungeon('Wicker Man')) wispcount++;
     if(wispcount >= 3){
       earlytwists.push('Wisp?');
@@ -180,7 +179,7 @@ if(draincount >= 3 && draincount <= 6){
   earlytwists.push('Drain Monster?');
 }
 		
-var midtwists = ['Wizard?', 'Rotten Apple?', 'Cowboy?', 'Alchemist'];
+var midtwists = ['Mimic?', 'Wizard?', 'Rotten Apple?', 'Cowboy?', 'Alchemist'];
 if(player == 'Robot' && chance(66)) midtwists.push('Buster?'); //robot only, a little weird so odds are lowered
 if(player == 'Jester') midtwists.push('The Jester?'); //swap pu cards with normal cards & vice-versa. midtwist because you're more likely to be in possession of backup cards by then
 if(player != 'Jester' && player != 'Witch' && player != 'Robot') midtwists.push('Marshmallow?'); //jester and witch would get screwed over hard by this, and it wouldn't even make sense for robot. actually i don't play witch so i'm not sure how hard she would be affected by this? but it sounds like it would majorly limit her start-of-turn options
@@ -205,7 +204,7 @@ earlytwists = shuffle(earlytwists);
 standardlist.push(earlytwists.pop());
 standardlist = shuffle(standardlist);
 
-var latelist = ['Mimic?', 'Aoife?', 'Singer?', 'Sorceress', 'Bully', 'Bounty Hunter', 'Kraken'];
+var latelist = ['Aoife?', 'Singer?', 'Sorceress', 'Bully', 'Bounty Hunter', 'Kraken'];
 if(player == 'Jester' || player == 'Inventor') latelist.push('Handyman?'); //blueprints aren't as useful to other classes as they are to jester and inventor
 if(!isenemyindungeon('Scathach')){
   standardlist.push('Cowboy'); //Don't offer the Cowboy rule if Scathach is the boss

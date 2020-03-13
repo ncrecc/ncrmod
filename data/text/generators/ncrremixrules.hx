@@ -29,7 +29,6 @@ if(player != 'Thief') standardlist.push('Keymaster?'); //conventional thief acti
 var secondremixlist = [];
 
 var earlytwists = ['Rat King?'];
-if(player != 'Jester') { earlytwists.push('Mimic?'); } //terrible for jester
 if(chance(50)) { //these are too common
 if(player == 'Thief') earlytwists.push('The Thief?'); //uptick
 if(player == 'Inventor') earlytwists.push('The Inventor?'); //double scrap
@@ -47,7 +46,7 @@ if(player != 'Witch' && player != 'Jester'){
   }else{
     var wispcount = 0;
     if(isenemyindungeon('Fireman')) wispcount++;
-    if(isenemyindungeon('Wisp')) wispcount++;
+    if(isenemyindungeon('Wisp')) wispcount += 2;
     if(isenemyindungeon('Wicker Man')) wispcount++;
     if(wispcount >= 3){
       earlytwists.push('Wisp?');
@@ -113,7 +112,7 @@ if(draincount >= 3 && draincount <= 6){
   earlytwists.push('Drain Monster?');
 }
 		
-var midtwists = ['Wizard?', 'Rotten Apple?', 'Cowboy?'];
+var midtwists = ['Mimic?', 'Wizard?', 'Rotten Apple?', 'Cowboy?'];
 if(player == 'Robot' && chance(66)) midtwists.push('Robobot?'); //robot only, a little weird so odds are lowered
 if(player == 'Jester') midtwists.push('The Jester?'); //swap pu cards with normal cards & vice-versa. midtwist because you're more likely to be in possession of backup cards by then
 if(player != 'Jester' && player != 'Witch' && player != 'Robot') midtwists.push('Marshmallow?'); //jester and witch would get screwed over hard by this, and it wouldn't even make sense for robot. actually i don't play witch so i'm not sure how hard she would be affected by this? but it sounds like it would majorly limit her start-of-turn options
