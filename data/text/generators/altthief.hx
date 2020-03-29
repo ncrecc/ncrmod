@@ -8,7 +8,9 @@ var otherstuff = [];
 var goodotherstuff = [];
 
 //Floor 1:
-var commonlist1 = shuffle(["Watering Can", "Peapod", "Freezeburn", "Magic Flute"]);
+var freezeburngivenyet = false; //this isn't used for anything as of yet
+
+var commonlist1 = shuffle(["Watering Can", "Peapod", "Freezeburn", "Magic Flute", "Enchanted Shield"]);
 		
 items = [commonlist1.pop()];
 
@@ -26,6 +28,8 @@ gooditems = [];
 
 otherstuff = [health(), health()];
 goodotherstuff = [shop(shuffle(["Keyhole", commonlist1.pop(), commonlist1.pop()]))];
+
+if(commonlist1.indexOf("Freezeburn") == -1) freezeburngivenyet = true;
 
 addfloor("normal")
   .additems(items, gooditems)
