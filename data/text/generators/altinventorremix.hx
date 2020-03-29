@@ -14,7 +14,7 @@ var goodotherstuff = [];
 trace("starting....");
 
 //Floor 1:
-var switchbonetech = ["Switchblade", "Bone Club", "Technology"];
+var switchbonetech = ["Switchblade@even", "Bone Club", "Technology"];
 shuffle(switchbonetech);
 var scraplist = ["Scrap Slingshot", "Scrap Trap", "Scrapsies", "Scrapstick", "Scrap Lamp", "Scrap Crystal", "Scraptula", "Scrap Slam"];
 shuffle(scraplist);
@@ -89,8 +89,9 @@ trace("floor 2 done");
 
 //Floor 3:
 
-var midtierdrops = shuffle(["Shudder", "Technology", "Chainsmoke", "Keyhole", "Gas Lamp", "Operator", "Sucker Punch"]);
+var midtierdrops = shuffle(["Gadsby Gun", "Shudder", "Technology", "Chainsmoke", "Keyhole", "Gas Lamp", "Operator", "Sucker Punch"]);
 if(chance(33)) { midtierdrops.push("Charity"); }
+if(chance(1)) { midtierdrops.push("Do [sword][d6] damage"); }
 //no reason to push flicker here since shudder is always included
 items = [rand(["Scrap Trap", "Scrapsies", "Scrapstick", "Scrap Slam"])];
 scraplist.remove(items[0]);
@@ -98,7 +99,7 @@ items.push(chance(17.5) ? shielddrops.pop() : pick(["Kale Smoothie", "Starspear"
 gooditems = [midtierdrops.pop()];
 
 
-var commonlist2 = ["Queen of Diamonds", "Sleight of Hand", spearswing, "Sharp Straw", "Gadsby Gun", switchbonetech.pop(), "Icebox", "Ice Nine", "Sacrificial Blade@3", pick(["Berlin Massachusetts Key", "Table Flip"]), "Cubby", "Broadkunai"];
+var commonlist2 = ["Queen of Diamonds", "Sleight of Hand", spearswing, "Sharp Straw", switchbonetech.pop(), "Icebox", "Ice Nine", "Sacrificial Blade@3", pick(["Berlin Massachusetts Key", "Table Flip"]), "Cubby", "Broadkunai"];
 //if(chance(30)) { commonlist2.remove("Ice Nine"); commonlist2.push("PyrotechnIX"); } //good pun
 if(gimmickorwhip == 1) { commonlist2.push(whips.pop()); cleanwhips(commonlist1[commonlist1.length - 1], whips); }
 else { commonlist2.push(brgimmicks.pop()); }
@@ -118,7 +119,7 @@ includewhipgimmick.push(brgimmicks.pop());
 if(includewhipgimmick.length > 0) { commonlist2.push(includewhipgimmick.pop()); }
 commonlist2.push(pick(["Hunting Knife@small", "Hunting Knife@large"]));
 if (chance(30)) commonlist2.push("Lava Quenching");
-if (chance(60)) { commonlist2.push("Velocity"); commonlist2.push("Platinum Blade"); }
+if (chance(40)) { commonlist2.push("Velocity"); commonlist2.push("Platinum Blade"); }
 shuffle(commonlist2);
 
 otherstuff = [health()];
