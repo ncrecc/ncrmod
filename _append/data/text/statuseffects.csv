@@ -7,7 +7,7 @@ ncr_lightswitch4,Light_Switch_4,dice,Roll an extra 4 next turn.,NO,NO,NO,YES,NO
 ncr_lightswitch5,Light_Switch_5,dice,Roll an extra 5 next turn.,NO,NO,NO,YES,NO
 ncr_lightswitch6,Light_Switch_6,dice,Roll an extra 6 next turn.,NO,NO,NO,YES,NO
 ncr_vanishall,Vanish_all,vanish,Duplicate dice are immediately destroyed.,NO,NO,YES,NO,NO
-ncr_vanish,Vanish,vanish,Duplicate dice are destroyed[;] up to <value> time(s).,NO,YES,YES,NO,NO
+ncr_vanish,Vanish,vanish,Up to <value> duplicate dice are immediately destroyed.,NO,YES,YES,NO,NO
 ncr_internalvanish,Vanish,vanish,Only used internally[;] decreases for each dice vanished.|You shouldn't be seeing this description.,NO,YES,YES,NO,YES
 ncr_lessfluff,Less_Fluff,cog,The next card you use is immediately gadgetized.,NO,NO,YES,NO,NO
 ncr_injection,Script_Injection,cog,Next card you use will give you a new dice[;]| in addition to its normal effect.,NO,YES,NO,NO,NO
@@ -15,3 +15,5 @@ ncr_invisiblehook,Invisible_Hook,silence,You shouldn't be seeing this[;] it's an
 ncr_hyper,Hyperspeed,confuse,Convert the next status you inflict to its Parallel Universe version.,NO,YES,YES,NO,NO
 alternate_ncr_hyper,Hyperspeed?,confuse,Convert the next status you inflict to its non-Parallel Universe version.,NO,YES,YES,NO,NO
 ncr_vanishlegacy,Vanish,vanish,Duplicate dice are immediately destroyed.,NO,NO,YES,NO,NO
+ncr_poisontemp,Poisontemp,cog,You shouldn't be seeing this description.|Go yell at ncrecc,NO,YES,YES,NO,NO
+ncr_error,Error,curse,At the start of your turn[;] a random item will error out[;]|rendering it unusable for that turn.,NO,YES,YES,NO,NO

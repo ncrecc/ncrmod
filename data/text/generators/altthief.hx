@@ -9,9 +9,10 @@ var goodotherstuff = [];
 
 //Floor 1:
 var freezeburngivenyet = false; //this isn't used for anything as of yet
+var jinxgivenyet = false;
 
-var commonlist1 = shuffle(["Watering Can", "Peapod", "Freezeburn", "Magic Flute", "Enchanted Shield"]);
-		
+var commonlist1 = shuffle(["Watering Can", "Peapod", "Freezeburn", "Magic Flute"]);
+
 items = [commonlist1.pop()];
 
 addfloor("tiny")
@@ -21,6 +22,7 @@ addfloor("tiny")
   
 //Floor 2:
 commonlist1.push("Blue Ocean");
+commonlist1.push("Enchanted Shield");
 commonlist1 = shuffle(commonlist1);
 
 items = [commonlist1.pop()];
@@ -35,29 +37,39 @@ addfloor("normal")
   .additems(items, gooditems)
   .addotherstuff(otherstuff, goodotherstuff)
   .generate();
-  
-//Floor 3:
-var lockpickvariant1 = pick(["Open Sesame", "Luckpick"]);
-var lockpickvariants = ["Open Sesame", "Luckpick"];
-lockpickvariants.remove(lockpickvariant1);
-lockpickvariant2 = lockpickvariants[0];
 
-var commonlist2 = ["Matchbox", "Gas Lamp", "Last Stand", "First Aid Kit", "Glitter Bomb", lockpickvariant1];
+//Floor 3:
+var scraplist = ["Scrap Slingshot", "Scrap Trap", "Scrapsies", "Scrapstick", "Scrap Lamp", "Scrap Crystal", "Scraptula", "Scrap Slam"];
+scraplist = shuffle(scraplist);
+
+var lockpickvariants = ["Open Sesame", "Luckpick"];
+lockpickvariants = shuffle(lockpickvariants);
+if(chance(5)) {
+	lockpickvariants.pop();
+	lockpickvariants.push("Hijack");
+	lockpickvariants = shuffle(lockpickvariants);
+}
+var lockpickvariant1 = lockpickvariants.pop();
+var lockpickvariant2 = lockpickvariants.pop();
+
+var commonlist2 = ["Honeysuckle", "Wind up Fist", "Gas Lamp", "Telephone", "Cookie Cake", "Glitter Bomb", "Blacklight", lockpickvariant1];
 if(chance(20)) commonlist2.push("Survivor's Guilt");
-var rarelist1 = ["Black Lotus", "Autohook", "Magic Flute", "Combat Roll", "Fool's Fire"];
-if(chance(20)) { commonlist2.remove("Fool's Fire"); commonlist2.push("Stupid's Shock"); }
+var rarelist1 = [chance(66) ? "Precious Egg@6" : "Rotten Egg@6", "Arf Arf Arf", chance(50) ? "Jester" : "Call for Backup Robot", "Lotus Swing", "Black Lotus", "Autohook", "Magic Flute", "Combat Roll", "Fool's Fire"];
+if(chance(20)) { rarelist1.push("Metacrowbar"); }
+if(chance(20)) { rarelist1.remove("Fool's Fire"); rarelist1.push("Stupid's Shock"); }
 
 commonlist2 = shuffle(commonlist2);
 rarelist1 = shuffle(rarelist1);
 items = [commonlist2.pop()];
-gooditems = [];
+gooditems = [pick(["Uberbump", "Slim Jim", "Welder"])];
+if(chance(10)) gooditems = ["Change Machine"];
 
 otherstuff = [
   health(),
   health()
 ];
 goodotherstuff = [
-  shop([commonlist2.pop(), commonlist2.pop(), commonlist1.pop()]),
+  shop([commonlist2.pop(), chance(66) ? commonlist2.pop() : scraplist.pop(), commonlist1.pop()]),
   upgrade()
 ];
 
@@ -67,14 +79,23 @@ addfloor("normal")
   .generate();
   
 //Floor 4:
-var commonlist3 = [lockpickvariant2, "Defense Mechanism", "Blight", "Detonator", "Spatula"];
+if(
+	commonlist2.indexOf("Telephone") == -1 || 
+	commonlist2.indexOf("Gas Lamp") == -1 || 
+	scraplist.indexOf("Scrapsies") == -1 || 
+	rarelist1.indexOf("Arf Arf Arf") == -1 ||
+	rarelist1.indexOf("Lotus Swing") == -1
+  )
+	jinxgivenyet = true;
+
+var commonlist3 = [lockpickvariant2, "Iron Shield", "Defense Mechanism", "Plight", "Warhammer"];
+if(jinxgivenyet) commonlist3.push("Hijinx");
 commonlist3 = shuffle(commonlist3);
 items = [commonlist3.pop()];
 gooditems = [];
 
 var floor5item = commonlist3.pop();
 
-commonlist3.push("Nudgeblade");
 commonlist3 = shuffle(commonlist3);
 
 otherstuff = [health(), health()];
@@ -89,7 +110,7 @@ if(chance(10)){
 }
 
 goodotherstuff = [
-  shop([rarelist1.pop(), rarelist1.pop(), commonlist2.pop()]),
+  shop([rarelist1.pop(), chance(66) ? rarelist1.pop() : scraplist.pop(), commonlist2.pop()]),
   thieftrade
 ];
 
@@ -121,7 +142,7 @@ goodotherstuff = [];
 var lastfloor = addfloor("boss");
 
 if (getfinalboss() == "Drake"){
-  items.push("Wooden Stake");
+  items.push("Steel Sword");
 }
 
 lastfloor

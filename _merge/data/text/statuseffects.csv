@@ -1,0 +1,7 @@
+Name,Displayed As,Symbol,Description,External Scripts?,Stacks?,Remove at End Turn?,Remove at Start Turn?,Invisible?
+dice_trigger_1,Dice_Trigger_1,dice,Roll an extra dice next turn for each 1 the enemy rolls.,NO,NO,NO,YES,NO
+dice_trigger_2,Dice_Trigger_2,dice,Roll an extra dice next turn for each 2 the enemy rolls.,NO,NO,NO,YES,NO
+dice_trigger_3,Dice_Trigger_3,dice,Roll an extra dice next turn for each 3 the enemy rolls.,NO,NO,NO,YES,NO
+dice_trigger_4,Dice_Trigger_4,dice,Roll an extra dice next turn for each 4 the enemy rolls.,NO,NO,NO,YES,NO
+dice_trigger_5,Dice_Trigger_5,dice,Roll an extra dice next turn for each 5 the enemy rolls.,NO,NO,NO,YES,NO
+dice_trigger_6,Dice_Trigger_6,dice,Roll an extra dice next turn for each 6 the enemy rolls.,NO,NO,NO,YES,NO

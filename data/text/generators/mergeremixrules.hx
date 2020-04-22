@@ -75,7 +75,7 @@ if(player == 'Inventor') earlytwists.push('The Inventor?'); //double scrap
 if(player == 'Robot') earlytwists.push('The Robot?'); //more jackpot rewards
 if(player == 'Witch') earlytwists.push('The Witch?'); //countdown
 //jester's is a midtwist. because i said so
-if(player == 'Warrior') earlytwists.push('The Warrior?'); //shifting skillcard
+if(player == 'Warrior') earlytwists.push('The Warrior?'); //stop shifting skillcard
 
 //Thief, Jester and Warrior *can* get keymaster, but it's in the veryrare list or standard lists instead
 if(player != 'Thief' && player != 'Jester' && player != 'Warrior') earlytwists.push('Keymaster'); 

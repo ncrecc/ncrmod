@@ -17,7 +17,7 @@ trace("starting....");
 var switchbonetech = ["Switchblade@even", "Bone Club", "Technology"];
 shuffle(switchbonetech);
 var scraplist = ["Scrap Slingshot", "Scrap Trap", "Scrapsies", "Scrapstick", "Scrap Lamp", "Scrap Crystal", "Scraptula", "Scrap Slam"];
-shuffle(scraplist);
+scraplist = shuffle(scraplist);
 
 items = [switchbonetech.pop(), rand(["Scrap Slingshot", "Scrap Crystal", "Scrap Lamp", "Scrapsies"])];
 gooditems = [pick(["Uberbump", "Slim Jim", "Welder"])];
