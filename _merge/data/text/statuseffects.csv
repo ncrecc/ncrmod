@@ -5,3 +5,4 @@ dice_trigger_3,Dice_Trigger_3,dice,Roll an extra dice next turn for each 3 the e
 dice_trigger_4,Dice_Trigger_4,dice,Roll an extra dice next turn for each 4 the enemy rolls.,NO,NO,NO,YES,NO
 dice_trigger_5,Dice_Trigger_5,dice,Roll an extra dice next turn for each 5 the enemy rolls.,NO,NO,NO,YES,NO
 dice_trigger_6,Dice_Trigger_6,dice,Roll an extra dice next turn for each 6 the enemy rolls.,NO,NO,NO,YES,NO
+vanish,Vanish_ALL,vanish,Duplicate dice are immediately destroyed.,NO,NO,YES,NO,NO

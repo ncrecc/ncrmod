@@ -16,7 +16,9 @@ Remix.preventclash(['Skeleton?', 'Rhino Beetle?']); //both directly deal damage 
 Remix.preventclash(['Marshmallow?', 'The Witch?']); //can't have multiple restrictions on your rolls
 Remix.preventclash(['Sorceress?', 'Cowboy?']); //neither can the enemy
 Remix.preventclash(['Rat King?', 'Lady Luck']); //one upgrades a random enemy equipment, one upgrades all enemy equipment. redundancy is bad. redundancy is bad
-
+Remix.preventclash(['Singer?', 'The Witch?']); //singer? effectively negates dice range/stack rules since dice are immediately rerolled ignoring the normal range/stack
+Remix.preventclash(['Singer?', 'Marshmallow?']); //see above
+Remix.preventclash(['Wisp?', 'Bounty Hunter?']); //bad idea. literally only one enemy in the game cares about vanish, and vanish equipment is relatively rare in ncrmod (probably rarer than it ought to be), this along with shock equipment being uncommon means you never really see bounty hunter? do its thing
 
 var veryrare = ['Sorceress?', 'Kraken?', 'Warlock?'];
 if(player != 'Witch' && player != 'Jester') veryrare.push('Copycat?'); //copycat? doesn't work with witch & jester for the same reason val doesn't work

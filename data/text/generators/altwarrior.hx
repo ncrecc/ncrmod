@@ -27,7 +27,7 @@ chancepush(dicemanip,chance50manip,50);
 chancepush(dicemanip,chance25manip,25);
 dicemanip = shuffle(dicemanip);
 
-var warriorshops = [rand(["Shiked Spield@sword", "Shiked Spield@shield"]), "Retreat", "Warhammer", "Swing Me Another 6", "Pocket Protector", "Cubby", "Swing Me Another 6", "Big Knife", "Vanity Mirror", "Sleight of Hand"];
+var warriorshops = [rand(["Shiked Spield@sword", "Shiked Spield@shield"]), "Sharp Straw", "Retreat", "Warhammer", "Swing Me Another 6", "Pocket Protector", "Cubby", "Swing Me Another 6", "Big Knife", "Vanity Mirror", "Sleight of Hand"];
 if(!bassguitar) warriorshops.push("Electric Guitar");
 
 warriorshops = shuffle(warriorshops);
@@ -37,7 +37,7 @@ strangeshop = shuffle(strangeshop);
 
 //Floor 1:
 items = [];
-var awesomelist = ["Shiny Nunchucks", "Heavenly Nectar", "Snare Drum", "Sap Gloves", "Halligan Bar"];
+var awesomelist = ["Shiny Nunchucks", "Heavenly Nectar", "Bone Club", "Sap Gloves", "Halligan Bar"];
 awesomelist = shuffle(awesomelist);
 gooditems = [awesomelist.pop()];
 otherstuff = [];
@@ -61,7 +61,7 @@ addfloor("small")
 
 //Floor 3:
 items = [];
-var floor3items = [dicemanip.pop(), "Rainmaking", "Kale Bat", "Bone Club", "Ice Nine"];
+var floor3items = [dicemanip.pop(), "Rainmaking", "Kale Bat", "Snare Drum", "Ice Nine"];
 if(bassguitar) floor3items.push("Bass Guitar");
 floor3items = shuffle(floor3items);
 items.push(floor3items.pop());

@@ -29,11 +29,16 @@ Remix.preventclash(['Wizard', 'Cornelius?']); //mean & redundant
 Remix.preventclash(['Rotten Apple?', 'Cornelius']); //-10 max hp plus a rule that deducts 1 max hp after each fight is probably cruel
 Remix.preventclash(['Skeleton?', 'Cornelius']); //"take 10 damage immediately" & -10 max hp. mean
 Remix.preventclash(['Singer?', 'Singer']); //the former negates the latter, mostly
+Remix.preventclash(['Singer?', 'The Witch?']); //again, dice range/stack negation
+Remix.preventclash(['Singer?', 'Marshmallow?']);
+Remix.preventclash(['Singer?', 'Bounty Hunter']); //could actually probably make singer? work for bounty hunter and marshmallow? by having it reroll according to *the player's dice range* rather than fair 1/2/3/4/5/6. how do you access dice range instead of just changing it tho
 Remix.preventclash(['Copycat?', 'Val']); //both involve item swaps. just in case
 Remix.preventclash(['Wisp?', 'Wisp']); //when you have vanish all (i.e. regular vanish), being inflicted with finite vanish has no effect
 //Remix.preventclash(['Wisp?', 'Copycat?']); //only particular vanish equipment really causes problems, and preventing wisp? from appearing with copycat? won't prevent vanish items in general from appearing with copycat?.
+//oh god why does Copycat? exist
 //Remix.preventclash(['Keymaster?', 'Crystalina']); //if this is really a problem someone else will point it out eventually
 Remix.preventclash(['Wisp?', 'Marshmallow']); //i have no clue what happens if two rules try to swap the same equipment, e.g. flame spell for illusion spell AND flame spell for freeze spell
+Remix.preventclash(['Wisp?', 'Bounty Hunter?']); //bad idea. literally only one enemy in the game cares about vanish, and vanish equipment is relatively rare in ncrmod (probably rarer than it ought to be), this along with shock equipment being uncommon means you never really see bounty hunter? do its thing
 
 var veryrare = ['Sorceress?', 'Kraken?', 'Warlock?', 'Sticky Hands'];
 if(player != 'Witch' && player != 'Jester') veryrare.push('Copycat?'); //copycat? doesn't work with witch & jester for the same reason val doesn't work
