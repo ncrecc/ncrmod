@@ -1,7 +1,7 @@
 Hand-drawn with side-by-side comparison: http://www.vintageguitar.com/wp-content/uploads/GIZMOTRON_02.jpg
 
 Multiple layers for shading
-"Gizmotron" bevel effect not done by hand
+"Gizmotron" text bevel effect not done by hand
 Slight pixel adjustments done tightly zoomed in
 
 For a while I'd been thinking "hey wouldn't it be cool if ncrmod equipment could have graphical previews" which they can't obviously, but I got some cool ideas for what equipment would look like if I were to draw them anyway. I'm not a great artist though - especially so when I don't a reference - so I might stop at gizmotron
