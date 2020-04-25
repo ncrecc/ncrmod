@@ -19,7 +19,8 @@ chance50manip = shuffle(chance50manip);
 chance25manip = shuffle(chance25manip);
 
 function chancepush(pushto,pushfrom,pushchance) {
-	for(0...pushfrom.length) {
+	var pushfromlength = pushfrom.length;
+	for(0...pushfromlength) {
 		if(pushchance) {
 			pushto.push(pushfrom.pop());
 		}
