@@ -17,3 +17,7 @@ alternate_ncr_hyper,Hyperspeed?,confuse,Convert the next status you inflict to i
 ncr_vanishlegacy,Vanish,vanish,Duplicate dice are immediately destroyed.,NO,NO,YES,NO,NO
 ncr_poisontemp,Poisontemp,cog,You shouldn't be seeing this description.|Go yell at ncrecc,NO,YES,YES,NO,NO
 ncr_error,Error,curse,At the start of your turn[;] a random item will error out[;]|rendering it unusable for that turn.,NO,YES,YES,NO,NO
+ncr_silence,Silence,silence,Temporarily disables your last equipment.|Can use a dice to unsilence.,NO,NO,YES,NO,NO
+alternate_ncr_silence,Silence?!,silence,Temporarily weakens your last equipment.|Equipment becomes less powerful.,NO,NO,YES,NO,NO
+ncr_dummysilence,Silence,silence,Cannot use special character skills or limit breaks.,NO,NO,YES,NO,NO
+alternate_ncr_dummysilence,Silence?,silence,Limit break is less powerful.,NO,NO,YES,NO,NO

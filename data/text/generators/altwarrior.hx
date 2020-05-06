@@ -5,8 +5,7 @@ var gooditems = [];
 var otherstuff = [];
 var goodotherstuff = [];
 
-var bassguitar = false;
-if(chance(20)) bassguitar = true;
+var bassguitar = true;
 
 //the following dice manip is all "normal" versions of the dice manip that can appear as warrior's skillcard.
 var dicemanip = ["Keyhole", "Innovate", "Virtue Grip"]; //new manip, essentially chance 100
@@ -27,17 +26,17 @@ chancepush(dicemanip,chance50manip,50);
 chancepush(dicemanip,chance25manip,25);
 dicemanip = shuffle(dicemanip);
 
-var warriorshops = [rand(["Shiked Spield@sword", "Shiked Spield@shield"]), "Sharp Straw", "Retreat", "Warhammer", "Swing Me Another 6", "Pocket Protector", "Cubby", "Swing Me Another 6", "Big Knife", "Vanity Mirror", "Sleight of Hand"];
-if(!bassguitar) warriorshops.push("Electric Guitar");
+var warriorshops = [rand(["Shiked Spield@sword", "Shiked Spield@shield"]), "Sharp Straw", "Retreat", "Warhammer", "Swing Me Another 6", "Pocket Protector", "Big Knife", "Vanity Mirror", "Sleight of Hand", "Wail Bat", "Energy Ball", "Whipcrack", "Circuit Breaker"];
+if(chance(5)) { warriorshops.pop(); warriorshops.push("Strange Apparatus"); }
 
 warriorshops = shuffle(warriorshops);
 
-var strangeshop = ["Uberbump", "Humility", "Bizarro Blade", "Doppeldfire", "Undermine"];
+var strangeshop = ["Uberbump", rand(["Humility", "Charity"]), "Bizarro Blade", "Doppeldfire", "Undermine", "Fuel Bat"];
 strangeshop = shuffle(strangeshop);
 
 //Floor 1:
 items = [];
-var awesomelist = ["Shiny Nunchucks", "Heavenly Nectar", "Bone Club", "Sap Gloves", "Halligan Bar"];
+var awesomelist = ["Shiny Nunchucks", "Heavenly Nectar", "Bone Club", "Sap Gloves", "Halligan Bar", "Smart Spike", "Sceptre"];
 awesomelist = shuffle(awesomelist);
 gooditems = [awesomelist.pop()];
 otherstuff = [];
@@ -61,7 +60,7 @@ addfloor("small")
 
 //Floor 3:
 items = [];
-var floor3items = [dicemanip.pop(), "Rainmaking", "Kale Bat", "Snare Drum", "Ice Nine"];
+var floor3items = [dicemanip.pop(), "Rainmaking", "Kale Bat", "Snare Drum", "Ice Nine", "Echochamber", "Plasma Rifle"];
 if(bassguitar) floor3items.push("Bass Guitar");
 floor3items = shuffle(floor3items);
 items.push(floor3items.pop());
@@ -83,7 +82,7 @@ addfloor("normal")
 items = [];
 //awesomelist.push("Wrath");
 awesomelist = shuffle(awesomelist);
-gooditems = [awesomelist.pop()];
+gooditems = chance(75) ? [awesomelist.pop()] : [strangeshop.pop()];
 
 otherstuff = [health()];
 goodotherstuff = [
@@ -105,7 +104,7 @@ gooditems = [];
 otherstuff = [health(), health()];
 goodotherstuff = [
   upgrade(),
-  shop(["upgrade", strangeshop.pop(), "health"], [4, 4, 4])
+  shop(["upgrade", chance(98) ? strangeshop.pop() : "Katsuhiro Bat", "health"], [4, 4, 4])
 ];
 
 addfloor("big")

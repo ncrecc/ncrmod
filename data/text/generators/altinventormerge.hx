@@ -42,7 +42,7 @@ function cleanwhips(x,y) {
 
 var shielddrops = shuffle(["Industrial Press", "Defense Mechanism", "Rickety Shield"]);  
 
-var commonlist1 = ["Shocking Horror", "Gizmotron", "Leather Armor", "Bump", "Healing Crystal", "Lockpick", "Spike", "Keyblade", "Hi Vis Jacket", "Saw Wave", "Elastic Heart", "Berlin Key", "Double Edge", pick(["Blast Chiller", "Cremator"]), "Tetraphobia", spearswing, "Sharp Straw", switchbonetech.pop(), "Icebox", "Ice Nine", "Sacrificial Blade@3", pick(["Berlin Massachusetts Key", "Table Flip"]), "Cubby", "Broadkunai"];
+var commonlist1 = ["Sheer Will", "Gizmotron", "Leather Armor", "Bump", "Healing Crystal", "Lockpick", "Spike", "Keyblade", "Hi Vis Jacket", "Saw Wave", "Elastic Heart", "Berlin Key", "Double Edge", pick(["Blast Chiller", "Cremator"]), "Tetraphobia", spearswing, "Sharp Straw", switchbonetech.pop(), "Icebox", "Ice Nine", "Sacrificial Blade@3", pick(["Berlin Massachusetts Key", "Table Flip"]), "Cubby", "Broadkunai"];
 //if(chance(20)) { commonlist1.remove("Ice Nine"); commonlist1.push("PyrotechnIX"); }
 commonlist1.push(whips.pop()); cleanwhips(commonlist1[commonlist1.length - 1], whips);
 
@@ -90,6 +90,7 @@ if (chance(20)) commonlist2.push("Lava Quenching");
 if (chance(30)) { commonlist2.push("Velocity"); commonlist2.push("Platinum Blade"); }
 if(chance(10)) commonlist2.push("e.name");
 if(chance(20)) commonlist2.push("Bizarro Blade"); //the best equipment is the equipment you never see because it's tied to stupid chance-based crap
+if(chance(20)) { commonlist2.push("Cybernetics"); }
 
 shuffle(commonlist2);
 		

@@ -6,3 +6,4 @@ diceydungeons_wisp_ncr,diceydungeons, Wisp ,42,wisp,wisp,-40|40,wisp,20|-60,-40|
 diceydungeons_wispq_ncr,diceydungeons,Wisp?,42,wisp,wisp,-40|40,wisp,20|-60,-40|-100,3,1000,Sword,Sword,1,8,NO,NO,NO,,,,,,,,,chat_monster2,looping,YES,THANX FOR PLAYING||YOU'RE NOT SUPPOSED TO BE SEEING THIS,NO,,,,,
 diceydungeons_wolf_puppy_ncr,diceydungeons, Wolf Puppy ,12,wolf_puppy,wolf_puppy,-50|-40,wolfpuppy,0|0,-120|0,3,1000,Sword,Sword,1,12,NO,NO,NO,,,,,,,,,chat_monster1,looping,YES,YOU'RE NOT SUPPOSED TO BE SEEING THIS||WHAT IS GOING ON I DON'T UNDERSTAND,NO,,,,,
 diceydungeons_testtest_ncr,diceydungeons,test weaken all enemy,100,stereohead,stereohead,-30|-10,stereohead,0|0,-140|-80,2,1000,Lockpick|Dagger,test weaken all card,0,6,NO,NO,NO,,,,,,,,,chat_monster1,looping,NO,,NO,yep,,,,
+diceydungeons_big_guy,diceydungeons,big guy,999,stereohead,wizard,40|-20,wizard,-50|-20,-40|0,0,1000,Fuse,Fuse,1,6,NO,NO,NO,,,,,,,,,chat_monster1,looping,NO,,NO,,,,,
