@@ -10,7 +10,7 @@ var bassguitar = true;
 //the following dice manip is all "normal" versions of the dice manip that can appear as warrior's skillcard.
 var dicemanip = ["Keyhole", "Innovate", "Virtue Grip"]; //new manip, essentially chance 100
 var chance75manip = ["Crucible", "Illuminate", "Cauldron", "Table Slam", "Spanner", "Gold Cauldron", "Silver Cauldron", "Gumball Machine", "Ungeradedice", "Giant Spatula"]; //specific dice manip that not many classes receive
-var chance50manip = ["Doppeldice", "Hall of Mirrors", "Berlin Key"]; //common dice manip that warrior doesn't get
+var chance50manip = ["Doppeldice", "Hall of Mirrors", "Berlin Key"]; //common/simple dice manip that warrior doesn't get
 var chance25manip = ["Bump", "Spatula", "Sine Wave"]; //already warrior dice manip
 
 function chancepush(pushto,pushfrom,pushchance) {

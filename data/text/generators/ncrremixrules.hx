@@ -19,6 +19,7 @@ Remix.preventclash(['Rat King?', 'Lady Luck']); //one upgrades a random enemy eq
 Remix.preventclash(['Singer?', 'The Witch?']); //singer? effectively negates dice range/stack rules since dice are immediately rerolled ignoring the normal range/stack
 Remix.preventclash(['Singer?', 'Marshmallow?']); //see above
 Remix.preventclash(['Wisp?', 'Bounty Hunter?']); //bad idea. literally only one enemy in the game cares about vanish, and vanish equipment is relatively rare in ncrmod (probably rarer than it ought to be), this along with shock equipment being uncommon means you never really see bounty hunter? do its thing
+Remix.preventclash(['Magician?', 'Loud Bird?']); //magician swaps your limit to a random limit every turn. loud bird permanently swaps your limit break to its weakened version.
 
 var veryrare = ['Sorceress?', 'Kraken?', 'Warlock?'];
 if(player != 'Witch' && player != 'Jester') veryrare.push('Copycat?'); //copycat? doesn't work with witch & jester for the same reason val doesn't work

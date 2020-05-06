@@ -39,6 +39,7 @@ Remix.preventclash(['Wisp?', 'Wisp']); //when you have vanish all (i.e. regular 
 //Remix.preventclash(['Keymaster?', 'Crystalina']); //if this is really a problem someone else will point it out eventually
 Remix.preventclash(['Wisp?', 'Marshmallow']); //i have no clue what happens if two rules try to swap the same equipment, e.g. flame spell for illusion spell AND flame spell for freeze spell
 Remix.preventclash(['Wisp?', 'Bounty Hunter?']); //bad idea. literally only one enemy in the game cares about vanish, and vanish equipment is relatively rare in ncrmod (probably rarer than it ought to be), this along with shock equipment being uncommon means you never really see bounty hunter? do its thing
+Remix.preventclash(['Magician?', 'Loud Bird?']); //magician swaps your limit to a random limit every turn. loud bird permanently swaps your limit break to its weakened version.
 
 var veryrare = ['Sorceress?', 'Kraken?', 'Warlock?', 'Sticky Hands'];
 if(player != 'Witch' && player != 'Jester') veryrare.push('Copycat?'); //copycat? doesn't work with witch & jester for the same reason val doesn't work
