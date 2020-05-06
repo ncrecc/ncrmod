@@ -46,7 +46,7 @@ var commonlist1 = ["Sheer Will", "Gizmotron", "Leather Armor", "Bump", "Healing 
 //if(chance(20)) { commonlist1.remove("Ice Nine"); commonlist1.push("PyrotechnIX"); }
 commonlist1.push(whips.pop()); cleanwhips(commonlist1[commonlist1.length - 1], whips);
 
-var shoplist1 = ["Autohook", "Virtue Grip", switchbonetech.pop(), "Lightstick", "No Pain No Gain", "Berliner", "Tragic Entrance", "Buzzsaw", "Smartwatch", "Bronze Dagger", "Dagger", "Boomerang", "Crystal Sword", "Venus Fly Trap", "Keyblade", "Nunchucks", "Big Stick", "Rubber Mallet", "Change Machine", "Screwdriver", "Giant Spatula", pick(["Gold Dagger", "Silver Dagger"])];
+var shoplist1 = ["Wail Bat", "Autohook", "Virtue Grip", switchbonetech.pop(), "Lightstick", "No Pain No Gain", "Berliner", "Tragic Entrance", "Buzzsaw", "Smartwatch", "Bronze Dagger", "Dagger", "Boomerang", "Crystal Sword", "Venus Fly Trap", "Keyblade", "Nunchucks", "Big Stick", "Rubber Mallet", "Change Machine", "Screwdriver", "Giant Spatula", pick(["Gold Dagger", "Silver Dagger"])];
 if (chance(30)) shoplist1.push("Six Shooter");
 if (chance(30)) shoplist1.push("Sledgehammer");
 if (chance(30)) shoplist1.push("Warhammer");

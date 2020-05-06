@@ -65,7 +65,7 @@ if(chance(20)) { commonlist1.remove("Ice Nine"); commonlist1.push("PyrotechnIX")
 if(gimmickorwhip == 1) { commonlist1.push(whips.pop()); cleanwhips(commonlist1[commonlist1.length - 1], whips); }
 else { commonlist1.push(brgimmicks.pop()); }
 
-var shoplist1 = ["Autohook", "Virtue Grip", switchbonetech.pop(), "Lightstick", "No Pain No Gain", "Berliner", "Tragic Entrance", "Buzzsaw", "Smartwatch", "Bronze Dagger"];
+var shoplist1 = ["Autohook", "Virtue Grip", switchbonetech.pop(), "Lightstick", "No Pain No Gain", "Berliner", "Tragic Entrance", "Buzzsaw", "Smartwatch", "Bronze Dagger", "Wail Bat"];
 if (chance(30)) shoplist1.push("Warhammer");
 commonlist1 = shuffle(commonlist1);
 shoplist1 = shuffle(shoplist1);

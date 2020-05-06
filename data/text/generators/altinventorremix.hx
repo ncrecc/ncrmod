@@ -63,7 +63,7 @@ var shielddrops = shuffle(["Industrial Press", "Defense Mechanism", "Rickety Shi
 var commonlist1 = ["Cremator", "Sheer Will", "Revolver", "Tear Down This Wall", "Vanity Mirror", "Innovate", "Gyrate Hook", "Junk Sword", "Bumpbomb", "Heat Pump", scraplist.pop()];
 if(chance(50)) commonlist1.push("Dripping Yellow Madness");
 
-var shoplist1 = ["Autohook", "Virtue Grip", switchbonetech.pop(), "Lightstick", "No Pain No Gain", "Berliner", "Tragic Entrance", "Buzzsaw", "Smartwatch", "Bronze Dagger"];
+var shoplist1 = ["Autohook", "Virtue Grip", switchbonetech.pop(), "Lightstick", "No Pain No Gain", "Berliner", "Tragic Entrance", "Buzzsaw", "Smartwatch", "Bronze Dagger", "Wail Bat"];
 if (chance(50)) shoplist1.push("Warhammer");
 commonlist1 = shuffle(commonlist1);
 shoplist1 = shuffle(shoplist1);
