@@ -11,7 +11,7 @@ if (levelupselections.indexOf("Boosterpack:Wall Street Shuffle,Golden Gun,Golden
 if (levelupselections.indexOf("Boosterpack:Lucky Charm,Reckless Flailing,Reckless Flailing") > -1){
   Rules.substitute("Backfire", "Healer Staff");
   Rules.substitute("Ping", rand(["Fissure","Sheer Cold","Guillotine"]));
-  Rules.substitute("Bop,Bop,Bop", rand(["Beginner's Luck,Lucky Charm,Reckless Flailing","Trinity Charm,Zoop Zoop,Trinity Charm"]));
+  Rules.substitute("Bop,Bop,Bop", rand(["Beginner's Luck,Lucky Charm,Reckless Flailing","Trinity Charm,Zoop Zoop,Trinity Charm","Delicious Fruit,Bop Bop,Delicious Fruit"]));
 }
 if (levelupselections.indexOf("Boosterpack:Spite,Folly,Folly") > -1){ //external circumstances make this pack really bad: the charge counter will only increment if the card is on-screen! https://github.com/TerryCavanagh/diceydungeons.com/issues/1904 ...although how good can a pack whose associated floor 4 booster contains stumble and an item known as "super backfire" be
   Rules.substitute("Backfire", "Distort");

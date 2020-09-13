@@ -8,7 +8,7 @@ var goodotherstuff = [];
 var brostep = rand([false,true]);
 
 trace(rand([false,true]));
-trace(runscript(~ncrmod/coinflip~));
+trace(runscript("ncrmod/coinflip"));
 
 trace("hi");
 

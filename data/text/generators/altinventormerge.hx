@@ -9,6 +9,8 @@ var goodotherstuff = [];
 var basics = ["Switchblade@even", "Bone Club", "Technology", "Magic Cyanide"];
 shuffle(basics);
 
+var oobleck = ["Oobleck Cauldron","Oobleck Mirror","Oobleck Hammer","Oobleck Missile","Oobleck Hacksaw","Oobleck Capacitor","Oobleck Flamethrower","Oobleck Box","Oobleck Bump","Frozen Oobleck","Ooblock"];
+
 var basic1 = basics.pop();
 
 items = [pick([basic1, basic1, basic1, "Gemstone Staff", "Wrecking Ball", "Staff", "Crossbow"]), rand(["Scrap Nettle", "Scrap Bump", "Scrap Club", "Scrap Book", "Scrap Spear", "Scrap Kettle", "Scrap Metal", "Scrap Slingshot", "Scrap Trap", "Scrapsies", "Scrapstick", "Scrap Lamp", "Scrap Crystal", "Scraptula", "Scrap Slam"])];
@@ -78,9 +80,9 @@ var midtierdrops = shuffle(["Gadsby Gun", "Technology", "Chainsmoke", "Keyhole",
 if(chance(33)) { midtierdrops.push(rand(["Charity", "Humility"])); }
 if(chance(33)) { midtierdrops.push(rand(["Greed", "Envy"])); }
 if(chance(1)) { midtierdrops.push("Do [sword][d6] damage"); }
-items = [rand(["Scrap Slingshot", "Scrap Trap", "Scrapsies", "Scrapstick", "Scrap Lamp", "Scrap Crystal", "Scraptula", "Scrap Slam", "Scrap Nettle", "Scrap Bump", "Scrap Club", "Scrap Book", "Scrap Spear", "Scrap Kettle"])];
+items = [oobleck.pop()];
 items.push(chance(12.5) ? shielddrops.pop() :  pick(["Kale Smoothie", "Starspear", "Biohazard", "Broadsword", "Bump", "Crystal Sword", "Hall of Mirrors", "Midnight Charm", "Calculator", "Spannersword", "Rubber Mallet", "Encyclopedia", "Broken Mirror", "Lucky Star", "Spirit Sword"]));
-gooditems = [midtierdrops.pop()];
+gooditems = [oobleck.pop()];
 
 shoplist1.push("Compact Resonator");
 shuffle(shoplist1);

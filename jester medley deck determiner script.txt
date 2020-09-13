@@ -6,11 +6,11 @@ var funcdeckfiller = new hscript.Parser().parseString("
 		trace(Deck.getcardlist(\"all\")[0]);
 		var eqname = \"InitialEquipment:\" + Deck.getcardlist(\"all\")[0];
 		var itemstoadd = [];
-		if(normallist.indexOf(eqname) > 0)
+		if(normallist.indexOf(eqname) >= 0)
 			itemstoadd = [\"Boop\",\"Boop\",\"Boop\",\"Boop\",\"Bop\",\"Bop\",\"Bop\",\"Sweets\",\"Sweets\"];
-		else if(pulist.indexOf(eqname) > 0)
+		else if(pulist.indexOf(eqname) >= 0)
 			itemstoadd = [\"Kapow\",\"Kapow\",\"Kapow\",\"Kapow\",\"Blammo\",\"Blammo\",\"Blammo\",\"Sour Candy\",\"Sour Candy\"];
-		else if(ncrlist.indexOf(eqname) > 0)
+		else if(ncrlist.indexOf(eqname) >= 0)
 			itemstoadd = [\"Zoop Zoop\",\"Zoop Zoop\",\"Zoop Zoop\",\"Zoop Zoop\",\"Bop Bop\",\"Bop Bop\",\"Bop Bop\",\"Veneer\",\"Veneer\"];
 		if(itemstoadd.length > 0) {
 			eqname = eqname.split(\"InitialEquipment:\")[1];

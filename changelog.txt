@@ -1,5 +1,5 @@
 - Robot and Jester have been added!
-- Repeat: Robot and Jester have been added. This entails a majority of what was added in the update.
+- Repeat: Robot and Jester have been added. This entails a majority of what was added in the update. Robot also comes with two non-NCR episodes.
 - Everything's reworked for 1.9, of course
 - 150+ equipment added since last update
 - New equipment given to Inventor, and a new vanish-themed Bonus Round starting card (Suspense - do raw damage, inflict 2 vanish if not used this turn)
@@ -17,6 +17,7 @@
 - Rollout doesn't error anymore
 - Kraken? rule now works for Robot
 - Keymaster? rule now works for Robot
+- Aurora? rule should no longer error on the first turn of combat
 - Changed Jester? rule since ultimately Boop, Bop, Sweets, Kapow, Blammo, and Sour Candy aren't used in Jester's bonus round.
 - Combat Scroll no longer bumps your dice when a countdown equipment is *used*, only when a dice is placed into it
 - Scraptula didn't actually say anywhere in its description that it's always offered for scrap. Now it does.
@@ -32,3 +33,5 @@
 - To avoid confusion, Combat Mirror now only plays the "get extra dice" sound if you would actually get an extra dice.
 - Lava Quenching was renamed Glassblowing. Both mean roughly the same thing; dice are associated with glass and this card has to do with permanently gaining an extra dice.
 - "Delete this on use" items now work with Jester.
+- Buffed Cybernetics to no longer destroy itself, but require 3 when unupgraded
+- Fixed text bleed on Desperation Attack+
