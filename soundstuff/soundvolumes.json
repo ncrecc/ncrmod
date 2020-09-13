@@ -1,4 +1,6 @@
 {
+	"sfx/chip": 1.6,
+	"sfx/socket": 1.6,
 	"music/atmos/castle": 1,
 	"music/atmos/crystal": 1,
 	"music/atmos/gameshow": 1,
@@ -26,7 +28,6 @@
 	"music/combat/combat8": 0.4,
 	"music/combat/combat9": 0.6,
 	"music/combat/combatboss": 1,
-	"music/combat/pounds": 1,
 	"music/combat/victory": 1,
 	"music/cutscene/crowd": 0,
 	"music/cutscene/cutscene_cheery": 1,
@@ -48,6 +49,7 @@
 	"music/shops/tradingpost": 0.32,
 	"music/shops/blacksmith": 0.42,
 	"music/title/title": 1,
+	"sfx/permadice": 1.6,
 	"sfx/battle/defeatmonster": 1,
 	"sfx/battle/defeatplayer": 1,
 	"sfx/battle/flee": 0.3,

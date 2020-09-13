@@ -1,7 +1,5 @@
 Remix.reset();
 Remix.mode = "challenge";
-Remix.settotalremixes(3);
+Remix.settotalremixes(1);
 
-Remix.offer(2, '', ['Space Marine?']);
-Remix.offer(3, '', ['The Warrior?']);
-Remix.offer(4, '', ['Cowboy?']);
+Remix.offer(2, '', ['Rat King?']);

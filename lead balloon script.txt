@@ -1,0 +1,97 @@
+/*funny enough i actually looked at mysticsword's 'helium shooter' for reference since i wanted the dice to accelerate when falling - helium balloon itself just continuously kicks dice upward*/
+
+if(!self.isplayer) { bonus(-99999999); self.textparticle(~No effect!~); }
+
+if(self.isplayer) {
+	var gravityindices = self.getvar(~gravityindices~);
+	var gravityspeedindices = self.getvar(~gravityspeedindices~);
+	givedice([rand([1|2|3|4|5|6])|rand([1|2|3|4|5|6])|rand([1|2|3|4|5|6])]);
+	gravityindices.push(self.dicepool.length - 1);
+	gravityindices.push(self.dicepool.length - 2);
+	gravityindices.push(self.dicepool.length - 3);
+	self.setvar(~gravityindices~|gravityindices);
+	for(i in 0...gravityindices.length) {
+		gravityspeedindices.push(0);
+	}
+	self.setvar(~gravityspeedindices~|gravityspeedindices);
+}
+
+var skipsetup = false;
+
+if(self.getvar(~leadactuator~) + 1 == ~SimpleActuator1~ # !self.isplayer) skipsetup = true;
+trace(skipsetup);
+if(skipsetup) trace(~skipping setup~);
+if(!skipsetup) {
+	trace(~starting lead actuator~);
+	var tw = new motion.actuators.SimpleActuator(null|0|null);
+	tw._repeat = -1;
+	var s = new elements.Skill(~Against all odds_old~);
+	s.script = ~
+		var gravityindices = self.getvar(\~gravityindices\~);
+		var gravityspeedindices = self.getvar(\~gravityspeedindices\~);
+		var changesmade = false;
+		var diceavailable = false;
+		if(self.doendturnnow # self.hp <= 0 # self.graphic == null # target == null # target.graphic == null # target.hp <= 0) {
+			trace(\~lead actuator stopped\~);
+			self.getvar(\~leadactuator\~).stop();
+			self.resetvar(\~leadactuator\~);
+			self.setvar(\~gravityindices\~|[]);
+			self.setvar(\~gravityspeedindices\~|[]);
+			diceavailable = true; /*kludge so the second 'can we leave yet?' check is bypassed*/
+		}
+		else {
+			if(gravityindices.length == 0) {
+				trace(\~gravityindices is empty! stopping\~);
+				self.getvar(\~leadactuator\~).stop();
+				self.resetvar(\~leadactuator\~);
+				self.setvar(\~gravityindices\~|[]);
+				self.setvar(\~gravityspeedindices\~|[]);
+			}
+			else {
+				for(indice in gravityindices) { /*my x key is being uncooperative*/
+					var mydice = self.dicepool[indice];
+					if(mydice == null) {
+						trace(\~a dice referred to by gravityindices is null. stopping\~);
+						self.getvar(\~leadactuator\~).stop();
+						self.resetvar(\~leadactuator\~);
+						self.setvar(\~gravityindices\~|[]);
+						self.setvar(\~gravityspeedindices\~|[]);
+						break;
+					}
+					if(!mydice.intween() && !mydice.grabbed && !mydice.consumed && mydice.assigned == null) {
+						if(mydice.y > 4000) { /*guessing this is roughly below the bottom of the screen. no way to get screen height currently*/
+							mydice.consumed = true;	
+						}
+						mydice.y = mydice.y + gravityspeedindices[gravityindices.indexOf(indice)];
+						gravityspeedindices[gravityindices.indexOf(indice)] += 0.275;
+						changesmade = true;
+					}
+					if(mydice.intween() # mydice.grabbed # mydice.consumed # mydice.assigned != null) {
+						gravityspeedindices[gravityindices.indexOf(indice)] = 0;
+						changesmade = true;
+					}
+					if(!diceavailable && !mydice.consumed) {
+						if(mydice.assigned == null # mydice.assigned.ready) {
+							diceavailable = true;
+						}
+					}
+				}
+			}
+		}
+		if(changesmade) {
+			self.setvar(\~gravityindices\~|gravityindices);
+			self.setvar(\~gravityspeedindices\~|gravityspeedindices);
+		}
+		if(!diceavailable) {
+			trace(\~all lead dice gone! stopping\~);
+			self.getvar(\~leadactuator\~).stop();
+			self.resetvar(\~leadactuator\~);
+			self.setvar(\~gravityindices\~|[]);
+			self.setvar(\~gravityspeedindices\~|[]);
+		}
+	~;
+	tw.onRepeat(s.execute|[self|target]);
+	self.setvar(~leadactuator~|tw);
+	s.execute(self|target);
+	tw.move();
+}

@@ -5,7 +5,7 @@ var gooditems = [];
 var otherstuff = [];
 var goodotherstuff = [];
 
-var bassguitar = true;
+var bassguitar = true; //this used to be rand([true,false]) and if false you got bass guitar's shock equivalent, "electric guitar", in its place. electric guitar was pretty unimaginative (moreso than bass guitar) and once i added circuit breaker i found it redundant
 
 //the following dice manip is all "normal" versions of the dice manip that can appear as warrior's skillcard.
 var dicemanip = ["Keyhole", "Innovate", "Virtue Grip"]; //new manip, essentially chance 100
@@ -15,7 +15,7 @@ var chance25manip = ["Bump", "Spatula", "Sine Wave"]; //already warrior dice man
 
 function chancepush(pushto,pushfrom,pushchance) {
 	for(item in pushfrom) {
-		if(pushchance) {
+		if(chance(pushchance)) {
 			pushto.push(item);
 		}
 	}
@@ -26,8 +26,8 @@ chancepush(dicemanip,chance50manip,50);
 chancepush(dicemanip,chance25manip,25);
 dicemanip = shuffle(dicemanip);
 
-var warriorshops = [rand(["Shiked Spield@sword", "Shiked Spield@shield"]), "Sharp Straw", "Retreat", "Warhammer", "Swing Me Another 6", "Pocket Protector", "Big Knife", "Vanity Mirror", "Sleight of Hand", "Wail Bat", "Energy Ball", "Whipcrack", "Circuit Breaker"];
-if(chance(5)) { warriorshops.pop(); warriorshops.push("Strange Apparatus"); }
+var warriorshops = [rand(["Shiked Spield@sword", "Shiked Spield@shield"]), "Sharp Straw", "Retreat", "Warhammer", "Swing Me Another 6", "Pocket Protector", "Big Knife", "Vanity Mirror", "Sleight of Hand", "Wail Bat", "Energy Ball", "Whipcrack", "Circuit Breaker", "Pummel"];
+if(chance(25)) { warriorshops.remove("Circuit Breaker"); warriorshops.push("Strange Apparatus"); }
 
 warriorshops = shuffle(warriorshops);
 
@@ -60,7 +60,7 @@ addfloor("small")
 
 //Floor 3:
 items = [];
-var floor3items = [dicemanip.pop(), "Rainmaking", "Kale Bat", "Snare Drum", "Ice Nine", "Echochamber", "Plasma Rifle"];
+var floor3items = [dicemanip.pop(), "Rainmaking", "Kale Bat", "Snare Drum", "Ice Nine", "Echochamber", "Plasma Rifle", "Shame"];
 if(bassguitar) floor3items.push("Bass Guitar");
 floor3items = shuffle(floor3items);
 items.push(floor3items.pop());
@@ -96,7 +96,7 @@ addfloor("normal")
   
 //Floor 5:
 items = [];
-var floor4items = ["Biohazard", "Russian Roulette", "Wrongo", "Strychnine", "Red Hot Dagger"];
+var floor4items = ["Biohazard", "Russian Roulette", "Wrongo", "Strychnine", "Red Hot Dagger", "Spin Attack"];
 if(bassguitar && floor3items.indexOf("Bass Guitar") != -1) { floor4items.push("Bass Guitar"); }
 items.push(pick(floor4items));
 gooditems = [];
@@ -104,7 +104,7 @@ gooditems = [];
 otherstuff = [health(), health()];
 goodotherstuff = [
   upgrade(),
-  shop(["upgrade", chance(98) ? strangeshop.pop() : "Katsuhiro Bat", "health"], [4, 4, 4])
+  shop(["upgrade", chance(90) ? strangeshop.pop() : "Katsuhiro Bat", "health"], [4, 4, 4])
 ];
 
 addfloor("big")
@@ -129,3 +129,5 @@ lastfloor
   .setlocation('BOSS')
   .addotherstuff(otherstuff, goodotherstuff)
   .generate();
+  
+trace(lastfloor.style.atmos);

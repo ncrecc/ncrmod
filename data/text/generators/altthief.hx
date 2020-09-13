@@ -23,6 +23,7 @@ addfloor("tiny")
 //Floor 2:
 commonlist1.push("Blue Ocean");
 commonlist1.push("Enchanted Shield");
+commonlist1.push("Glitter Bomb");
 commonlist1 = shuffle(commonlist1);
 
 items = [commonlist1.pop()];
@@ -52,7 +53,7 @@ if(chance(5)) {
 var lockpickvariant1 = lockpickvariants.pop();
 var lockpickvariant2 = lockpickvariants.pop();
 
-var commonlist2 = ["Honeysuckle", "Wind up Fist", "Gas Lamp", "Telephone", "Cookie Cake", "Glitter Bomb", "Blacklight", lockpickvariant1];
+var commonlist2 = ["Honeysuckle", "Gas Lamp", "Telephone", "Cookie Cake", "Blacklight", lockpickvariant1];
 if(chance(20)) commonlist2.push("Survivor's Guilt");
 var rarelist1 = [chance(66) ? "Precious Egg@6" : "Rotten Egg@6", "Arf Arf Arf", chance(50) ? "Jester" : "Call for Backup Robot", "Lotus Swing", "Black Lotus", "Autohook", "Magic Flute", "Combat Roll", "Fool's Fire"];
 if(chance(20)) { rarelist1.push("Metacrowbar"); }

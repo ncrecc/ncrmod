@@ -2,7 +2,7 @@ creditz:
 
 jackeea and themysticsword for more fluff and (private 1.0 version of) megaquest, i learned a lot from looking at the scripts in those
 matz for inspiring me to actually work on this
-cody for letting me bounce ideas off him
+cody for letting me bounce ideas off her, & coming up with lots of ways to do stuff
 terry for putting up with my rubbish as always!
 
-everything in this mod is by me except the music (but i did make the combat1/halloweencombat1 remix, and looped stuff that needed to be looped)
+everything in this mod is by me except the music (but i did make the combat1 + halloweencombat1 remix, and looped stuff that needed to be looped)

@@ -20,7 +20,7 @@ chance25manip = shuffle(chance25manip);
 function chancepush(pushto,pushfrom,pushchance) {
 	var pushfromlength = pushfrom.length;
 	for(i in 0...pushfromlength) {
-		if(pushchance) {
+		if(chance(pushchance)) {
 			pushto.push(pushfrom.pop());
 		}
 	}
@@ -32,7 +32,7 @@ chancepush(dicemanip,chance25manip,25);
 while(dicemanip.length < 6) dicemanip.push(chance75manip.pop());
 dicemanip = shuffle(dicemanip);
 
-var warriorshops = ["Sharp Straw", "Broadsword", "Iron Shield", "Dagger", "Buckler", "Target Shield", "Nightstick", "Blight", "Snake Eye Charm", "Midnight Charm", rand(["Healing Crystal", "Thick Skin", "Elastic Heart"]), "Claw", "Snowball", "Boomerang", "Tazer", rand(["First Aid Kit", "Kite Shield"]), "Parrying Dagger", "Boxing Gloves", "Last Stand", "Singularity", "Half Moon Charm", "Dramatic Exit", "Hookshot", "Capacitor", rand(["Shiked Spield@sword", "Shiked Spield@shield"]), "Retreat", "Warhammer", "Swing Me Another 6", "Pocket Protector", "Big Knife", "Vanity Mirror", "Sleight of Hand", "Wail Bat", "Energy Ball", "Whipcrack", "Circuit Breaker"];
+var warriorshops = ["Sharp Straw", "Broadsword", "Iron Shield", "Dagger", "Buckler", "Target Shield", "Nightstick", "Blight", "Snake Eye Charm", "Midnight Charm", rand(["Healing Crystal", "Thick Skin", "Elastic Heart"]), "Claw", "Snowball", "Boomerang", "Tazer", rand(["First Aid Kit", "Kite Shield"]), "Parrying Dagger", "Boxing Gloves", "Last Stand", "Singularity", "Half Moon Charm", "Dramatic Exit", "Hookshot", "Capacitor", rand(["Shiked Spield@sword", "Shiked Spield@shield"]), "Retreat", "Warhammer", "Swing Me Another 6", "Pocket Protector", "Big Knife", "Vanity Mirror", "Sleight of Hand", "Wail Bat", "Energy Ball", "Whipcrack", "Circuit Breaker", "Pummel"];
 if(chance(10)) { warriorshops.pop(); warriorshops.push("Strange Apparatus"); }
 
 warriorshops = shuffle(warriorshops);
@@ -102,7 +102,7 @@ addfloor("normal")
   
 //Floor 5:
 items = [];
-var floor4items = ["Counter Spell", "Pea Shooter", "Chocolate Cookie", "Toxic Ooze", "Blight", "Detonator", "Disco Ball", "Parrying Dagger", "Sine Wave", "Fishing Net", "Last Stand", "Fireworks", "Biohazard", "Russian Roulette", "Wrongo", "Strychnine", "Red Hot Dagger"];
+var floor4items = ["Counter Spell", "Pea Shooter", "Chocolate Cookie", "Toxic Ooze", "Blight", "Detonator", "Disco Ball", "Parrying Dagger", "Sine Wave", "Fishing Net", "Last Stand", "Fireworks", "Biohazard", "Russian Roulette", "Wrongo", "Strychnine", "Red Hot Dagger", "Spin Attack"];
 if(bassguitar && floor3items.indexOf("Bass Guitar") != -1) { floor4items.push("Bass Guitar"); }
 items.push(pick(floor4items));
 gooditems = [];

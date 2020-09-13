@@ -1,0 +1,25 @@
+Wisper@V|Wisper@W
+Whisp@F|Whisp@W
+Hamment@S|Hamment@I
+Shiked Spield@sword|Shiked Spield@shield
+Hunting Knife@large|Hunting Knife@small
+Sacrificial Blade@3|Sacrificial Blade@2|Sacrificial Blade@1|Sacrificial Blade@0|Sacrificial Blade@X
+Switchblade@odd|Switchblade@even
+Precious Egg@1|Precious Egg@2|Precious Egg@3|Precious Egg@4|Precious Egg@5|Precious Egg@6
+Rotten Egg@1|Rotten Egg@2|Rotten Egg@3|Rotten Egg@4|Rotten Egg@5|Rotten Egg@6
+Transformer@1|Transformer@2|Transformer@3|Transformer@4|Transformer@5|Transformer@6|Transformer@7|Transformer@8|Transformer@9|Transformer@10
+Transformer@1|Transformer@2|Transformer@3|Transformer@4|Transformer@5|Transformer@6|Transformer@7|Transformer@8|Transformer@9|Transformer@10
+Judgement@plants|Judgement@hats|Judgement@green|Judgement@swords|Judgement@shields|Judgement@spears|Judgement@animals|Judgement@floating|Judgement@eyewear|Judgement@bosses|Judgement@level1|Judgement@onfire|Judgement@poison|Judgement@machines|Judgement@magic|Judgement@wings|Judgement@dicepeople|Judgement@limbs|Judgement@lowhp|Judgement@fullhp
+Uptick@1|Uptick@2|Uptick@3|Uptick@4|Uptick@5|Uptick@6
+Dark Shadow|Dark Shadow@versusladyluck
+Keyblade|Keyblade@1|Keyblade@2|Keyblade@3|Keyblade@4|Keyblade@5|Keyblade@6|Lock 1|Lock 2|Lock 3|Lock 4|Lock 5|Lock 6
+Earth Crystal@crystallize|Fire Crystal@crystallize|Air Crystal@crystallize|Ice Crystal@crystallize|Power Crystal@crystallize|Smokey Crystal@crystallize|Life Crystal@crystallize|Hollow Crystal@crystallize|Energy Crystal@crystallize|Crystallize
+Earth Crystal@crystallize|Earth Crystal
+Fire Crystal@crystallize|Fire Crystal
+Air Crystal@crystallize|Air Crystal
+Ice Crystal@crystallize|Ice Crystal
+Power Crystal@crystallize|Power Crystal
+Smokey Crystal@crystallize|Smokey Crystal
+Life Crystal@crystallize|Life Crystal
+Hollow Crystal@crystallize|Hollow Crystal
+Energy Crystal@crystallize|Energy Crystal

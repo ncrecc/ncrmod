@@ -15,7 +15,7 @@ var chance25manip = ["Bump", "Spatula", "Sine Wave"]; //already warrior dice man
 
 function chancepush(pushto,pushfrom,pushchance) {
 	for(item in pushfrom) {
-		if(pushchance) {
+		if(chance(pushchance)) {
 			pushto.push(item);
 		}
 	}
@@ -26,7 +26,7 @@ chancepush(dicemanip,chance50manip,50);
 chancepush(dicemanip,chance25manip,25);
 dicemanip = shuffle(dicemanip);
 
-var warriorshops = [rand(["Shiked Spield@sword", "Shiked Spield@shield"]), "Sharp Straw", "Retreat", "Warhammer", "Swing Me Another 6", "Pocket Protector", "Big Knife", "Vanity Mirror", "Sleight of Hand", "Wail Bat", "Energy Ball", "Whipcrack", "Circuit Breaker"];
+var warriorshops = [rand(["Shiked Spield@sword", "Shiked Spield@shield"]), "Sharp Straw", "Retreat", "Warhammer", "Swing Me Another 6", "Pocket Protector", "Big Knife", "Vanity Mirror", "Sleight of Hand", "Wail Bat", "Energy Ball", "Whipcrack", "Circuit Breaker", "Pummel"];
 if(chance(10)) { warriorshops.pop(); warriorshops.push("Strange Apparatus"); }
 
 warriorshops = shuffle(warriorshops);
@@ -61,7 +61,7 @@ addfloor("small")
 
 //Floor 3:
 items = [];
-var floor3items = ["Biohazard", "Russian Roulette", "Wrongo", "Strychnine", "Red Hot Dagger"];
+var floor3items = ["Spin Attack", "Biohazard", "Russian Roulette", "Wrongo", "Strychnine", "Red Hot Dagger"];
 if(bassguitar) floor3items.push("Bass Guitar");
 floor3items = shuffle(floor3items);
 items.push(floor3items.pop());

@@ -1,8 +1,8 @@
 {
 	"title":"ncrmod",
-	"description":"Adds a bunch of equipment",
+	"description":"Adds a bunch of equipment and episodes",
 	"author":"ncrecc",
-	"api_version":"0.13.0",
-	"mod_version":"0.4.1",
+	"api_version":"1.0.0",
+	"mod_version":"0.6.0",
 	"license":"none"
 }

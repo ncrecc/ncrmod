@@ -22,7 +22,7 @@ Remix.preventclash(['Wisp?', 'Bounty Hunter?']); //bad idea. literally only one 
 Remix.preventclash(['Magician?', 'Loud Bird?']); //magician swaps your limit to a random limit every turn. loud bird permanently swaps your limit break to its weakened version.
 
 var veryrare = ['Sorceress?', 'Kraken?', 'Warlock?'];
-if(player != 'Witch' && player != 'Jester') veryrare.push('Copycat?'); //copycat? doesn't work with witch & jester for the same reason val doesn't work
+if(player != 'Witch') veryrare.push('Copycat?'); //witch can *only* have size 1 equipment!
 
 veryrare = shuffle(veryrare);
 
@@ -116,7 +116,6 @@ if(draincount >= 3 && draincount <= 6){
 }
 		
 var midtwists = ['Mimic?', 'Wizard?', 'Rotten Apple?', 'Cowboy?', 'Magician?'];
-if(player == 'Robot' && chance(66)) midtwists.push('Robobot?'); //robot only, a little weird so odds are lowered
 if(player == 'Jester') midtwists.push('The Jester?'); //swap pu cards with normal cards & vice-versa. midtwist because you're more likely to be in possession of backup cards by then
 if(player != 'Jester' && player != 'Witch' && player != 'Robot') midtwists.push('Marshmallow?'); //jester and witch would get screwed over hard by this, and it wouldn't even make sense for robot. actually i don't play witch so i'm not sure how hard she would be affected by this? but it sounds like it would majorly limit her start-of-turn options
 if(chance(33)) { if(chance(50)) midtwists.push('Ned?'); else midtwists.push('Val?'); } //ned and val are equally likely, so the optimal strategy is never just to only ever cross floors after putting equipment you like in the backpack/putting equipment you want upgraded in the equipped grid. also goes in midtwists instead of veryrare because this is probably not something you'd want to get early on

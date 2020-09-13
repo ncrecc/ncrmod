@@ -1,0 +1,9 @@
+enemyname,importantcard,importantcard2,
+The enemy by name. No distinction between normal enemies and super enemies.,The card by name that should be silenced.,The card that should be silenced if that card is not present.,If the enemy has no equipment that appears on this list; then the order of preference goes: equipment with most uses (equipment with hidereuseable tag is treated as 1-use for modders' sake); equipment with largest max countdown; multislot equipment; non-''needs X'' equipment; ''needs X'' equipment in descending order; any equipment. In a tie it chooses the largest equipment; if *that* is a tie it chooses the leftmost equipment. This hierarchy is more or less hand-tailored to the vanilla enemies; but it allows this sheet to be pretty brief; only listing cases where a ''lower'' item is stronger than a ''higher'' item in an enemy's loadout. e.g. Yoink is stronger than Electromagnet; Overwhelm is stronger than Camoflague. Changing an enemy's equipment slots e.g. with Petrification Spell might modify which equipment is targeted for Silence if the enemy has no equipment listed here.
+Alchemist,Bear Potion,,
+Aurora,Mood Change,,
+Loud Bird,Echo Blast,,
+Warlock,Dark Shadow,,
+Bounty Hunter,Yoink,,
+Vacuum,Blood Suck,,
+Keymaster,Lock 1,,

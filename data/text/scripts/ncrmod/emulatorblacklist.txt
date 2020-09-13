@@ -1,0 +1,5 @@
+  Gadgets that should not be chosen by Emulator.
+Emulator
+  Self explanatory. This would mean nothing but "hey select another gadget instead" and would cause an infinite loop if you have only Emulator and an equipment that gadgetizes to Emulator.
+Boltzmann Brain
+  Would cause ugly text particle overlapping.

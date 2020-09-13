@@ -1,0 +1,17 @@
+  Common phrases found in items that should not be spawned midturn. Temporary until a distinction between "exclude from random lists" and "exclude from abrupt one-turn spawning" is established in vanilla, for sake of consistency. A lot of these are overspecific kludges
+discard this
+make this unavailable
+delete this
+remove this
+destroy this
+next use
+every use
+each use
+per use
+lowers every turn
++1 dmg per turn
++1 each turn
++1 to each status each turn
+After fight
+Turn end:
+last card the enemy used

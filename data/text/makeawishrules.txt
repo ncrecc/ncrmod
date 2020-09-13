@@ -1,0 +1,11 @@
+h1|Make a Wish
+
+All naturally spawned equipment are Blessed Wands of Wishing.
+In this episode[;] and this episode only[;] you are not
+allowed to wish for the same thing twice. This includes
+alternate forms of an equipment - for example, if you wish
+for Transformer at its tenth stage, you are not allowed to
+then wish for Transformer at its ninth stage.
+
+Make sure all wishes typed are in correct letter case!
+

@@ -1,0 +1,4 @@
+cardname,priority,
+The card by name.,Can be ''always'' (will always be silenced if present) or ''never''.,This is mainly a kludge for the Bully and Wizard? rules.
+Hall of Mirrors,always,
+Rock,never,

@@ -1,8 +1,8 @@
-Name,Displayed As,Symbol,Description,External Scripts?,Stacks?,Remove at End Turn?,Remove at Start Turn?,Invisible?
-dice_trigger_1,Dice_Trigger_1,dice,Roll an extra dice next turn for each 1 the enemy rolls.,NO,NO,NO,YES,NO
-dice_trigger_2,Dice_Trigger_2,dice,Roll an extra dice next turn for each 2 the enemy rolls.,NO,NO,NO,YES,NO
-dice_trigger_3,Dice_Trigger_3,dice,Roll an extra dice next turn for each 3 the enemy rolls.,NO,NO,NO,YES,NO
-dice_trigger_4,Dice_Trigger_4,dice,Roll an extra dice next turn for each 4 the enemy rolls.,NO,NO,NO,YES,NO
-dice_trigger_5,Dice_Trigger_5,dice,Roll an extra dice next turn for each 5 the enemy rolls.,NO,NO,NO,YES,NO
-dice_trigger_6,Dice_Trigger_6,dice,Roll an extra dice next turn for each 6 the enemy rolls.,NO,NO,NO,YES,NO
-vanish,Vanish_ALL,vanish,Duplicate dice are immediately destroyed.,NO,NO,YES,NO,NO
+Name,Displayed As,Symbol,Description,Stacks?,Remove at End Turn?,Remove at Start Turn?,Invisible?,Blocked by Reduce?,Script: When inflicted,Script: On any status infliction,Script: Before Start Turn,Script: On Start Turn,Script: On any equipment use,Script: On any countdown reduce,Script: End Turn,Script: After Combat,Script: On damage inflicted,Script: On damage taken,Script: On status remove
+dice_trigger_1,Dice_Trigger_1,dice,Roll an extra dice next turn for each 1 the enemy rolls.,NO,NO,YES,NO,NO,,,,,,,,,,,
+dice_trigger_2,Dice_Trigger_2,dice,Roll an extra dice next turn for each 2 the enemy rolls.,NO,NO,YES,NO,NO,,,,,,,,,,,
+dice_trigger_3,Dice_Trigger_3,dice,Roll an extra dice next turn for each 3 the enemy rolls.,NO,NO,YES,NO,NO,,,,,,,,,,,
+dice_trigger_4,Dice_Trigger_4,dice,Roll an extra dice next turn for each 4 the enemy rolls.,NO,NO,YES,NO,NO,,,,,,,,,,,
+dice_trigger_5,Dice_Trigger_5,dice,Roll an extra dice next turn for each 5 the enemy rolls.,NO,NO,YES,NO,NO,,,,,,,,,,,
+dice_trigger_6,Dice_Trigger_6,dice,Roll an extra dice next turn for each 6 the enemy rolls.,NO,NO,YES,NO,NO,,,,,,,,,,,
+vanish,Vanish_all,vanish,Duplicate dice are immediately destroyed.,NO,YES,NO,NO,YES,if(getstatusself(~ncr_vanish~) > 0) { trace(~removing stack vanish~); var tw = new motion.actuators.SimpleActuator(null|0.01|null); var s = new elements.Skill(~Against all odds_old~); s.script = ~  removestatusself(\~ncr_vanish\~|ALL); removestatusself(VANISH); inflictself(VANISH); ~; tw.onComplete(s.execute|[self|target]); tw.move(); } /*this won't cause an infinite 'when inflicted' loop because it needs ncr_vanish to be more than 0*/,,,,,,,,,,

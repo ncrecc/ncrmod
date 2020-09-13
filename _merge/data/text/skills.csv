@@ -1,0 +1,3 @@
+Name,Description,Script
+Overload,Double status effects,if(target.status.length > 0) { for(x in target.status) { if(x.type.split(~~).length > 4) { if(x.type.substr(0|5) == ~jinx_~) { continue; } } if(x.type != ~beartransform~ && x.type != ~extradamage~ && x.stacks) { inflict(x.type|x.value); } } } if(self.status.length > 0) { for(x in self.status) { if(x.type.split(~~).length > 4) { if(x.type.substr(0|5) == ~jinx_~) { continue; } } if(x.type != ~beartransform~ && x.type != ~extradamage~ && x.stacks) { inflict(x.type|x.value); } } } sfx(~_thinghappens~);
+Stardust,Random status effect,var randstatus = rand([CURSE|LOCK|FIRE|ICE|WEAKEN|SHOCK|POISON|VANISH]); if(randstatus == ~vanish~) { inflict(~ncr_vanish~); } else { inflict(randstatus); }
