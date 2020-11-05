@@ -177,7 +177,7 @@ if(!simulation) {
 			var wandwisharr = wandwish.split(\~\~);
 			wandwish = \~\~;
 			for(char in wandwisharr) wandwish = char + wandwish;
-			var exceptions = getcolumn(loaddata(\~ncrmod/wishredirects\~)|\~exceptions\~);
+			var exceptions = getcolumn(loaddata(\~ncrmod/wishredirects\~)|\~input\~);
 			var redirects = getcolumn(loaddata(\~ncrmod/wishredirects\~)|\~redirect\~);
 			if(exceptions.indexOf(wandwish) != -1) wandwish = redirects[exceptions.indexOf(wandwish)];
 			if(getequipmentlist().indexOf(wandwish) != -1) {
@@ -226,7 +226,7 @@ if(!simulation) {
 			self.resetvar(\~wandwish\~);
 			if(self.getvar(\~lendeddice\~) == 1) { for(dice in self.dicepool) { if(dice.available() && dice.basevalue == 1) { dice.animate(\~disappear\~); break; } } }
 			self.resetvar(\~lendeddice\~);
-		}
+while(self.equipmenthistory[self.equipmenthistory.length - 1].name == \~deleteme\~ # self.equipmenthistory[self.equipmenthistory.length - 1].name == \~Equipment That Does Nothing\~) self.equipmenthistory.pop(); self.lastequipmentused = self.equipmenthistory[self.equipmenthistory.length - 1];		}
 		
 		if(phonedone) {
 			for(eq in self.equipment) {
@@ -250,7 +250,7 @@ if(!simulation) {
 			var wandwisharr = wandwish.split(\~\~);
 			wandwish = \~\~;
 			for(char in wandwisharr) wandwish = char + wandwish;
-			var exceptions = getcolumn(loaddata(\~ncrmod/wishredirects\~)|\~exceptions\~);
+			var exceptions = getcolumn(loaddata(\~ncrmod/wishredirects\~)|\~input\~);
 			var redirects = getcolumn(loaddata(\~ncrmod/wishredirects\~)|\~redirect\~);
 			if(exceptions.indexOf(wandwish) != -1) wandwish = redirects[exceptions.indexOf(wandwish)];
 			if(getequipmentlist().indexOf(wandwish) != -1) {
@@ -299,7 +299,7 @@ if(!simulation) {
 			self.resetvar(\~wandwish\~);
 			if(self.getvar(\~lendeddice\~) == 1) { for(dice in self.dicepool) { if(dice.available() && dice.basevalue == 1) { dice.animate(\~disappear\~); break; } } }
 			self.resetvar(\~lendeddice\~);
-		}
+while(self.equipmenthistory[self.equipmenthistory.length - 1].name == \~deleteme\~ # self.equipmenthistory[self.equipmenthistory.length - 1].name == \~Equipment That Does Nothing\~) self.equipmenthistory.pop(); self.lastequipmentused = self.equipmenthistory[self.equipmenthistory.length - 1];		}
 	~;
 	tw.onRepeat(s.execute|[self|target]);
 	self.setvar(~wishactuator~|tw);

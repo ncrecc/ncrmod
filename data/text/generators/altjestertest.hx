@@ -197,7 +197,7 @@ var funcfloorthing = new hscript.Parser().parseString("
 	if(floors == null || floors[0] == null) { actfloorthing._repeat = 0; }
 	else {
 		if(Rules.substitutions.exists(\"replacewithchips\")) {
-			trace(\"replacing non-shop items w/ chips\");
+			trace(\"replacing items w/ chips\");
 			for(floor in floors) {
 				trace(\"inspecting a floor...\");
 				for(node in floor.nodes) { if(node.item != \" \" && node.item.indexOf(\",\") == -1 && finals.indexOf(node.item) == -1) { trace(node.item); node.item = \"IC Chip\"; } }

@@ -106,7 +106,7 @@ var gimmickwhipgiven = false;
 
 var shielddrops = shuffle(["Industrial Press", "Defense Mechanism", "Rickety Shield"]);  
 
-var commonlist1 = ["Queen of Diamonds", "Sleight of Hand", spearswing, "Sharp Straw", basics.pop(), "Icebox", "Ice Nine", "Sacrificial Blade@3", "Cubby", "Broadkunai"];
+var commonlist1 = ["Queen of Diamonds", "Sleight of Hand@ncrmod", spearswing, "Sharp Straw", basics.pop(), "Icebox", "Ice Nine", "Sacrificial Blade@3", "Cubby", "Broadkunai"];
 //if(chance(30)) { commonlist1.remove("Ice Nine"); commonlist1.push("PyrotechnIX"); } //good pun
 if (chance(20)) { commonlist1.push("Cybernetics"); }
 
@@ -151,7 +151,7 @@ gooditems = [midtierdrops.pop()];
 shoplist1.push("Compact Resonator");
 shuffle(shoplist1);
 
-var commonlist2 = ["Healer Staff", "Gizmotron", "Gag Rule", "Cremator", "Sheer Will", "Revolver", "Tear Down This Wall", "Vanity Mirror", "Gyrate Hook", "Junk Sword", "Bumpbomb", "Heat Pump", scraplist.pop()];
+var commonlist2 = ["Healer Staff", "Gizmotron", "Gag Rule", "Cremator", "Sheer Will", "Revolver@ncrmod", "Tear Down This Wall", "Vanity Mirror", "Gyrate Hook", "Junk Sword", "Bumpbomb", "Heat Pump", scraplist.pop()];
 if(chance(50)) commonlist2.push("Dripping Yellow Madness");
 
 if(gimmickorwhip == 1) { commonlist2.push(whips.pop()); cleanwhips(commonlist1[commonlist1.length - 1], whips); }

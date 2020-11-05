@@ -23,6 +23,7 @@ specialfloor.generate();
 //Floor 1:
 var basics = ["Switchblade@even", "Bone Club", "Technology", "Magic Cyanide"];
 shuffle(basics);
+var oobleck = ["Oobleck Cauldron","Oobleck Mirror","Oobleck Hammer","Oobleck Missile","Oobleck Hacksaw","Oobleck Capacitor","Oobleck Flamethrower","Oobleck Box","Oobleck Bump","Frozen Oobleck","Ooblock"];
 var scraplist = ["Scrap Slingshot", "Scrap Trap", "Scrapsies", "Scrapstick", "Scrap Lamp", "Scrap Crystal"];
 scraplist = shuffle(scraplist);
 
@@ -68,7 +69,7 @@ var gimmickwhipgiven = false;
 
 var shielddrops = shuffle(["Industrial Press", "Defense Mechanism", "Rickety Shield"]);  
 
-var commonlist1 = ["Queen of Diamonds", "Sleight of Hand", spearswing, "Sharp Straw", basics.pop(), "Icebox", "Ice Nine", "Sacrificial Blade@3", "Cubby", "Broadkunai"];
+var commonlist1 = ["Queen of Diamonds", "Sleight of Hand@ncrmod", spearswing, "Sharp Straw", basics.pop(), "Icebox", "Ice Nine", "Sacrificial Blade@3", "Cubby", "Broadkunai"];
 //if(chance(30)) { commonlist1.remove("Ice Nine"); commonlist1.push("PyrotechnIX"); } //good pun
 if (chance(20)) { commonlist1.push("Cybernetics"); }
 
@@ -105,15 +106,14 @@ var midtierdrops = shuffle(["Gadsby Gun", "Shudder", "Technology", "Chainsmoke",
 if(chance(33)) { midtierdrops.push(rand(["Charity", "Humility"])); }
 if(chance(33)) { midtierdrops.push(rand(["Greed", "Envy"])); }
 if(chance(3)) { midtierdrops.push("Do [sword][d6] damage"); }
-items = [rand(["Scrap Trap", "Scrapsies", "Scrapstick", "Scrap Slam"])];
-scraplist.remove(items[0]);
+items = [oobleck.pop()];
 items.push(chance(17.5) ? shielddrops.pop() : pick(["Kale Smoothie", "Starspear", "Biohazard"]));
-gooditems = [midtierdrops.pop()];
+gooditems = [oobleck.pop()];
 
 shoplist1.push("Compact Resonator");
 shuffle(shoplist1);
 
-var commonlist2 = ["Healer Staff", "Gizmotron", "Gag Rule", "Cremator", "Sheer Will", "Revolver", "Tear Down This Wall", "Vanity Mirror", "Gyrate Hook", "Junk Sword", "Bumpbomb", "Heat Pump", scraplist.pop()];
+var commonlist2 = ["Roman Candle@ncrmod", "Healer Staff", "Gizmotron", "Gag Rule", "Cremator", "Sheer Will", "Revolver@ncrmod", "Tear Down This Wall", "Vanity Mirror", "Gyrate Hook", "Junk Sword", "Bumpbomb", "Heat Pump", scraplist.pop()];
 if(chance(50)) commonlist2.push("Dripping Yellow Madness");
 
 if(gimmickorwhip == 1) { commonlist2.push(whips.pop()); cleanwhips(commonlist1[commonlist1.length - 1], whips); }

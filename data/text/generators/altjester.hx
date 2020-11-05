@@ -29,8 +29,9 @@ var dontreplaceinstore = jester_dice_pool.copy();
 dontreplaceinstore.push("Ping");
 
 //15, 16 if wonder gummi is counted (pushed in later), 17 if hammer up is counted
-var jester_damage_pool = ["Operator", "Tap", "Sharpened Rosary", "Smart Spike", rand(["Bad Damage", "Cheap Shot"]), "Breaking Point", "Prod", "Magic Cyanide", "Throwing Axe", "Supervolcano", "Spin Attack", "Sharp Straw", "Bass Guitar", "Ouija Board", "Holy Water", "Mirror on a Stick", "Ice Giant"];
+var jester_damage_pool = ["Operator", "Tap", "Sharpened Rosary", "Smart Spike", rand(["Bad Damage", "Cheap Shot"]), "Breaking Point", "Prod", "Magic Cyanide", "Throwing Axe", "Supervolcano", "Spin Attack", "Sharp Straw", "Bass Guitar", "Ouija Board", "Holy Water", "Mirror on a Stick", "Shiver Star"];
 if(chance(33)) jester_damage_pool.push("Hammer Up!");
+jester_damage_pool.remove("Hammer Up!"); //remove once https://github.com/TerryCavanagh/diceydungeons.com/issues/1840 is addressed
 
 function doubleitems(list) {
 	var templist = [];
@@ -187,7 +188,7 @@ var chiplist = loadtext("ncrmod/floorspawnablechips");
 chiplist = shuffle(chiplist);
 //the script which replaces items with chips should ignore items which already are chips, just in case
 dontreplaceinstore = dontreplaceinstore.concat(chiplist);
-finals.concat(chiplist);
+finals = finals.concat(chiplist);
 
 //uncomment this if i change my mind about finales not being replaced when chip pack is active. then get rid of the finals kludge and have a dontreplaceonfloor thing
 //finals = [];
@@ -206,15 +207,15 @@ for(floor in floors) {
 var actfloorthing = new motion.actuators.SimpleActuator(null,0,null); //larrytech!
 actfloorthing.repeat(-1);
 var funcfloorthing = new hscript.Parser().parseString("
-	if(floors == null || floors[0] == null) { trace(\"exiting jester's actuator\"); actfloorthing._repeat = 0; }
+	if(getplayername() != \"Jester\" || floors == null || floors.length == 0 || floors[0] == null) { trace(\"exiting jester's actuator\"); actfloorthing._repeat = 0; }
 	else {
 		if(Rules.substitutions.exists(\"replacewithchips\")) {
-			trace(\"replacing non-shop items w/ chips\");
+			trace(\"replacing items w/ chips\");
 			var i = 2;
 			for(floor in floors) {
 				trace(\"inspecting a floor...\");
 				if(i != 3) { /*don't replace floor 3 dice manip. makes it easier on player since the chips have such different requirements*/ for(node in floor.nodes) { if(itemreplacestomake.indexOf(node.item) != -1) { node.item = itemreplacestomake[itemreplacestomake.indexOf(node.item) + 1]; } } }
-				if(floor.shops.length > 0) { for(shop in floor.shops) { if(shop.contents.length > 0) { for(stock in shop.contents) { if(stock.type == \"equipment\" && storereplacestomake.indexOf(stock.equipment.name) != -1) { /*trace(\"old: \" + stock.equipment.name);*/ stock.equipment = new elements.Equipment(storereplacestomake[storereplacestomake.indexOf(stock.equipment.name) + 1]); stock.equipment.resize(2); trace(stock.equipment.name); } } } } }
+				if(floor.shops.length > 0) { for(shop in floor.shops) { if(shop.contents.length > 0) { for(stock in shop.contents) { if(stock.type == \"equipment\" && storereplacestomake.indexOf(stock.equipment.name) != -1) { /*trace(\"old: \" + stock.equipment.name);*/ stock.equipment = new elements.Equipment(storereplacestomake[storereplacestomake.indexOf(stock.equipment.name) + 1]); stock.equipment.resize(2); } } } } }
 				i++;
 			}
 			trace(\"finished chip replacement\");
@@ -235,5 +236,6 @@ interp.variables.set("actfloorthing", actfloorthing);
 interp.variables.set("trace", trace);
 interp.variables.set("storereplacestomake", storereplacestomake);
 interp.variables.set("itemreplacestomake", itemreplacestomake);
+interp.variables.set("getplayername", getplayername);
 actfloorthing.onRepeat(interp.execute, [funcfloorthing]);
 actfloorthing.move();

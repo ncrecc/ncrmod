@@ -114,7 +114,7 @@ includewhipgimmick.push(brgimmicks.pop());
 shoplist1.push("Compact Resonator");
 shuffle(shoplist1);
 
-var commonlist2 = ["Healer Staff", "Gizmotron", "Gag Rule", "Two Handed Spatula", "Cremator", "Sheer Will", "Queen of Diamonds", "Revolver", "Tear Down This Wall", "Vanity Mirror", "Starspear", "Innovate", "Gyrate Hook", "Junk Sword", "Bumpbomb", "Heat Pump", scraplist.pop()];
+var commonlist2 = ["Roman Candle@ncrmod", "Healer Staff", "Gizmotron", "Gag Rule", "Two Handed Spatula", "Cremator", "Sheer Will", "Queen of Diamonds", "Revolver@ncrmod", "Tear Down This Wall", "Vanity Mirror", "Starspear", "Innovate", "Gyrate Hook", "Junk Sword", "Bumpbomb", "Heat Pump", scraplist.pop()];
 if(chance(30)) commonlist2.push("Dripping Yellow Madness");
 
 if(includewhipgimmick.length > 0) { commonlist2.push(includewhipgimmick.pop()); }

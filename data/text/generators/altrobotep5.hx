@@ -20,7 +20,7 @@ var murkorspec = rand(["Murk", "Spectral Cauldron"]);
 //Floor 1:
 var basics = ["Switchblade@even", "Bone Club", "Technology", "Magic Cyanide", "Disk Eject", "Pocket Protector"];
 shuffle(basics);
-var scraplist = ["Scrap Trap", "Scrapsies", "Scrapstick", "Scrap Lamp", "Scrap Crystal", "Scraptula", "Scrap Slam"];
+var scraplist = ["Scrap Slingshot", "Scrap Trap", "Scrapsies", "Scrapstick", "Scrap Lamp", "Scrap Crystal", "Scraptula", "Scrap Slam"];
 scraplist = shuffle(scraplist);
 
 items = [basics.pop(), rand(["Scrap Slingshot", "Scrap Crystal", "Scrap Lamp", "Scrapsies"])];
@@ -69,10 +69,11 @@ if(chance(20)) { commonlist1.remove("Ice Nine"); commonlist1.push("PyrotechnIX")
 if(gimmickorwhip == 1) { commonlist1.push(whips.pop()); cleanwhips(commonlist1[commonlist1.length - 1], whips); }
 else { commonlist1.push(brgimmicks.pop()); }
 
-var shoplist1 = ["Sharpened Rosary", "Strange Parcel", "Blast Processing", "Spin Attack", "Snatch", "Throwing Axe", "Extreme Detail Bat", "Crystallize", "Two Handed Spatula", "Powerball", "Gyrate Hook", "Survivor's Guilt", "Autohook", "Virtue Grip", basics.pop(), "Lightstick", "No Pain No Gain", "Berliner", "Tragic Entrance", "Buzzsaw"];
+var shoplist1 = ["Sharpened Rosary", "Strange Parcel", "Blast Processing", "Spin Attack", "Snatch", "Throwing Axe", "Extreme Detail Bat", "Crystallize", "Two Handed Spatula", "Powerball", "Gyrate Hook", "Survivor's Guilt", "Autohook", "Virtue Grip", basics.pop(), "Lightstick", "No Pain No Gain", "Berliner", "Tragic Entrance", "Smartwatch",  "Bronze Dagger", "Buzzsaw"];
 if (chance(30)) shoplist1.push("Warhammer");
 if(!brostep) { shoplist1.push(rand(["Coil", "Jacob's Ladder"])); }
 if(chance(30)) { shoplist1.push("Wand of Wishing"); }
+if(chance(30)) { shoplist1.push("Awful Pun"); shoplist1.push("Hall of Busters"); }
 commonlist1 = shuffle(commonlist1);
 shoplist1 = shuffle(shoplist1);
 
@@ -120,7 +121,7 @@ includewhipgimmick.push(brgimmicks.pop());
 shoplist1.push("Compact Resonator");
 shuffle(shoplist1);
 
-var commonlist2 = ["Gizmotron", "Gag Rule", "Two Handed Spatula", "Cremator", "Sheer Will", "Ace of Diamonds", "Revolver", "Tear Down This Wall", "Vanity Mirror", "Starspear", "Innovate", "Gyrate Hook", "Junk Sword", "Bumpbomb", "Heat Pump", scraplist.pop()];
+var commonlist2 = ["Gizmotron", "Gag Rule", "Two Handed Spatula", "Cremator", "Sheer Will", "Ace of Diamonds", "Revolver@ncrmod", "Tear Down This Wall", "Vanity Mirror", "Starspear", "Innovate", "Gyrate Hook", "Bumpbomb", "Heat Pump", scraplist.pop()];
 if(chance(30)) commonlist2.push("Dripping Yellow Madness");
 var hypertension = rand(["Hyper Beam", "Tension"]);
 commonlist2.push(hypertension);
@@ -181,20 +182,19 @@ addfloor("normal")
   .additems(items, gooditems)
   .addotherstuff(otherstuff, goodotherstuff)
   .generate();
-  
-  
+
 trace("floor 4 done");
-  
+
 //Floor 5:
-items = [pick([brgimmicks.pop(), "Mirrorang", "Baby's First Counting Book"]), scraplist.pop()];
+items = [pick([brgimmicks.pop(), "Hot Table", "Mirrorang", "Baby's First Counting Book"]), scraplist.pop()];
 gooditems = [pick([midtierdrops.pop(), commonlist2.pop()])];
-		
+
 otherstuff = [health(), health()];
 goodotherstuff = [
   shop(shuffle([commonlist2.pop(), "health", commonlist1.pop()])),
   upgrade()
 ];
-		
+
 addfloor("big")
   .additems(items, gooditems)
   .addotherstuff(otherstuff, goodotherstuff)

@@ -19,7 +19,4 @@ maybe make an easter egg where if you use a wand of wishing to wish for a blesse
 
 see if you can modify the floor overworld themes from generator!!! make special floors play a random "special"-sounding tackhead or ahc or watever loop. in the future arenas should use "menacing" music, e.g. veneer loop, veneered loop, zoop zoop... hell maybe make it *only* use veneer and its variants. arena combat music should also be different - hysteria dub fucking rules
 
-once the vanilla generators start depending on loadtext; consider "ncrmod jr." designed for max compatibility. remove all merge stuff (the *sole exception* being making vanish remove ncrvanish since theres no other way thatd work); remove custom episodes; have no custom generators (everything pulled from loadtext appends); no custom soundevents.json. KEEP THE GHOSTBUSTERS "PROOVED THE JUSTICE OF OUR CULTURE" REPLACEMENT TO ENDING.TXT IF YOU CAN GET AWAY WITH IT
-(thinkpiece: how will you get all your special gadgets working if you can't merge into inventor gadgets?! can you? is this reason to ask terry to have a runscript before combat that's blank by default but can be appended to?)
-
 REMEMBER: if you ever put focus spell or whatever in. in 7drl it says lose health, but you actually take damage - e.g. if you have 10 shield and use focus spell you lose all your shield, you don't lose 10 hp but keep your shield

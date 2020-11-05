@@ -1,0 +1,5 @@
+- make sure better item distribution is working properly (if it's not remove the traces while you're at it)
+
+- for jr: maybe just manually override j generators to include chips hook/larry
+
+- do that thing where instead of using a fixed constant for helium speed increment you just do loadtext, e.g. mydice.y  += ~ + loadtext(~ncrmod/leadgravity~) + ~; and also do the same sort of thing for the robobot? card

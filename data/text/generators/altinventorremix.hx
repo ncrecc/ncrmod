@@ -60,7 +60,7 @@ var gimmickwhipgiven = false;
 
 var shielddrops = shuffle(["Industrial Press", "Defense Mechanism", "Rickety Shield"]);  
 
-var commonlist1 = ["Healer Staff", "Gizmotron", "Gag Rule", "Two Handed Spatula", "Cremator", "Sheer Will", "Revolver", "Tear Down This Wall", "Vanity Mirror", "Innovate", "Gyrate Hook", "Junk Sword", "Bumpbomb", "Heat Pump", scraplist.pop()];
+var commonlist1 = ["Roman Candle@ncrmod", "Healer Staff", "Gizmotron", "Gag Rule", "Two Handed Spatula", "Cremator", "Sheer Will", "Revolver@ncrmod", "Tear Down This Wall", "Vanity Mirror", "Innovate", "Gyrate Hook", "Junk Sword", "Bumpbomb", "Heat Pump", scraplist.pop()];
 if(chance(50)) commonlist1.push("Dripping Yellow Madness");
 
 var shoplist1 = ["Survivor's Guilt", "Radio Dial", "Autohook", "Virtue Grip", basics.pop(), "Lightstick", "No Pain No Gain", "Berliner", "Tragic Entrance", "Buzzsaw", "Smartwatch", "Bronze Dagger", "Wail Bat"];
@@ -89,7 +89,7 @@ trace("floor 2 done");
 
 //Floor 3:
 
-var midtierdrops = shuffle(["Gadsby Gun", "Shudder", "Technology", "Chainsmoke", "Keyhole", "Gas Lamp", "Operator", "Sucker Punch", "Hush". "Veneer"]);
+var midtierdrops = shuffle(["Gadsby Gun", "Shudder", "Technology", "Chainsmoke", "Keyhole", "Gas Lamp", "Operator", "Sucker Punch", "Hush", "Veneer"]);
 if(chance(33)) { midtierdrops.push(rand(["Charity", "Humility"])); }
 if(chance(33)) { midtierdrops.push(rand(["Greed", "Envy"])); }
 if(chance(3)) { midtierdrops.push("Do [sword][d6] damage"); }

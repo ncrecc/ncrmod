@@ -40,6 +40,7 @@ function preventclashes(){
   Remix.preventclash(['Singer?', 'The Witch?']); //again, dice range/stack negation
   Remix.preventclash(['Singer?', 'Marshmallow?']); //^
   Remix.preventclash(['Singer?', 'Bounty Hunter']); //could actually probably make singer? work for bounty hunter and marshmallow? by having it reroll according to *the player's dice range* rather than fair 1/2/3/4/5/6. how do you access dice range instead of just changing it tho (ed: Rules.actualdicerange, don't really care though.)
+  Remix.preventclash(['Marshmallow?', 'Bounty Hunter']); //again, two dice range modifications
   Remix.preventclash(['Copycat?', 'Val']); //both involve item swaps. just in case
   Remix.preventclash(['Wisp?', 'Wisp']); //when you have vanish all (i.e. regular vanish), being inflicted with finite vanish has no effect
   //Remix.preventclash(['Keymaster?', 'Crystalina']); //if this is really a problem someone else will point it out eventually
@@ -120,7 +121,7 @@ function fillearlytwists(){
   if(player == 'Inventor') earlytwists.push('The Inventor?'); //double scrap
   if(player == 'Robot') earlytwists.push('The Robot?'); //less jackpot rewards
   if(player == 'Witch') earlytwists.push('The Witch?'); //countdown
-  //jester's is a midtwist. because i said so
+  if(player == 'Jester') earlytwists.push('The Jester?'); //0.13 mechanics
   //if(player == 'Warrior') earlytwists.push('The Warrior?'); //stop shifting skillcard
   
   earlytwists = shuffle(earlytwists);
@@ -131,7 +132,6 @@ function fillmidtwists(){
   var midtwists = ['Alchemist', 'Mimic?', 'Wizard?', 'Rotten Apple?', 'Cowboy?', 'Magician?', 'Sneezy?']; 
   var player = getplayername();
   
-  if(player == 'Jester') midtwists.push('The Jester?'); //swap pu cards with normal cards & vice-versa. midtwist because you're more likely to be in possession of backup cards by then
   if(player != 'Jester' && player != 'Witch' && player != 'Robot') midtwists.push('Marshmallow?'); //jester and witch would get screwed over hard by this, and it wouldn't even make sense for robot. actually i don't play witch so i'm not sure how hard she would be affected by this? but it sounds like it would majorly limit her start-of-turn options
   if(chance(33)) { if(chance(50)) midtwists.push('Ned?'); else midtwists.push('Val?'); } //ned and val are equally likely, so the optimal strategy is never just to only ever cross floors after putting equipment you like in the backpack/putting equipment you want upgraded in the equipped grid. also goes in midtwists instead of veryrare because this is probably not something you'd want to get early on
   if(chance(33)) { midtwists.push('Yolanda?'); } //yolanda is also a midtwist as getting it later on probably makes it less likely you'll accidentally go broke
@@ -157,10 +157,11 @@ function fillmidtwists(){
 }
 
 function filllatelist(){
-  var latelist = ['Sorceress', 'Bully', 'Bounty Hunter', 'Kraken', 'Buster?', 'Aoife?', 'Singer?'];
+  var latelist = ['Sorceress', 'Bully', 'Bounty Hunter', 'Kraken', 'Aoife?', 'Singer?'];
   
   var player = getplayername();
   
+  if(player != 'Jester') latelist.push('Buster?'); //managed to get the jester deck to progress properly when a card is errored, but even then this practically does nothing to jester. at worst a nice card you were hoping to see later in the pile gets errored, at best something weak like zoop zoop gets errored
   if(player == 'Jester' || player == 'Inventor') latelist.push('Handyman?'); //blueprints aren't as useful to other classes as they are to jester and inventor
   if(player != 'Jester' && player != 'Robot') latelist.push('Scathach?'); //shouldn't silenece these two!
   
@@ -205,7 +206,7 @@ function fillveryrare(){
   var veryrare = ['Sticky Hands', 'Sorceress?', 'Kraken?', 'Warlock?'];
   var player = getplayername();
   
-  if(player != 'Witch') veryrare.push('Copycat?'); //witch can *only* have size 1 equipment!
+  if(player != 'Witch' && player != 'Jester' && !isenemyindungeon('Scathach')) veryrare.push('Copycat?'); //doesn't work with witch and jester, and turns scathach into a pushover
   
   if(player != 'Robot' && !isenemyindungeon('Wisp')) veryrare.push('Wisp'); //Robot is offered Wisp elsewhere
   if(player != 'Thief') veryrare.push('Crystalina'); //Thief is offered Crystalina elsewhere
@@ -299,20 +300,6 @@ function addpoisonrules(latelist){
   }
 }
 
-function addweakenrules(standardlist){
-  var weakencount = 0;
-  if(isenemyindungeon('Stereohead')) weakencount++;
-  if(isenemyindungeon('Singer')) weakencount++;
-  if(isenemyindungeon('Drain Monster')) weakencount++;
-  if(isenemyindungeon('Loud Bird')) weakencount++;
-  if(weakencount >= 2 || isenemyindungeon('Audrey')){ //If there are 2 or more weaken enemies or Audrey is the boss, offer the Gardener remix
-    //To increase the odds of our weaken remix showing up, we remove a few elements from the standardlist
-    while(standardlist.length > 4) standardlist.pop();
-    standardlist.push('Gardener');
-    standardlist = shuffle(standardlist);
-  }
-}
-
 function addvanishrules(earlytwists){
   //We add Wisp? to the early twist list if Buster, Madison, or Wisp show up
   var player = getplayername();
@@ -368,7 +355,6 @@ var earlytwists = fillearlytwists();
 var midtwists = fillmidtwists();
 var veryrare = fillveryrare();
 
-addweakenrules(standardlist);
 addfireandicerules(standardlist, earlytwists);
 addcurserules(latelist);
 addpoisonrules(latelist);

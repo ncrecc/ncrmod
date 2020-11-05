@@ -1,0 +1,8 @@
+Statuses not to be affected by the "Reset Button" gadget, which clears all statuses on you.
+cannotseeenemyhealth
+robotblinded
+crystalinaremix
+bindweakentopoison
+ncr_drainmonster_helper
+ncr_bountyhunter_helper
+mf_recurseion

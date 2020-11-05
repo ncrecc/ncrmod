@@ -1,0 +1,79 @@
+Rules.addextrascript(~
+	if(target.name != 'Copycat') { /*if target is copycat you're just copying your own equipment! this doesn't lead to any bugs (this 'before combat' script runs *after* fighters' 'before combat' scripts) but it does cause 'your' countdowns to reset when your turn's done. heck you could argue this isn't a bug; this is a feature.*/
+		for(eq in self.equipment) {
+			eq.removetag('ncr_copycathide');
+			if(eq.skillcard == '') {
+				eq.usedthisbattle = true;
+				eq.onceperbattle = true;
+				eq.addtag('ncr_copycathide');
+			}
+		}
+		for(eq in target.equipment) {
+			var copiedeq = new elements.Equipment(eq.name|eq.upgraded|false|true);
+			if(copiedeq.name == 'Mystery Box' && target.name == 'Mimic') {
+				copiedeq = new elements.Equipment(rand(loadtext('diceydungeons/mysterybox'))|eq.upgraded|false|true);
+			}
+			copiedeq.equippedby = self;
+			self.equipment.push(copiedeq);
+			copiedeq.temporary_thisturnonly = true;
+		}
+		self.fixskillcard();
+		var showneq = [for(eq in self.equipment) if(!eq.hastag('ncr_copycathide')) eq];
+		if(self.getskillcard() != null) {
+			showneq.remove(self.getskillcard());
+			showneq.push(self.getskillcard()); /*make sure skillcard is at the end of the list*/
+		}
+		var space = 8;
+		for(eq in showneq) space -= eq.size;
+		while(space < 0) {
+			showneq[0].name = 'ncrsaysdeletethis';
+			showneq.shift();
+			removeequipment('ncrsaysdeletethis');
+			space = 8;
+			for(eq in showneq) space -= eq.size;
+		}
+		for(eq in showneq) eq.resetfornewturn('player');
+	}
+~[;]~startcombat~);
+Rules.addextrascript(~
+	if(turn == 1 && target.hp > 0) {
+		if(self.name == 'Bear' && !self.varexists('copycattransformkludge')) {
+			for(eq in self.equipment) {
+				eq.addtag('ncr_copycathide');
+			}
+			self.setvar('copycattransformkludge'|true);
+		}
+		for(eq in self.equipment) {
+			if(eq.hastag('ncr_copycathide')) {
+				eq.usedthisbattle = false;
+				eq.onceperbattle = false;
+				eq.removetag('ncr_copycathide');
+			} else {
+				if(eq.skillcard == '') eq.name = 'ncrsaysdeletethis';
+			}
+		}
+		removeequipment('ncrsaysdeletethis');
+	}
+	if(turn == 1 && target.hp <= 0) self.setvar('copycatkillturn1kludge'|true);
+~[;]~endturn~);
+Rules.addextrascript(~
+	if(self.varexists('copycatkillturn1kludge')) {
+		if(self.name == 'Bear' && !self.varexists('copycattransformkludge')) {
+			for(eq in self.equipment) {
+				eq.addtag('ncr_copycathide');
+			}
+			self.setvar('copycattransformkludge'|true);
+		}
+		for(eq in self.equipment) {
+			if(eq.hastag('ncr_copycathide')) {
+				eq.usedthisbattle = false;
+				eq.onceperbattle = false;
+				eq.removetag('ncr_copycathide');
+			} else {
+				if(eq.skillcard == '') eq.name = 'ncrsaysdeletethis';
+			}
+		}
+		removeequipment('ncrsaysdeletethis');
+	}
+	self.resetvar('copycatkillturn1kludge');
+~[;]~aftercombat~);

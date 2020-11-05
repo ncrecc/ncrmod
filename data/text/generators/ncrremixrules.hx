@@ -22,7 +22,7 @@ Remix.preventclash(['Wisp?', 'Bounty Hunter?']); //bad idea. literally only one 
 Remix.preventclash(['Magician?', 'Loud Bird?']); //magician swaps your limit to a random limit every turn. loud bird permanently swaps your limit break to its weakened version.
 
 var veryrare = ['Sorceress?', 'Kraken?', 'Warlock?'];
-if(player != 'Witch') veryrare.push('Copycat?'); //witch can *only* have size 1 equipment!
+if(player != 'Witch' && player != 'Jester' && !isenemyindungeon('Scathach')) veryrare.push('Copycat?'); //doesn't work with witch and jester, and turns scathach into a pushover
 
 veryrare = shuffle(veryrare);
 
@@ -37,7 +37,7 @@ if(player == 'Thief') earlytwists.push('The Thief?'); //uptick
 if(player == 'Inventor') earlytwists.push('The Inventor?'); //double scrap
 if(player == 'Robot') earlytwists.push('The Robot?'); //more jackpot rewards
 if(player == 'Witch') earlytwists.push('The Witch?'); //countdown
-//jester's is a midtwist. because i said so
+if(player == 'Jester') earlytwists.push('The Jester?'); //0.13 mechanics
 if(player == 'Warrior') earlytwists.push('The Warrior?'); //stop shifting skillcard
 }
 
@@ -116,7 +116,6 @@ if(draincount >= 3 && draincount <= 6){
 }
 		
 var midtwists = ['Mimic?', 'Wizard?', 'Rotten Apple?', 'Cowboy?', 'Magician?'];
-if(player == 'Jester') midtwists.push('The Jester?'); //swap pu cards with normal cards & vice-versa. midtwist because you're more likely to be in possession of backup cards by then
 if(player != 'Jester' && player != 'Witch' && player != 'Robot') midtwists.push('Marshmallow?'); //jester and witch would get screwed over hard by this, and it wouldn't even make sense for robot. actually i don't play witch so i'm not sure how hard she would be affected by this? but it sounds like it would majorly limit her start-of-turn options
 if(chance(33)) { if(chance(50)) midtwists.push('Ned?'); else midtwists.push('Val?'); } //ned and val are equally likely, so the optimal strategy is never just to only ever cross floors after putting equipment you like in the backpack/putting equipment you want upgraded in the equipped grid. also goes in midtwists instead of veryrare because this is probably not something you'd want to get early on
 if(chance(33)) { midtwists.push('Yolanda?'); } //yolanda is also a midtwist as getting it later on probably makes it less likely you'll accidentally go broke
@@ -129,7 +128,8 @@ earlytwists = shuffle(earlytwists);
 standardlist.push(earlytwists.pop());
 standardlist = shuffle(standardlist);
 
-var latelist = ['Buster?', 'Aoife?', 'Singer?'];
+var latelist = ['Aoife?', 'Singer?'];
+if(player != 'Jester') latelist.push('Buster?'); //managed to get the jester deck to progress properly when a card is errored, but even then this practically does nothing to jester. at worst a nice card you were hoping to see later in the pile gets errored, at best something weak like zoop zoop gets errored
 if(player == 'Jester' || player == 'Inventor') latelist.push('Handyman?'); //blueprints aren't as useful to other classes as they are to jester and inventor
 if(player != 'Jester' && player != 'Robot') latelist.push('Scathach?'); 
 

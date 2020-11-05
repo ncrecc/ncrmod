@@ -73,7 +73,6 @@ goodotherstuff = [];
 var lastfloor = addfloor("boss");
 
 lastfloor
-  .additems([if(getfinalboss() == "Drake") "Blessed Wand of Wishing"], [])
   .setlocation('BOSS')
   .addotherstuff(otherstuff, goodotherstuff)
   .generate();

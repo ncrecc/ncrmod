@@ -1,37 +1,10 @@
-- Robot and Jester have been added!
-- Repeat: Robot and Jester have been added. This entails a majority of what was added in the update. Robot also comes with two non-NCR episodes.
-- Everything's reworked for 1.9, of course
-- 150+ equipment added since last update
-- New equipment given to Inventor, and a new vanish-themed Bonus Round starting card (Suspense - do raw damage, inflict 2 vanish if not used this turn)
-- A bit of new stuff for Warrior
-- A new Inventor episode revolving around loaded dice ranges (based on the increpare flash game "Platonic Archetypes of Dice")
-- An Inventor episode where all the equipment is randomized
-- Changed one of the boss themes
-- Blacksmith music is now higher-quality, maybe imperceptibly
-- Reworked Copycat? rule; ended up being too similar to a Thief episode in Megaquest and lead to a metric heckton of bugs anyway. (Hence why the Copycat enemy is banned from most episodes... I need to get around to wrapping stuff in if(!self.isplayer) and if(!simulation).) Now makes you overwrite one of your equipment with a random enemy equipment instead of swapping equipment
-- Stackable Vanish is internally reworked and 99% less bloated. (It previously was just one tiny script with code twelve times its size that attempted to inject it everywhere possible - and then there was also a bunch of crap surrounding every script that inflicted it. Now that Actuate exploits have made realtime scripting more convenient, and part of the game's source code has been exposed, this works more or less the same as real Vanish but disappears after vanishing enough dice.) This also fixes a bug where cards like Berlin Key that replace existing dice wouldn't trigger Vanish. ncrmod's custom implementation of non-stackable Vanish, which worked similarly, has also been removed since Vanish now works on enemies.
-- Several vanilla equipment that inflict a random status may also inflict Vanish now. Relatedly, Crystallize may now yield Energy Crystal, and Mood Change may yield Mist
-- Implemented custom silence. It targets the enemy's "most important card", determined either automatically or from an explicit "silence priorities" file in scripts/ncrmod/. 
-- Addded a few minor status effects, mainly "receive this particular status every turn" and "receive this particular status whenever you use a card on the enemy this turn".
-- Reworked the rare "Error" status so everything important is done entirely within statuseffects.csv.
-- Rollout doesn't error anymore
-- Kraken? rule now works for Robot
-- Keymaster? rule now works for Robot
-- Aurora? rule should no longer error on the first turn of combat
-- Changed Jester? rule since ultimately Boop, Bop, Sweets, Kapow, Blammo, and Sour Candy aren't used in Jester's bonus round.
-- Combat Scroll no longer bumps your dice when a countdown equipment is *used*, only when a dice is placed into it
-- Scraptula didn't actually say anywhere in its description that it's always offered for scrap. Now it does.
-- Scrap Slingshot+ now actually does 4 damage, as its description says, instead of d * 4 damage (what?????)
-- Talent Contest+ crashed the game on use. I don't know if you could actually get it, but that's what it did. Now it doesn't do that anymore.
-- Keyhole+ no longer reverts to size 2 when weakened. (Thanks 25fan)
-- Bone Club- is less overcomplicated; formerly "do 6 damage, 50% chance to inflict curse but also 50% chance to curse you", now just "do 6 damage"
-- Warrior's shifting skillcard no longer traces everything it does
-- Warlock? rule no longer traces the list of statuses changed to alternate
-- The very rare gadget "Glisten" now gives you 2 mana, like it says it does, instead of 1
-- Flaming Sword and Frozen Sword now work properly for non-Robot characters (I'd made an attempt before but it turned out not to work)
-- Emulator now applies a flash-and-shake animation to the card whose gadget it copies
-- To avoid confusion, Combat Mirror now only plays the "get extra dice" sound if you would actually get an extra dice.
-- Lava Quenching was renamed Glassblowing. Both mean roughly the same thing; dice are associated with glass and this card has to do with permanently gaining an extra dice.
-- "Delete this on use" items now work with Jester.
-- Buffed Cybernetics to no longer destroy itself, but require 3 when unupgraded
-- Fixed text bleed on Desperation Attack+
+Added a Jester episode: you start with a Delete skillcard, and have *1 of each equipment you can possibly attain in Episode 1*.
+Added alt. Vanish. 50% chance that one of your dice vanishes whenever you use an equipment; decrements when triggered if not inflicted in its "ALL" form
+Fixed missing self sfxdamage on Combat (that's not a typo, the card is literally named Combat)
+Fixed missing self sfxdamage on Coldron and its swaps
+Fixed Robobot? endlessly throwing errors to the console if you defeat an enemy while it's active.
+Fixed Handcuffs- returning the dice.
+Fixed Trick+ crash.
+Fixed missing sfx on Necropost
+Octobar+ is no longer redundant (went from must equal 10 to must equal 8... with a free 2)
+Added a few more items

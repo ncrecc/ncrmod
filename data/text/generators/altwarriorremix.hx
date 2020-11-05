@@ -26,7 +26,7 @@ chancepush(dicemanip,chance50manip,50);
 chancepush(dicemanip,chance25manip,25);
 dicemanip = shuffle(dicemanip);
 
-var warriorshops = [rand(["Shiked Spield@sword", "Shiked Spield@shield"]), "Sharp Straw", "Retreat", "Warhammer", "Swing Me Another 6", "Pocket Protector", "Big Knife", "Vanity Mirror", "Sleight of Hand", "Wail Bat", "Energy Ball", "Whipcrack", "Circuit Breaker", "Pummel"];
+var warriorshops = [rand(["Shiked Spield@sword", "Shiked Spield@shield"]), "Sharp Straw", "Retreat", "Warhammer", "Swing Me Another 6", "Pocket Protector", "Big Knife", "Vanity Mirror", "Sleight of Hand@ncrmod", "Wail Bat", "Energy Ball", "Whipcrack", "Circuit Breaker", "Pummel"];
 if(chance(10)) { warriorshops.pop(); warriorshops.push("Strange Apparatus"); }
 
 warriorshops = shuffle(warriorshops);

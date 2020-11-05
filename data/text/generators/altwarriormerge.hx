@@ -32,7 +32,7 @@ chancepush(dicemanip,chance25manip,25);
 while(dicemanip.length < 6) dicemanip.push(chance75manip.pop());
 dicemanip = shuffle(dicemanip);
 
-var warriorshops = ["Sharp Straw", "Broadsword", "Iron Shield", "Dagger", "Buckler", "Target Shield", "Nightstick", "Blight", "Snake Eye Charm", "Midnight Charm", rand(["Healing Crystal", "Thick Skin", "Elastic Heart"]), "Claw", "Snowball", "Boomerang", "Tazer", rand(["First Aid Kit", "Kite Shield"]), "Parrying Dagger", "Boxing Gloves", "Last Stand", "Singularity", "Half Moon Charm", "Dramatic Exit", "Hookshot", "Capacitor", rand(["Shiked Spield@sword", "Shiked Spield@shield"]), "Retreat", "Warhammer", "Swing Me Another 6", "Pocket Protector", "Big Knife", "Vanity Mirror", "Sleight of Hand", "Wail Bat", "Energy Ball", "Whipcrack", "Circuit Breaker", "Pummel"];
+var warriorshops = ["Sharp Straw", "Broadsword", "Iron Shield", "Dagger", "Buckler", "Target Shield", "Nightstick", "Blight", "Snake Eye Charm", "Midnight Charm", rand(["Healing Crystal", "Thick Skin", "Elastic Heart"]), "Claw", "Snowball", "Boomerang", "Tazer", rand(["First Aid Kit", "Kite Shield"]), "Parrying Dagger", "Boxing Gloves", "Last Stand", "Singularity", "Half Moon Charm", "Dramatic Exit", "Hookshot", "Capacitor", rand(["Shiked Spield@sword", "Shiked Spield@shield"]), "Retreat", "Warhammer", "Swing Me Another 6", "Pocket Protector", "Big Knife", "Vanity Mirror", "Sleight of Hand@ncrmod", "Wail Bat", "Energy Ball", "Whipcrack", "Circuit Breaker", "Pummel"];
 if(chance(10)) { warriorshops.pop(); warriorshops.push("Strange Apparatus"); }
 
 warriorshops = shuffle(warriorshops);

@@ -87,7 +87,7 @@ gooditems = [oobleck.pop()];
 shoplist1.push("Compact Resonator");
 shuffle(shoplist1);
 		
-var commonlist2 = ["Healer Staff", "Gag Rule", "Two Handed Spatula", "Queen of Diamonds", pick(["Hunting Knife@small", "Hunting Knife@large"]), "Revolver", "Tear Down This Wall", "Vanity Mirror", "Starspear", "Innovate", "Gyrate Hook", "Junk Sword", "Bumpbomb", "Heat Pump", "Shovel", "Boomerang", "Pea Shooter", "Spanner", "Healing Crystal", "Scissors", "Polar Star", "Capacitor", "Puppy Paws", rand(["Scrap Slingshot", "Scrap Trap", "Scrapsies", "Scrapstick", "Scrap Lamp", "Scrap Crystal", "Scraptula", "Scrap Slam", "Scrap Nettle", "Scrap Bump", "Scrap Club", "Scrap Book", "Scrap Spear", "Scrap Kettle", "Scrap Metal"]), "Elastic Heart"];
+var commonlist2 = ["Roman Candle@ncrmod", "Healer Staff", "Gag Rule", "Two Handed Spatula", "Queen of Diamonds", pick(["Hunting Knife@small", "Hunting Knife@large"]), "Revolver@ncrmod", "Tear Down This Wall", "Vanity Mirror", "Starspear", "Innovate", "Gyrate Hook", "Junk Sword", "Bumpbomb", "Heat Pump", "Shovel", "Boomerang", "Pea Shooter", "Spanner", "Healing Crystal", "Scissors", "Polar Star", "Capacitor", "Puppy Paws", rand(["Scrap Slingshot", "Scrap Trap", "Scrapsies", "Scrapstick", "Scrap Lamp", "Scrap Crystal", "Scraptula", "Scrap Slam", "Scrap Nettle", "Scrap Bump", "Scrap Club", "Scrap Book", "Scrap Spear", "Scrap Kettle", "Scrap Metal"]), "Elastic Heart"];
 
 commonlist2.push(whips.pop());
 if(chance(30)) commonlist2.push("Dripping Yellow Madness"); //no YOU'RE a nonsense out-of-context homestar runner reference

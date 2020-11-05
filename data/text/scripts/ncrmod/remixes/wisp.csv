@@ -7,7 +7,7 @@ Inferno,Raw Energy
 Meteor,Purify
 Crucible,Spectral Cauldron
 The Ashes,The Grave
-Whip,Sleight of Hand
+Whip,Sleight of Hand@ncrmod
 Spark,Flicker
 Sunburn,Light Pillar
 Heatwave,Mist
@@ -60,7 +60,7 @@ Idiot's Ice,Fool's Frost
 Supervolcano,Superstition
 Molten Glass,Foggy Glass
 This is Fine,Scientology Pamphlet
-Fissure,Guillotine
+Fissure@ncrmod,Guillotine
 Boiling Cauldron,Ritual Cauldron
 Anger,Hypnotise
 Red Dwarf,Planet Nine
@@ -68,3 +68,5 @@ Ancestral Staff,Ancestral Sceptre
 Brushfire,Mystical Chip
 Firetrap,Paranoia
 Oobleck Flamethrower,Oobleck Proton Pack
+Warm Oobleck,Invisible Oobleck
+Flame War,Necropost
