@@ -1,1 +1,0 @@
-when revolver seems to do a completely arbitrary amount of damage, that's because the "more dice get pushed than are supposed to"/"dice don't get reset" bug happened (still NO clue what that is) and revolver removes excess dice from its dicehistory
