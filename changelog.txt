@@ -1,29 +1,10 @@
-- Reworked Space Marine? entirely, it now nudges a random dice whenever you use an equipment rather than increasing all countdowns by 1 whenever you use an equipment. The old behavior didn't matter if you had no countdown items and caused bugs with some e.dicehistory equipment.
-- Reworked Copycat? similarly, it now makes you copy all your enemy's equipment for the first turn of every fight rather than permanently overwriting one of your equipment with a random enemy equipment each battle. The old behavior, I feel, has no satisfying resolution for what to do if you bring only small equipment and the enemy has only large equipment.
-- Fixed Skeleton? not setting your HP to 1 if you take it while at 10 or less HP.
-- Fixed Kraken? not working
-- Decimate no longer has underwhelming sfxdamage
-- Rebalanced finale cards a bit further: Remaster and Reissue now require two odd/even dice, and Anger is now one MIN2 slot
-- Loud Bird? rule no longer persists into next run
-- Aoife? and Fireman? now only do their end turn thing when the enemy is not at 0 HP
-- Fixed Zombocom and Obmozcom crash. (Zombo has lied to you! You can't do anything with Zombocom.)
-- Fixed Manual Turret respawning its spare dice when any equipment is used as Jester
-- Fixed text bleed on Milky Potion
-- Fixed Ego Stroke not being reuseable
-- Dynamite, Ol' Reliable, and Sleight of Hand no longer conflict with Grab Bag
-- Fixed some erratic behavior with Aurora and Mood Change
-- Reverse Emulation no longer reverts to Broken Gadget if the enemy doesn't use anything on their turn
-- Fixed Reverse Emulation not actually being once per battle when copying gadgets marked "(once)" (former behavior: disappeared for your next turn, then came back the turn after)
-- Reverse Emulation- is now Bubble Gun. Rejoice.
-- Fixed CfB Robobot not doing damage
-- Fixed Roman Candle's extra effect activating on some incorrect gadget names
-- Fixed Tap not properly inserting dice into RANGE and NEEDS X equipment
-- Fixed how Tap selects the "next" card for classes who don't use a Jester deck, even though those classes currently never get Tap as a normal drop. Look on my works, ye mighty, and despair.
-- Similarly, fixed Radio Dial not setting your gadget to Tap's gadget if used via Tap.
-- Fixed Less Fluff not working, and changed how it defines your "first card"
-- Toolbox no longer activates Sneezy rule every time it cycles
-- Fixed Toolbox occasionally returning a dice on 1 or 6
-- Fixed Autohook being incremented by Toolbox cycles
-- Slightly changed Val rule - it now changes each equipment to another equipment of the same color, which i thought was more thematic
-- Fixed Time Lapse being once per battle even if you didn't gain an extra turn from it
-- Error status now removes dice from cards that are about to be errored
+Added a Jester episode: you start with a Delete skillcard, and have *1 of each equipment you can possibly attain in Episode 1*.
+Added alt. Vanish. 50% chance that one of your dice vanishes whenever you use an equipment; decrements when triggered if not inflicted in its "ALL" form
+Fixed missing self sfxdamage on Combat (that's not a typo, the card is literally named Combat)
+Fixed missing self sfxdamage on Coldron and its swaps
+Fixed Robobot? endlessly throwing errors to the console if you defeat an enemy while it's active.
+Fixed Handcuffs- returning the dice.
+Fixed Trick+ crash.
+Fixed missing sfx on Necropost
+Octobar+ is no longer redundant (went from must equal 10 to must equal 8... with a free 2)
+Added a few more items

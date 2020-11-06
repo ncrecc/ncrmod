@@ -11,7 +11,7 @@ if (levelupselections.indexOf("Boosterpack:Lucky Charm,Reckless Flailing,Reckles
 if (levelupselections.indexOf("Boosterpack:Wind Chimes,Cyclone,Cyclone") > -1){
   Rules.substitute("Backfire", "Turbine");
   Rules.substitute("Ping", "One Way Mirror");
-  Rules.substitute("Bop,Bop,Bop", "Bop Bop,Blow,Bop Bop");
+  Rules.substitute("Bop,Bop,Bop", "Blow,Bop Bop,Blow");
 }
 if (levelupselections.indexOf("Boosterpack:Fastball,Hall of Mirrors,Hall of Mirrors") > -1){
   Rules.substitute("Backfire", "Retroreflector");
