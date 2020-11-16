@@ -1,0 +1,6 @@
+Boosterpack:Speak Softly,Ivy,Ivy
+Boosterpack:Foggy Glass,Flicker,Flicker
+Boosterpack:Lucky Charm,Reckless Flailing,Reckless Flailing
+Boosterpack:Wind Chimes,Cyclone,Cyclone
+Boosterpack:Fastball,Hall of Mirrors,Hall of Mirrors
+Boosterpack:Sticky Cauldron,Crazy Glue,Crazy Glue

@@ -1,0 +1,9 @@
+InitialEquipment:Remaster
+InitialEquipment:Passivecation Program
+InitialEquipment:Survival
+InitialEquipment:Finale Salad
+InitialEquipment:Reissue
+InitialEquipment:We Watch and We Wait
+InitialEquipment:Anger
+InitialEquipment:Fatal Attraction
+InitialEquipment:Wildcard
