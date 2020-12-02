@@ -1,0 +1,13 @@
+var targetstatusbackup = []; if(target.status.length > 0) targetstatusbackup = [for(stat in target.status) if(!stat.invisible) stat];
+var targetstatus       = []; if(target.status.length > 0) targetstatus       = [for(stat in target.status) if( stat.invisible) stat];
+target.status = targetstatus;
+var selfstatusbackup = []; if(self.status.length > 0) selfstatusbackup = [for(stat in self.status) if(!stat.invisible) stat];
+var selfstatus       = []; if(self.status.length > 0) selfstatus       = [for(stat in self.status) if( stat.invisible) stat];
+self.status = selfstatus;
+
+pierceattack(d); sfxdamage(target|d);
+
+target.status = target.status.concat(targetstatusbackup);
+self.status = self.status.concat(selfstatusbackup);
+
+e.availablenextturn = true;

@@ -23,7 +23,7 @@ var finalboss:String = level6enemies.pop();
 //for most ncr non-lite rounds i swap commonlist1 and commonlist2 (or their closest equivalents), but here swapping the damage pool and dice pool entirely would make things quite hard on jester, so instead i just transfer a few elements that *could* count as dice manip/damage back and forth and add a few small things, like replacing spearhead with swing me another 6 and adding spear
 
 //9, 15 if later items pushed in are counted
-var jester_dice_pool = ["Operator", "Mirror on a Stick", "Prod", rand(["Bad Damage", "Cheap Shot"]), "Tap", "Saving Throw", "Table Flip", "Luckpick", "Welder", "Slim Jim", "Innovate", "Dime", "Coldron", "Tootsie Pop"];
+var jester_dice_pool = ["Operator", "Mirror on a Stick", "Prod", rand(["Bad Damage", "Cheap Shot"]), "Tap", "Saving Throw", "Table Flip", "Luckpick", "Welder", "Slim Jim", "Innovate", "Dime", "Coldron", "Tootsie Pop", "Anticyclone"];
 
 var dontreplaceinstore = jester_dice_pool.copy();
 //dontreplaceinstore.push("Backfire");

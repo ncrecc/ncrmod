@@ -1099,40 +1099,41 @@
                 }
             }
         ]
-    },"_vanish": {
-		"playsounds": [{
-			"channel": 0,
-			"delay": 0,
-			"effect": "",
-			"filter": "",
-			"folder": "sfx/status/vanish/apply",
-			"loop": false,
-			"panning": {
-				"fade": 0,
-				"max": 0,
-				"min": 0,
-				"random": false,
-				"value": 0
-			},
-			"pitch": {
-				"fade": 0,
-				"max": 1,
-				"min": 0,
-				"random": false,
-				"value": 1
-			},
-			"position": 0,
-			"syncbpm": 0,
-			"tag": "",
-			"volume": {
-				"fade": 0,
-				"max": 0.8,
-				"min": 0,
-				"random": false,
-				"value": 0.8
-			}
-		}]
-	},
+    },
+    "_vanish": {
+        "playsounds": [{
+            "channel": 0,
+            "delay": 0,
+            "effect": "",
+            "filter": "",
+            "folder": "sfx/status/vanish/apply",
+            "loop": false,
+            "panning": {
+                "fade": 0,
+                "max": 0,
+                "min": 0,
+                "random": false,
+                "value": 0
+            },
+            "pitch": {
+                "fade": 0,
+                "max": 1,
+                "min": 0,
+                "random": false,
+                "value": 1
+            },
+            "position": 0,
+            "syncbpm": 0,
+            "tag": "",
+            "volume": {
+                "fade": 0,
+                "max": 0.8,
+                "min": 0,
+                "random": false,
+                "value": 0.8
+            }
+        }]
+    },
     "_weaken": {
         "playsounds": [
             {
@@ -1519,6 +1520,60 @@
             {
                 "channel": 1,
                 "file": "music/chest/chest_dungeon",
+                "loop": true,
+                "tag": "chesttheme",
+                "volume": {
+                    "fade": 0,
+                    "max": 1,
+                    "min": 0,
+                    "random": false,
+                    "value": 0
+                }
+            }
+        ],
+        "stopsounds": [
+            {
+                "file": "music/title/title"
+            }
+        ]
+    },
+    "atmos_finalepisode": {
+        "playsounds": [
+            {
+                "channel": 1,
+                "delay": 0,
+                "effect": "",
+                "file": "music/atmos/finalepisode",
+                "filter": "",
+                "loop": true,
+                "panning": {
+                    "fade": 0,
+                    "max": 0,
+                    "min": 0,
+                    "random": false,
+                    "value": 0
+                },
+                "pitch": {
+                    "fade": 0,
+                    "max": 1,
+                    "min": 0,
+                    "random": false,
+                    "value": 1
+                },
+                "position": 0,
+                "syncbpm": 0,
+                "tag": "atmos",
+                "volume": {
+                    "fade": 0,
+                    "max": 1,
+                    "min": 0,
+                    "random": false,
+                    "value": 0.8
+                }
+            },
+            {
+                "channel": 1,
+                "file": "music/chest/chest_gameshow",
                 "loop": true,
                 "tag": "chesttheme",
                 "volume": {
@@ -2352,6 +2407,25 @@
                     "random": false,
                     "value": 0
                 }
+            }
+        ]
+    },
+    "chat_babysquid": {
+        "playsounds": [
+            {
+                "channel": 0,
+                "file": "sfx/chat/ned/chat",
+                "tag": ""
+            }
+        ]
+    },
+    "chat_babysquid_voice": {
+        "playsounds": [
+            {
+                "channel": 2,
+                "folder": "voiceovers/baby_squid/personality",
+                "sequential": true,
+                "tag": ""
             }
         ]
     },
@@ -3790,7 +3864,7 @@
                 "channel": 0,
                 "delay": 0,
                 "effect": "",
-                "file": "music/combat/ladyluck/wheeloffortune",
+                "file": "music/combat/ladyluck/phasestransitions/phasetransition4",
                 "filter": "",
                 "loop": false,
                 "panning": {
@@ -4122,28 +4196,28 @@
     "equipment_Action!_enemy": {
         "playevents": [
             {
-                "event": "magic"
+                "event": "_magic"
             }
         ]
     },
     "equipment_Action!_player": {
         "playevents": [
             {
-                "event": "magic"
+                "event": "_magic"
             }
         ]
     },
     "equipment_Action!_upgraded_enemy": {
         "playevents": [
             {
-                "event": "magic"
+                "event": "_magic"
             }
         ]
     },
     "equipment_Action!_upgraded_player": {
         "playevents": [
             {
-                "event": "magic"
+                "event": "_magic"
             }
         ]
     },
@@ -5191,6 +5265,22 @@
             }
         ]
     },
+    "equipment_Big Stick_downgraded_enemy": {
+        "playevents": [
+            {
+                "delay": 0.1,
+                "event": "_takedamage"
+            }
+        ]
+    },
+    "equipment_Big Stick_downgraded_player": {
+        "playevents": [
+            {
+                "delay": 0.1,
+                "event": "_damage"
+            }
+        ]
+    },
     "equipment_Big Stick_upgraded_enemy": {
         "playevents": [
             {
@@ -5688,68 +5778,22 @@
         "playevents": []
     },
     "equipment_Boxing Gloves_downgraded_enemy": {
-        "playevents": [
-            {
-                "delay": 0.1,
-                "event": "_takedamage"
-            }
-        ]
+        "playevents": []
     },
     "equipment_Boxing Gloves_downgraded_player": {
-        "playevents": [
-            {
-                "delay": 0.1,
-                "event": "_damage"
-            }
-        ]
+        "playevents": []
     },
     "equipment_Boxing Gloves_enemy": {
-        "playevents": [
-            {
-                "delay": 0.1,
-                "event": "_takedamage"
-            },
-            {
-                "delay": 0.2,
-                "event": "_shield"
-            }
-        ]
+        "playevents": []
     },
     "equipment_Boxing Gloves_player": {
-        "playevents": [
-            {
-                "delay": 0.1,
-                "event": "_damage"
-            },
-            {
-                "delay": 0.2,
-                "event": "_shield"
-            }
-        ]
+        "playevents": []
     },
     "equipment_Boxing Gloves_upgraded_enemy": {
-        "playevents": [
-            {
-                "delay": 0.1,
-                "event": "_takedamage"
-            },
-            {
-                "delay": 0.2,
-                "event": "_shield"
-            }
-        ]
+        "playevents": []
     },
     "equipment_Boxing Gloves_upgraded_player": {
-        "playevents": [
-            {
-                "delay": 0.1,
-                "event": "_damage"
-            },
-            {
-                "delay": 0.2,
-                "event": "_shield"
-            }
-        ]
+        "playevents": []
     },
     "equipment_Breadcrumbs_downgraded_enemy": {
         "playevents": [
@@ -13410,28 +13454,28 @@
     "equipment_Illuminate_enemy": {
         "playevents": [
             {
-                "event": "magic"
+                "event": "_magic"
             }
         ]
     },
     "equipment_Illuminate_player": {
         "playevents": [
             {
-                "event": "magic"
+                "event": "_magic"
             }
         ]
     },
     "equipment_Illuminate_upgraded_enemy": {
         "playevents": [
             {
-                "event": "magic"
+                "event": "_magic"
             }
         ]
     },
     "equipment_Illuminate_upgraded_player": {
         "playevents": [
             {
-                "event": "magic"
+                "event": "_magic"
             }
         ]
     },
@@ -14502,14 +14546,14 @@
     "equipment_Lantern_enemy": {
         "playevents": [
             {
-                "event": "magic"
+                "event": "_magic"
             }
         ]
     },
     "equipment_Lantern_player": {
         "playevents": [
             {
-                "event": "magic"
+                "event": "_magic"
             }
         ]
     },
@@ -16664,16 +16708,32 @@
         ]
     },
     "equipment_Northern Lights_enemy": {
-        "playevents": []
+        "playevents": [
+            {
+                "event": "_magic"
+            }
+        ]
     },
     "equipment_Northern Lights_player": {
-        "playevents": []
+        "playevents": [
+            {
+                "event": "_magic"
+            }
+        ]
     },
     "equipment_Northern Lights_upgraded_enemy": {
-        "playevents": []
+        "playevents": [
+            {
+                "event": "_magic"
+            }
+        ]
     },
     "equipment_Northern Lights_upgraded_player": {
-        "playevents": []
+        "playevents": [
+            {
+                "event": "_magic"
+            }
+        ]
     },
     "equipment_Nudge_enemy": {
         "playevents": []
@@ -16898,42 +16958,42 @@
     "equipment_Paper Lantern_downgraded_enemy": {
         "playevents": [
             {
-                "event": "magic"
+                "event": "_magic"
             }
         ]
     },
     "equipment_Paper Lantern_downgraded_player": {
         "playevents": [
             {
-                "event": "magic"
+                "event": "_magic"
             }
         ]
     },
     "equipment_Paper Lantern_enemy": {
         "playevents": [
             {
-                "event": "magic"
+                "event": "_magic"
             }
         ]
     },
     "equipment_Paper Lantern_player": {
         "playevents": [
             {
-                "event": "magic"
+                "event": "_magic"
             }
         ]
     },
     "equipment_Paper Lantern_upgraded_enemy": {
         "playevents": [
             {
-                "event": "magic"
+                "event": "_magic"
             }
         ]
     },
     "equipment_Paper Lantern_upgraded_player": {
         "playevents": [
             {
-                "event": "magic"
+                "event": "_magic"
             }
         ]
     },
@@ -17768,6 +17828,22 @@
         ]
     },
     "equipment_Polar Star_upgraded_player": {
+        "playevents": [
+            {
+                "delay": 0.1,
+                "event": "_damage"
+            }
+        ]
+    },
+    "equipment_Polar Star_weakened_enemy": {
+        "playevents": [
+            {
+                "delay": 0.1,
+                "event": "_takedamage"
+            }
+        ]
+    },
+    "equipment_Polar Star_weakened_player": {
         "playevents": [
             {
                 "delay": 0.1,
@@ -25016,7 +25092,7 @@
                 "channel": 0,
                 "delay": 0,
                 "effect": "",
-                "file": "sfx/player/abilities/jestersnap",
+                "file": "sfx/player/abilities/jesterdiscard",
                 "filter": "",
                 "loop": false,
                 "panning": {
@@ -25188,7 +25264,7 @@
         ],
         "playsounds": [
             {
-                "channel": 0,
+                "channel": 1,
                 "delay": 0,
                 "effect": "",
                 "file": "sfx/battle/lowhealth",
@@ -25260,7 +25336,7 @@
         ],
         "playsounds": [
             {
-                "channel": 0,
+                "channel": 1,
                 "delay": 0,
                 "effect": "",
                 "file": "sfx/battle/lowhealth",
@@ -25332,7 +25408,7 @@
         ],
         "playsounds": [
             {
-                "channel": 0,
+                "channel": 1,
                 "delay": 0,
                 "effect": "",
                 "file": "sfx/battle/lowhealth",
@@ -26211,6 +26287,27 @@
             {
                 "channel": 1,
                 "file": "music/cutscene/cutscene_dark",
+                "loop": true,
+                "volume": {
+                    "fade": 1,
+                    "max": 1,
+                    "min": 0,
+                    "random": false,
+                    "value": 1
+                }
+            }
+        ]
+    },
+    "music_cutscene_finalepisode": {
+        "playsounds": [
+            {
+                "channel": 1,
+                "file": "music/cutscene/crowd",
+                "loop": true
+            },
+            {
+                "channel": 1,
+                "file": "music/atmos/finalepisode",
                 "loop": true,
                 "volume": {
                     "fade": 1,
@@ -27220,77 +27317,77 @@
         ]
     },
     "vanish_applied_to_dice": {
-		"playsounds": [{
-			"channel": 0,
-			"delay": 0,
-			"effect": "",
-			"filter": "",
-			"folder": "sfx/status/vanish",
-			"loop": false,
-			"panning": {
-				"fade": 0,
-				"max": 0,
-				"min": 0,
-				"random": false,
-				"value": 0
-			},
-			"pitch": {
-				"fade": 0,
-				"max": 1,
-				"min": 0,
-				"random": false,
-				"value": 1
-			},
-			"position": 0,
-			"syncbpm": 0,
-			"tag": "",
-			"volume": {
-				"fade": 0,
-				"max": 1,
-				"min": 0,
-				"random": false,
-				"value": 1
-			}
-		}]
-	},
-	"atmos_ncrspecial": {
-		"playsounds": [{
-				"channel": 1,
-				"delay": 0,
-				"effect": "",
-				"file": "music/atmos/ncrspecial",
-				"filter": "",
-				"loop": true,
-				"panning": {
-					"fade": 0,
-					"max": 0,
-					"min": 0,
-					"random": false,
-					"value": 0
-				},
-				"pitch": {
-					"fade": 0,
-					"max": 1,
-					"min": 0,
-					"random": false,
-					"value": 1
-				},
-				"position": 0,
-				"syncbpm": 0,
-				"tag": "atmos",
-				"volume": {
-					"fade": 0,
-					"max": 1,
-					"min": 0,
-					"random": false,
-					"value": 1
-			}
-		}],
+        "playsounds": [{
+            "channel": 0,
+            "delay": 0,
+            "effect": "",
+            "filter": "",
+            "folder": "sfx/status/vanish",
+            "loop": false,
+            "panning": {
+                "fade": 0,
+                "max": 0,
+                "min": 0,
+                "random": false,
+                "value": 0
+            },
+            "pitch": {
+                "fade": 0,
+                "max": 1,
+                "min": 0,
+                "random": false,
+                "value": 1
+            },
+            "position": 0,
+            "syncbpm": 0,
+            "tag": "",
+            "volume": {
+                "fade": 0,
+                "max": 1,
+                "min": 0,
+                "random": false,
+                "value": 1
+            }
+        }]
+    },
+    "atmos_ncrspecial": {
+        "playsounds": [{
+                "channel": 1,
+                "delay": 0,
+                "effect": "",
+                "file": "music/atmos/ncrspecial",
+                "filter": "",
+                "loop": true,
+                "panning": {
+                    "fade": 0,
+                    "max": 0,
+                    "min": 0,
+                    "random": false,
+                    "value": 0
+                },
+                "pitch": {
+                    "fade": 0,
+                    "max": 1,
+                    "min": 0,
+                    "random": false,
+                    "value": 1
+                },
+                "position": 0,
+                "syncbpm": 0,
+                "tag": "atmos",
+                "volume": {
+                    "fade": 0,
+                    "max": 1,
+                    "min": 0,
+                    "random": false,
+                    "value": 1
+            }
+        }],
         "stopsounds": [{
             "file": "music/title/title"
         }]
-	},
-	"atmos_platonicdice": {
+    },
+    "atmos_platonicdice": {
         "playsounds": [
             {
                 "channel": 1,
@@ -27299,7 +27396,7 @@
                 "file": "music/atmos/platonicdice",
                 "filter": "",
                 "loop": true,
-				"tag": "atmos",
+                "tag": "atmos",
                 "panning": {
                     "fade": 0,
                     "max": 0,
@@ -27328,141 +27425,141 @@
         "stopsounds": [
             {
                 "file": "music/title/title"
-			}
+            }
         ]
     },
-	"hammer_up": {
-		"playsounds": [{
-			"file": "sfx/hammer_up"
-		}]
-	},
-	"hammer_down": {
-		"playsounds": [{
-			"file": "sfx/hammer_down"
-		}]
-	},
-	"yakety": {
-		"playsounds": [{
-			"file": "sfx/yakety"
-		}]
-	},
-	"permadice": {
-		"playsounds": [{
-			"channel": 0,
-			"delay": 0,
-			"effect": "",
-			"file": "sfx/permadice",
-			"filter": "",
-			"loop": false,
-			"panning": {
-				"fade": 0,
-				"max": 0,
-				"min": 0,
-				"random": false,
-				"value": 0
-			},
-			"pitch": {
-				"fade": 0,
-				"max": 1,
-				"min": 0,
-				"random": false,
-				"value": 1
-			},
-			"position": 0,
-			"syncbpm": 0,
-			"tag": "",
-			"volume": {
-				"fade": 0,
-				"max": 1,
-				"min": 0,
-				"random": false,
-				"value": 1
-			}
-		}]
-	},
-	"rhinogrunt": {
-		"playsounds": [{
-			"channel": 0,
-			"delay": 0,
-			"effect": "",
-			"filter": "",
-			"folder": "voiceovers/rhino_beetle/action",
-			"loop": false,
-			"panning": {
-				"fade": 0,
-				"max": 0,
-				"min": 0,
-				"random": false,
-				"value": 0
-			},
-			"pitch": {
-				"fade": 0,
-				"max": 1,
-				"min": 0,
-				"random": false,
-				"value": 1
-			},
-			"position": 0,
-			"syncbpm": 0,
-			"tag": "",
-			"volume": {
-				"fade": 0,
-				"max": 1,
-				"min": 0,
-				"random": false,
-				"value": 1
-			}
-		}]
-	},
-	"alchgrunt": {
-		"playsounds": [{
-			"channel": 0,
-			"delay": 0,
-			"effect": "",
-			"filter": "",
-			"folder": "voiceovers/alchemist/action",
-			"loop": false,
-			"panning": {
-				"fade": 0,
-				"max": 0,
-				"min": 0,
-				"random": false,
-				"value": 0
-			},
-			"pitch": {
-				"fade": 0,
-				"max": 1,
-				"min": 0,
-				"random": false,
-				"value": 1
-			},
-			"position": 0,
-			"syncbpm": 0,
-			"tag": "",
-			"volume": {
-				"fade": 0,
-				"max": 1,
-				"min": 0,
-				"random": false,
-				"value": 1
-			}
-		}]
-	},
-	"chip": {
+    "hammer_up": {
+        "playsounds": [{
+            "file": "sfx/hammer_up"
+        }]
+    },
+    "hammer_down": {
+        "playsounds": [{
+            "file": "sfx/hammer_down"
+        }]
+    },
+    "yakety": {
+        "playsounds": [{
+            "file": "sfx/yakety"
+        }]
+    },
+    "permadice": {
+        "playsounds": [{
+            "channel": 0,
+            "delay": 0,
+            "effect": "",
+            "file": "sfx/permadice",
+            "filter": "",
+            "loop": false,
+            "panning": {
+                "fade": 0,
+                "max": 0,
+                "min": 0,
+                "random": false,
+                "value": 0
+            },
+            "pitch": {
+                "fade": 0,
+                "max": 1,
+                "min": 0,
+                "random": false,
+                "value": 1
+            },
+            "position": 0,
+            "syncbpm": 0,
+            "tag": "",
+            "volume": {
+                "fade": 0,
+                "max": 1,
+                "min": 0,
+                "random": false,
+                "value": 1
+            }
+        }]
+    },
+    "rhinogrunt": {
+        "playsounds": [{
+            "channel": 0,
+            "delay": 0,
+            "effect": "",
+            "filter": "",
+            "folder": "voiceovers/rhino_beetle/action",
+            "loop": false,
+            "panning": {
+                "fade": 0,
+                "max": 0,
+                "min": 0,
+                "random": false,
+                "value": 0
+            },
+            "pitch": {
+                "fade": 0,
+                "max": 1,
+                "min": 0,
+                "random": false,
+                "value": 1
+            },
+            "position": 0,
+            "syncbpm": 0,
+            "tag": "",
+            "volume": {
+                "fade": 0,
+                "max": 1,
+                "min": 0,
+                "random": false,
+                "value": 1
+            }
+        }]
+    },
+    "alchgrunt": {
+        "playsounds": [{
+            "channel": 0,
+            "delay": 0,
+            "effect": "",
+            "filter": "",
+            "folder": "voiceovers/alchemist/action",
+            "loop": false,
+            "panning": {
+                "fade": 0,
+                "max": 0,
+                "min": 0,
+                "random": false,
+                "value": 0
+            },
+            "pitch": {
+                "fade": 0,
+                "max": 1,
+                "min": 0,
+                "random": false,
+                "value": 1
+            },
+            "position": 0,
+            "syncbpm": 0,
+            "tag": "",
+            "volume": {
+                "fade": 0,
+                "max": 1,
+                "min": 0,
+                "random": false,
+                "value": 1
+            }
+        }]
+    },
+    "chip": {
         "playsounds": [
             {
                 "file": "sfx/chip"
             }
         ]
     },
-	"socket": {
+    "socket": {
         "playsounds": [
             {
                 "file": "sfx/socket"
             }
         ]
     },
-	"car": {
+    "car": {
         "playsounds": [
             {
                 "file": "sfx/status/car/car"

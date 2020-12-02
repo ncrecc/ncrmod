@@ -3,6 +3,7 @@ Rules.addextrascript(~
 		for(eq in self.equipment) {
 			eq.removetag('ncr_copycathide');
 			if(eq.skillcard == '') {
+				eq.scriptbeforecombat = '/*ncr copycat disable before combat script*/ //' + eq.scriptbeforecombat;
 				eq.usedthisbattle = true;
 				eq.onceperbattle = true;
 				eq.addtag('ncr_copycathide');
@@ -36,6 +37,7 @@ Rules.addextrascript(~
 	}
 ~[;]~startcombat~);
 Rules.addextrascript(~
+	for(eq in self.equipment) if(eq.scriptbeforecombat.indexOf('/*ncr copycat disable before combat script*/ //') != -1) eq.scriptbeforecombat = eq.scriptbeforecombat.split('/*ncr copycat disable before combat script*/ //').join('');
 	if(turn == 1 && target.hp > 0) {
 		if(self.name == 'Bear' && !self.varexists('copycattransformkludge')) {
 			for(eq in self.equipment) {
@@ -48,6 +50,11 @@ Rules.addextrascript(~
 				eq.usedthisbattle = false;
 				eq.onceperbattle = false;
 				eq.removetag('ncr_copycathide');
+				var dobc = new elements.Skill('Against all odds_old');
+				self.setvar('thiseq'|eq);
+				dobc.script = 'var e = self.getvar(\~thiseq\~); ' + eq.scriptbeforecombat;
+				dobc.execute(self|target);
+				self.resetvar('thiseq');
 			} else {
 				if(eq.skillcard == '') eq.name = 'ncrsaysdeletethis';
 			}

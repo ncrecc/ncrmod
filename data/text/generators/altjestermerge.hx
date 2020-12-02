@@ -28,7 +28,7 @@ var dontreplaceinstore = jester_dice_pool.copy();
 dontreplaceinstore.push("Ping");
 
 //15, 16 if wonder gummi is counted (pushed in later), 17 if hammer up is counted
-var jester_damage_pool = ["Zombo", "Gumball Machine", "Kapow", "Boxing Gloves", "Rusty Sword", rand(["Telephone","Operator"]), "Missing Score", "Elastic Heart", "Juggling Ball", "Boop", "Shovel", "Lament", "Whip", "Hammer", "Blood Suck", "Zoop Zoop", "Bumpbomb", "Hijack", "Sharpened Rosary", "Smart Spike", "Breaking Point", "Magic Cyanide", "Throwing Axe", "Supervolcano", "Spin Attack", "Sharp Straw", "Bass Guitar", "Ouija Board", "Holy Water", "Shiver Star"];
+var jester_damage_pool = ["Zombo", "Gumball Machine", "Kapow", "Boxing Gloves", "Rusty Sword", rand(["Telephone","Operator"]), "Missing Score", "Elastic Heart", "Juggling Ball", "Boop", "Shovel", "Lament", "Whip", "Hammer", "Blood Suck", "Zoop Zoop", "Bumpbomb", "Hijack", "Sharpened Rosary", "Smart Spike", "Breaking Point", "Magic Cyanide", "Throwing Axe", "Supervolcano", "Spin Attack", "Sharp Straw", "Bass Guitar", "Ouija Board", "Holy Water", "Shiver Star", "Anticyclone"];
 
 function doubleitems(list) {
 	var templist = [];

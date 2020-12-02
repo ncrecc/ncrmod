@@ -29,7 +29,7 @@ var dontreplaceinstore = jester_dice_pool.copy();
 dontreplaceinstore.push("Ping");
 
 //15, 16 if wonder gummi is counted (pushed in later), 17 if hammer up is counted
-var jester_damage_pool = ["Operator", "Tap", "Sharpened Rosary", "Smart Spike", rand(["Bad Damage", "Cheap Shot"]), "Breaking Point", "Prod", "Magic Cyanide", "Throwing Axe", "Supervolcano", "Spin Attack", "Sharp Straw", "Bass Guitar", "Ouija Board", "Holy Water", "Mirror on a Stick", "Shiver Star"];
+var jester_damage_pool = ["Operator", "Tap", "Sharpened Rosary", "Smart Spike", rand(["Bad Damage", "Cheap Shot"]), "Breaking Point", "Prod", "Magic Cyanide", "Throwing Axe", "Supervolcano", "Spin Attack", "Sharp Straw", "Bass Guitar", "Ouija Board", "Holy Water", "Mirror on a Stick", "Shiver Star", "Anticyclone"];
 if(chance(33)) jester_damage_pool.push("Hammer Up!");
 jester_damage_pool.remove("Hammer Up!"); //remove once https://github.com/TerryCavanagh/diceydungeons.com/issues/1840 is addressed
 
@@ -56,7 +56,7 @@ function hasbeentaken(list, item) {
 	}
 	return false;
 }
-	
+
 
 jester_dice_pool = doubleitems(jester_dice_pool);
 jester_damage_pool = doubleitems(jester_damage_pool);

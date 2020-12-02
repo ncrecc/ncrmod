@@ -11,8 +11,8 @@ Gadsby Gun: Gadsby
 Dripping Yellow Madness, Bustle (as in Hustle and Bustle): Homestar Runner
 Wall Street Shuffle, Gizmotron: 10CC
 Ashley Bat, Aries Card, Purify, Magic Pipe, Katsuhiro Bat, Clockwork: OFF
-Swing Me Another 6, Fortune Abhors the Cold, Beginner's Luck,: Dicey OST
-Manual Turret, Compact Resonator, Five Squirrels: More Fluff
+Swing Me Another 6, Fortune Abhors the Cold, Beginner's Luck: Dicey OST
+Manual Turret, Compact Resonator, Five Squirrels, Battle Hax: More Fluff
 Ice Nine: Cat's Cradle
 Freeze Frame, Strange Apparatus: Godley & Creme
 Hammer Up!, Shocking Horror: Dr. Lunatic
@@ -50,6 +50,12 @@ Tootsie Pop: self-explanatory
 Forty Cakes: Superdictionary
 Distraction Where: distractionware
 Ink Repair: increpare
+Rainbow Road: Mario Kart
+Boulder Dash: Boulder Dash
+Mystery Machine: Scooby-Doo
+Mo' Money Mo' Problems: that one song, who knows
+Big Bill Hell's: Big Bill Hell's
+Revolution 9, Revolution 1: The Beatles
 
 === SKILLS ===
 Science: Thomas Dolby
