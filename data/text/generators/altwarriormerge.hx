@@ -10,7 +10,7 @@ var bassguitar = true;
 //the following dice manip is all "normal" versions of the dice manip that can appear as warrior's skillcard.
 var dicemanip = ["Keyhole", "Innovate", "Virtue Grip"]; //new manip, essentially chance 100
 var chance75manip = ["Crucible", "Illuminate", "Cauldron", "Table Slam", "Spanner", "Gold Cauldron", "Silver Cauldron", "Gumball Machine", "Ungeradedice", "Giant Spatula"]; //specific dice manip that not many classes receive
-var chance50manip = ["Doppeldice", "Hall of Mirrors", "Berlin Key"]; //common/simple dice manip that warrior doesn't get
+var chance50manip = ["Doppeldice", "Hall of Mirrors", "Berlin Key", "Counterfeit"]; //common/simple dice manip that warrior doesn't get
 var chance25manip = ["Bump", "Spatula", "Sine Wave"]; //already warrior dice manip
 
 chance75manip = shuffle(chance75manip);
@@ -32,17 +32,19 @@ chancepush(dicemanip,chance25manip,25);
 while(dicemanip.length < 6) dicemanip.push(chance75manip.pop());
 dicemanip = shuffle(dicemanip);
 
-var warriorshops = ["Sharp Straw", "Broadsword", "Iron Shield", "Dagger", "Buckler", "Target Shield", "Nightstick", "Blight", "Snake Eye Charm", "Midnight Charm", rand(["Healing Crystal", "Thick Skin", "Elastic Heart"]), "Claw", "Snowball", "Boomerang", "Tazer", rand(["First Aid Kit", "Kite Shield"]), "Parrying Dagger", "Boxing Gloves", "Last Stand", "Singularity", "Half Moon Charm", "Dramatic Exit", "Hookshot", "Capacitor", rand(["Shiked Spield@sword", "Shiked Spield@shield"]), "Retreat", "Warhammer", "Swing Me Another 6", "Pocket Protector", "Big Knife", "Vanity Mirror", "Sleight of Hand@ncrmod", "Wail Bat", "Energy Ball", "Whipcrack", "Circuit Breaker", "Pummel"];
-if(chance(10)) { warriorshops.pop(); warriorshops.push("Strange Apparatus"); }
+var warriorshops = ["Sharp Straw", "Broadsword", "Iron Shield", "Dagger", "Buckler", "Target Shield", "Nightstick", "Blight", "Snake Eye Charm", "Midnight Charm", rand(["Healing Crystal", "Thick Skin", "Elastic Heart"]), "Claw", "Snowball", "Boomerang", "Tazer", rand(["First Aid Kit", "Kite Shield"]), "Parrying Dagger", "Boxing Gloves", "Last Stand", "Singularity", "Half Moon Charm", "Dramatic Exit", "Hookshot", "Capacitor", rand(["Shiked Spield@sword", "Shiked Spield@shield"]), "Retreat", "Warhammer", "Swing Me Another 6", "Pocket Protector", "Big Knife", "Vanity Mirror", "Sleight of Hand@ncrmod", rand(["Wail Bat","Ale Bat"]), "Energy Ball", "Whipcrack", "Circuit Breaker", "Pummel", "Duplicrate", "Fast Forward"];
+if(chance(25)) { warriorshops.remove("Circuit Breaker"); warriorshops.push("Strange Apparatus"); }
+if(chance(25)) warriorshops.push("Ancestral Staff");
 
 warriorshops = shuffle(warriorshops);
 
 var strangeshop = ["Lightning Rod", "Shriek", "Hammer", "Juggling Ball", "Toxic Ooze", "Candle", "Particle Accelerator", "Flying Skull", "Sledgehammer", "Slingshot", "Fishing Net", "Scissors", "Uberbump", rand(["Humility", "Charity"]),  "Bizarro Blade", "Doppeldfire", "Undermine", "Fuel Bat"];
+if(chance(25)) { strangeshop.remove("Fuel Bat"); strangeshop.push("Katsuhiro Bat"); }
 strangeshop = shuffle(strangeshop);
 
 //Floor 1:
 items = [];
-var awesomelist = ["Whip", "Toxic Ooze", "Claw", "Staff", "Hammer", "Shovel", "Battle Axe", "Trident", "Fishing Net", "Gemstone Staff", "Sledgehammer", "Nail Bat", "Quarterstaff", "Shiny Nunchucks", "Heavenly Nectar", "Snare Drum", "Sap Gloves", "Halligan Bar", "Smart Spike", "Sceptre"];
+var awesomelist = ["Whip", "Toxic Ooze", "Claw", "Staff", "Hammer", "Shovel", "Battle Axe", "Trident", "Fishing Net", "Gemstone Staff", "Sledgehammer", "Nail Bat", "Quarterstaff", "Shiny Nunchucks", "Heavenly Nectar", "Sap Gloves", "Halligan Bar", "Smart Spike", "Sceptre", "Funnel"];
 awesomelist = shuffle(awesomelist);
 gooditems = [awesomelist.pop()];
 otherstuff = [];
@@ -66,7 +68,8 @@ addfloor("small")
 
 //Floor 3:
 items = [];
-var floor3items = [dicemanip.pop(), "Six Shooter", "Crystal Sword", "Chocolate Cookie", "Blight", "Detonator", "Scissors", "Battle Cry", "Sine Wave", "Last Stand", "Fireworks", dicemanip.pop(), "Rainmaking", "Kale Bat", "Bone Club", "Ice Nine", "Echochamber", "Plasma Rifle"];
+var floor3items = ["Snare Drum", dicemanip.pop(), "Six Shooter", "Crystal Sword", "Chocolate Cookie", "Blight", "Detonator", "Scissors", "Battle Cry", "Sine Wave", "Last Stand", "Fireworks", dicemanip.pop(), "Rainmaking", "Kale Bat", "Bone Club", "Ice Nine", "Echochamber", "Plasma Rifle"];
+if(chance(25)) { floor3items.remove("Snare Drum"); floor3items.push("Boulder Dash"); }
 if(bassguitar) floor3items.push("Bass Guitar");
 floor3items = shuffle(floor3items);
 items.push(floor3items.pop());
@@ -110,7 +113,7 @@ gooditems = [];
 otherstuff = [health(), health()];
 goodotherstuff = [
   upgrade(),
-  shop(["upgrade", chance(98) ? strangeshop.pop() : "Katsuhiro Bat", "health"], [4, 4, 4])
+  shop(["upgrade", strangeshop.pop(), "health"], [4, 4, 4])
 ];
 
 addfloor("big")

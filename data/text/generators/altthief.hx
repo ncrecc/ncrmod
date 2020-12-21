@@ -53,7 +53,7 @@ if(chance(5)) {
 var lockpickvariant1 = lockpickvariants.pop();
 var lockpickvariant2 = lockpickvariants.pop();
 
-var commonlist2 = ["Honeysuckle", "Gas Lamp", "Telephone", "Cookie Cake", "Blacklight", lockpickvariant1];
+var commonlist2 = [pick(["Lightreaver", "Bop Bop"]), "Reverse Emulation", "Forty Cakes", "Software Update", "Honeysuckle", "Gas Lamp", "Telephone", "Cookie Cake", "Blacklight", lockpickvariant1];
 if(chance(20)) commonlist2.push("Survivor's Guilt");
 var rarelist1 = [chance(66) ? "Precious Egg@6" : "Rotten Egg@6", "Arf Arf Arf", chance(50) ? "Jester" : "Call for Backup Robot", "Lotus Swing", "Black Lotus@ncrmod", "Autohook", "Magic Flute", "Combat Roll", "Fool's Fire"];
 if(chance(20)) { rarelist1.push("Metacrowbar"); }
@@ -63,7 +63,7 @@ commonlist2 = shuffle(commonlist2);
 rarelist1 = shuffle(rarelist1);
 items = [commonlist2.pop()];
 gooditems = [pick(["Uberbump", "Slim Jim", "Welder"])];
-if(chance(10)) gooditems = ["Change Machine"];
+//if(chance(10)) gooditems = ["Change Machine"];
 
 otherstuff = [
   health(),
@@ -107,7 +107,7 @@ if(chance(10)){
 }else if(chance(10)){
   thieftrade = trade(["flower pot"], ["gladioli"]);
 }else{
-  thieftrade = trade(["flower pot", "poppy", "woodchipper", "dynamite", "open sesame", "luckpick", "hunting knife@large" "hunting knife@small"], ["Backstab", "Blight", "Catastrophe", "Glass Cauldron"]);
+  thieftrade = trade(["flower pot", "poppy", "woodchipper", "dynamite@ncrmod", "open sesame", "luckpick", "hunting knife@large" "hunting knife@small", "any"], ["Backstab", "Blight", "Catastrophe", "Glass Cauldron"]);
 }
 
 goodotherstuff = [

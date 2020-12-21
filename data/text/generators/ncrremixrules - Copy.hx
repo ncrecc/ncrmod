@@ -10,37 +10,18 @@ function isenemyindungeon(enemyname){
   return true;
 }
 
-var preventclashes = [
-  ['Kraken?', 'Sorceress?'], //the former effectively negates the latter due to how blind currently works with ai
-  ['Skeleton?', 'Rhino Beetle?'], //both directly deal damage to you. probably cruel
-  ['Marshmallow?', 'The Witch?'], //can't have multiple restrictions on your rolls
-  ['Sorceress?', 'Cowboy?'], //neither can the enemy
-  ['Rat King?', 'Lady Luck'], //one upgrades a random enemy equipment, one upgrades all enemy equipment. redundancy is bad. redundancy is bad
-  ['Singer?', 'The Witch?'], //singer? effectively negates dice range/stack rules since dice are immediately rerolled ignoring the normal range/stack
-  ['Singer?', 'Marshmallow?'], //see above
-  ['Wisp?', 'Bounty Hunter?'], //bad idea. literally only one enemy in the game cares about vanish, and vanish equipment is relatively rare in ncrmod (probably rarer than it ought to be), this along with shock equipment being uncommon means you never really see bounty hunter? do its thing
-  ['Magician?', 'Loud Bird?'], //magician swaps your limit to a random limit every turn. loud bird permanently swaps your limit break to its weakened version.
-  ['The Thief?', 'The Thief'], //two skillcard changes
-  ['The Inventor?', 'The Inventor'], //i don't actually know if blind inspiration breaks with multiple gadgets but let's just assume it does
-  ['Hothead', 'Fireman?'], //both ignite a dice. might not break things but it is pretty silly
-  ['Kraken?', 'Baby Squid'], //kraken? blinds all dice, baby squid blinds a single dice
-  ['Wizard', 'Cornelius?'], //mean & redundant
-  ['Rotten Apple?', 'Cornelius'], //-10 max hp plus a rule that deducts 1 max hp after each fight is probably cruel
-  ['Skeleton?', 'Cornelius'], //"take 10 damage immediately" & -10 max hp. mean
-  ['Singer?', 'Singer'], //the former negates the latter, mostly
-  ['Singer?', 'Bounty Hunter'], //could actually probably make singer? work for bounty hunter and marshmallow? by having it reroll according to *the player's dice range* rather than fair 1/2/3/4/5/6. how do you access dice range instead of just changing it tho (ed: Rules.actualdicerange, don't really care though.)
-  ['Marshmallow?', 'Bounty Hunter'], //again, two dice range modifications
-  ['Copycat?', 'Val'], //both involve item replacements. just in case
-  ['Wisp?', 'Wisp'], //when you have vanish all (i.e. regular vanish), being inflicted with finite vanish has no effect
-  //['Keymaster?', 'Crystalina'], //if this is really a problem someone else will point it out eventually
-  ['Wisp?', 'Marshmallow'], //doesn't make the game explode, but very odd behavior: https://github.com/TerryCavanagh/diceydungeons.com/issues/1891
-  ['Space Marine', 'Sneezy?'], //countdown speed increasing messes up sneezy? determining which countdowns would not be activated by the inserted dice
-  ['Warlock', 'Warlock?'], //redundant for obvious reasons
-  ['The Robot?', 'The Robot'], //a rule that affects your jackpot options does nothing once you can't jackpot anymore
-  ['Drain Monster?', 'Drain Monster'] //very silly (!!!), and drain monster probably causes frequent problems with drain monster?.
-];
+//Generic setup: define some remixes that should never occur at the same time
+Remix.preventclash(['Kraken?', 'Sorceress?']); //the former effectively negates the latter due to how blind currently works with ai
+Remix.preventclash(['Skeleton?', 'Rhino Beetle?']); //both directly deal damage to you. probably cruel
+Remix.preventclash(['Marshmallow?', 'The Witch?']); //can't have multiple restrictions on your rolls
+Remix.preventclash(['Sorceress?', 'Cowboy?']); //neither can the enemy
+Remix.preventclash(['Rat King?', 'Lady Luck']); //one upgrades a random enemy equipment, one upgrades all enemy equipment. redundancy is bad. redundancy is bad
+Remix.preventclash(['Singer?', 'The Witch?']); //singer? effectively negates dice range/stack rules since dice are immediately rerolled ignoring the normal range/stack
+Remix.preventclash(['Singer?', 'Marshmallow?']); //see above
+Remix.preventclash(['Wisp?', 'Bounty Hunter?']); //bad idea. literally only one enemy in the game cares about vanish, and vanish equipment is relatively rare in ncrmod (probably rarer than it ought to be), this along with shock equipment being uncommon means you never really see bounty hunter? do its thing
+Remix.preventclash(['Magician?', 'Loud Bird?']); //magician swaps your limit to a random limit every turn. loud bird permanently swaps your limit break to its weakened version.
 
-var veryrare = ['Sorceress?', 'Kraken?'];
+var veryrare = ['Sorceress?', 'Kraken?', 'Warlock?'];
 if(player != 'Witch' && player != 'Jester' && !isenemyindungeon('Scathach')) veryrare.push('Copycat?'); //doesn't work with witch and jester, and turns scathach into a pushover
 
 veryrare = shuffle(veryrare);
@@ -54,13 +35,27 @@ var earlytwists = ['Rat King?'];
 if(chance(50)) { //these are too common
 if(player == 'Thief') earlytwists.push('The Thief?'); //uptick
 if(player == 'Inventor') earlytwists.push('The Inventor?'); //double scrap
-if(player == 'Robot') earlytwists.push('The Robot?'); //less jackpot rewards
+if(player == 'Robot') earlytwists.push('The Robot?'); //more jackpot rewards
 if(player == 'Witch') earlytwists.push('The Witch?'); //countdown
 if(player == 'Jester') earlytwists.push('The Jester?'); //0.13 mechanics
 if(player == 'Warrior') earlytwists.push('The Warrior?'); //stop shifting skillcard
 }
-if(player != 'Witch') earlytwists.push('Handyman?'); //witch doesn't get anvils and blueprints would do nothing anyway
-if(!isenemyindungeon('Drain Monster')) earlytwists.push('Warlock?');
+
+if(player != 'Witch' && player != 'Jester'){ 
+  //wisp? follows similar logic to marshmallow but more inclusive since there are no vanish-only enemies
+  
+  if(isenemyindungeon('Buster') || isenemyindungeon('Madison')){
+    earlytwists.push('Wisp?');
+  }else{
+    var wispcount = 0;
+    if(isenemyindungeon('Fireman')) wispcount++;
+    if(isenemyindungeon('Wisp')) wispcount += 2;
+    if(isenemyindungeon('Wicker Man')) wispcount++;
+    if(wispcount >= 3){
+      earlytwists.push('Wisp?');
+    }
+  }
+}
 
 //should we include sneezy? ?
 if(player != 'Jester'){ //sneezy? benefits jester muuuuch less than other classes
@@ -88,7 +83,6 @@ if(player != 'Jester'){ //sneezy? benefits jester muuuuch less than other classe
 	if(isenemyindungeon('Kraken')) sneezecount++;
 	if(sneezecount > 5 && sneezecount < 15) { //if too many enemies would benefit from this rule, drop it. don't be cruel
 		earlytwists.push('Sneezy?');
-		earlytwists = shuffle(earlytwists);
 	}
 }
 
@@ -105,9 +99,7 @@ if(isenemyindungeon('Buster')) bountycounty += 2;
 if(isenemyindungeon('Beatrice')) bountycounty += 2;
 if(isenemyindungeon('Madison')) bountycounty += 2;
 if(bountycounty >= 4 && bountycounty <= 7){
-  while(earlytwists.length > 3) earlytwists.pop();
   earlytwists.push('Bounty Hunter?');
-  earlytwists = shuffle(earlytwists);
 }
 
 //what about drain monster?? ????
@@ -120,9 +112,7 @@ if(isenemyindungeon('Haunted Jar')) draincount++;
 if(isenemyindungeon('Audrey')) draincount += 2;
 if(isenemyindungeon('Drake')) draincount++;
 if(draincount >= 3 && draincount <= 6){
-  while(earlytwists.length > 3) earlytwists.pop();
   earlytwists.push('Drain Monster?');
-  earlytwists = shuffle(earlytwists);
 }
 		
 var midtwists = ['Mimic?', 'Wizard?', 'Rotten Apple?', 'Cowboy?', 'Magician?'];
@@ -131,30 +121,7 @@ if(chance(33)) { if(chance(50)) midtwists.push('Ned?'); else midtwists.push('Val
 if(chance(33)) { midtwists.push('Yolanda?'); } //yolanda is also a midtwist as getting it later on probably makes it less likely you'll accidentally go broke
 
 var veryhardlist = ['Vacuum?', 'Cornelius?', 'Loud Bird?', 'Skeleton?'];
-if(player != 'Jester') {
-    veryhardlist.push('Rhino Beetle?'); //rhino beetle would screw over jester whenever they use their limit break
-    veryhardlist.push('Space Marine?'); //likewise
-}
-
-if(player != 'Witch' && player != 'Jester'){ 
-  //wisp? follows similar logic to marshmallow but more inclusive since there are no vanish-only enemies
-  
-  if(isenemyindungeon('Buster') || isenemyindungeon('Madison')){
-    while(earlytwists.length > 3) earlytwists.pop();
-    earlytwists.push('Wisp?');
-    earlytwists = shuffle(earlytwists);
-  }else{
-    var wispcount = 0;
-    if(isenemyindungeon('Fireman')) wispcount++;
-    if(isenemyindungeon('Wisp')) wispcount += 2;
-    if(isenemyindungeon('Wicker Man')) wispcount++;
-    if(wispcount >= 3){
-	  while(earlytwists.length > 3) earlytwists.pop();
-      earlytwists.push('Wisp?');
-      earlytwists = shuffle(earlytwists);
-    }
-  }
-}
+if(player != 'Jester') veryhardlist.push('Rhino Beetle?'); //rhino beetle would screw over jester whenever they use their limit break
 
 //Really simple first draft, shuffle all the lists, assign them randomly
 earlytwists = shuffle(earlytwists);
@@ -163,6 +130,7 @@ standardlist = shuffle(standardlist);
 
 var latelist = ['Aoife?', 'Singer?'];
 if(player != 'Jester') latelist.push('Buster?'); //managed to get the jester deck to progress properly when a card is errored, but even then this practically does nothing to jester. at worst a nice card you were hoping to see later in the pile gets errored, at best something weak like zoop zoop gets errored
+if(player == 'Jester' || player == 'Inventor') latelist.push('Handyman?'); //blueprints aren't as useful to other classes as they are to jester and inventor
 if(player != 'Jester' && player != 'Robot') latelist.push('Scathach?'); 
 
 midtwists = shuffle(midtwists);
@@ -186,20 +154,21 @@ while(latelist.length > 0) veryhardlist.push(latelist.pop());
 veryhardlist = shuffle(veryhardlist);
 var finaloffer5 = [veryhardlist.pop(), veryhardlist.pop(), veryhardlist.pop()];
 
+
 //Insert twists!
 if(chance(80)){
   //80% chance of seeing a twist
   if(chance(66)){
     if(chance(33)){
-      if(earlytwists.length > 0) finaloffer2.insert(0, earlytwists.pop());
+      finaloffer2.insert(0, earlytwists.pop());
     }else{
-      if(earlytwists.length > 0) finaloffer2.insert(1, earlytwists.pop());
+      finaloffer2.insert(1, earlytwists.pop());
     }
   }else{
     if(chance(66)){
-      if(veryrare.length > 0) finaloffer2.insert(0, veryrare.pop());
+      finaloffer2.insert(0, veryrare.pop());
     }else{
-      if(veryrare.length > 0) finaloffer2.insert(1, veryrare.pop());
+      finaloffer2.insert(1, veryrare.pop());
     }
   }
 }

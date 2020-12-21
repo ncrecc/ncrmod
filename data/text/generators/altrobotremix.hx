@@ -7,6 +7,8 @@ var goodotherstuff = [];
 
 var brostep = rand([false,true]);
 
+var clumporbump = rand(["Clump", "Overbump"]);
+
 //Floor 1:
 var commonlist1 = shuffle(["Toolbox@flip", "Disk Eject", "Pocket Protector", "Welder", "Innovate"]);
 var commonlist2 = shuffle(["Talent Contest", "Blockbuster", "Smart Spike", "Heaven on Earth"]); //"Reckless Piracy"
@@ -44,10 +46,12 @@ commonlist1copy.push("Pummel");
 var brosteporshockhumour = rand(["Loud Brostep", "Shock Humour"]);
 if(brostep) commonlist2.push(brosteporshockhumour);
 commonlist2.push("Baby's First Counting Book");
+commonlist2.push(clumporbump);
 shuffle(commonlist2);
 //commonlist2copy.push("Ransomware");
 if(brostep) commonlist2copy.push(brosteporshockhumour);
 commonlist2copy.push("Baby's First Counting Book");
+commonlist2copy.push(clumporbump);
 
 items = [];
 

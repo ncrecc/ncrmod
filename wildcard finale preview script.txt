@@ -1,0 +1,56 @@
+var previeweq = new elements.Equipment(~Passivecation Program~);
+self.equipment.push(previeweq);
+previeweq.x = 2935;
+previeweq.y = 1515;
+previeweq.height = 612;
+previeweq.size = 1;
+previeweq.arrangeslots();
+previeweq.equipalpha = 0.01; /*if equipalpha is 0 countdown number gets rendered at full alpha for some reason*/
+previeweq.countdown = 0;
+previeweq.reducecountdownby = 0;
+previeweq.reducecountdowndelay = 0;
+previeweq.maxcountdown = 0;
+
+for(tag in [~errorimmune~|~cannotsteal~|~shockavoid~|~weakenavoid~|~altpoisonavoid~|~cannotreuse~]) {
+	previeweq.tags.push(tag);
+}
+
+var delayedscript = ~eq.slots = [];~;
+var interp = new hscript.Interp();
+var parser = new hscript.Parser();
+interp.variables.set(~eq~|previeweq);
+interp.variables.set(~self~|self);
+interp.variables.set(~target~|target);
+var actuator1 = new motion.actuators.SimpleActuator(null|0.01|null);
+actuator1.onComplete(interp.execute|[parser.parseString(delayedscript)]);
+actuator1.move();
+var gradualscript = ~eq.equipalpha += 0.05;~;
+var actuator2 = new motion.actuators.SimpleActuator(null|0.01|null);
+actuator2._repeat = 10;
+actuator2.onRepeat(interp.execute|[parser.parseString(gradualscript)]);
+actuator2.move();
+var recurringscript = ~
+	if(self == null # self.hp <= 0 # self.graphic == null # target == null # target.graphic == null # target.hp <= 0) actuator3.stop();
+	else if(self.equipmentused > 0 # self.doendturnnow) {
+		var metaactuator = new motion.actuators.SimpleActuator(null|0.01|null);
+		metaactuator._repeat = 10;
+		var interp = new hscript.Interp();
+		interp.variables.set(\~eq\~|eq);
+		interp.variables.set(\~self\~|self);
+		interp.variables.set(\~metaactuator\~|metaactuator);
+		metaactuator.onRepeat(interp.execute|[new hscript.Parser().parseString(\~
+			if(eq.equipalpha <= 0) metaactuator.stop();
+			else {
+				eq.equipalpha -= 0.05;
+				if(eq.equipalpha <= 0) self.equipment.remove(eq);
+			}
+		\~)]);
+		metaactuator.move();
+		actuator3.stop();
+	}
+~; /*i fucking hated writing this and i hope you hate reading this*/
+var actuator3 = new motion.actuators.SimpleActuator(null|0.01|null);
+interp.variables.set(~actuator3~|actuator3);
+actuator3._repeat = -1;
+actuator3.onRepeat(interp.execute|[parser.parseString(recurringscript)]);
+actuator3.move();

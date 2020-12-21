@@ -39,3 +39,5 @@ Lepaul Documents_upgraded,Change your name to Paul[;]|remove this and Paul for|B
 Paul's Car Keys,Copy & activate a random|Paul effect[;] return the dice,1,donothing();,Vroom,DOUBLES|DOUBLES,,RED,change_power,change_power,,,,YES,,,,,,,,,,,,,,
 Paul's Car Keys_upgraded,Copy & activate 2 random|Paul effects[;] return the dice,1,donothing();,Vroom,DOUBLES|DOUBLES,,RED,,,,,,YES,,,,,,,,,,,,,,
 Paul's Car Keys_downgraded,Activate a random|Paul effect[;] return the dice,1,donothing(); /*yes naming it Paul's Car Keys inspired me to port More Cars*/,Vroom,DOUBLES|DOUBLES,,RED,,,,,,YES,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,but this one actually did solve ncrmod,,,,,,,,,,,,,,,,,,,,,,,,,,

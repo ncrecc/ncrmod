@@ -27565,5 +27565,26 @@
                 "file": "sfx/status/car/car"
             }
         ]
+    },
+    "pants": {
+        "playsounds": [
+            {
+                "file": "sfx/pants"
+            }
+        ]
+    },
+    "pants_bad": {
+        "playsounds": [
+            {
+                "file": "sfx/pants_bad"
+            }
+        ]
+    },
+    "scanner": {
+        "playsounds": [
+            {
+                "file": "sfx/scanner"
+            }
+        ]
     }
 }

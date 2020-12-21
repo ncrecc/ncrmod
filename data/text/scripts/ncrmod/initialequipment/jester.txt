@@ -7,3 +7,4 @@ InitialEquipment:We Watch and We Wait
 InitialEquipment:Anger
 InitialEquipment:Fatal Attraction
 InitialEquipment:Wildcard
+InitialEquipment:Face the Music

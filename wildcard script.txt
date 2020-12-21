@@ -1,0 +1,136 @@
+if(target != null && target.hp > 0) {
+	if(self.layout == ~DECK~) {
+		for(c in Deck.getcards(~all~)) {
+			if(c.equipment == e) {
+				c.equipment = new elements.Equipment(rand(getequipmentlist(null|[~finale~]|[~excludefromrandomlists~|~wildcard~]))|e.upgraded|false|true);
+				trace(c.equipment.name);
+				self.setvar(~doonthis~|c.equipment);
+				var estandardize = ~var e = self.getvar(\~doonthis\~); ~;
+				var doscripts = new elements.Skill(~Against all odds_old~);
+				doscripts.script = estandardize + c.equipment.scriptbeforecombat;
+				doscripts.execute(self|target);
+				doscripts.script = estandardize + c.equipment.scriptbeforestartturn;
+				doscripts.execute(self|target);
+				c.equipment.scriptbeforestartturn += ~
+					if(target == null # target.hp <= 0) { /*kludge because after combat scripts don't run for jester for some reason*/
+						for(c in Deck.getcards(\~all\~)) {
+							if(c.equipment == e) {
+								c.equipment = new elements.Equipment(\~~ + e.name + e.namemodifier + ~\~);
+								break;
+							}
+						}
+					}
+				~;
+				c.equipment.resize(2);
+				c.equipment.addtag(~weakenavoid~); /*aaaargh. weakened cards lose all properties that are not explicitly in the template*/
+				c.equipment.addtag(~fromwildcard~);
+				var showpreviewscript = ~ /*FUCK FUCK FUCK*/
+					trace(\~yes\~);
+					if(turn == 1) {
+						var previeweq = new elements.Equipment(e.name|e.upgraded|false|true);
+						self.equipment.push(previeweq);
+						previeweq.x = 9999; /*the proper value for this is 2940; as seen below; but making it 9999 until e.slots is wiped means you can't use the card by putting a dice in on the first few frames it's there (but nearly invisible)*/
+						previeweq.y = 1515;
+						previeweq.height = 612;
+						previeweq.size = 1;
+						previeweq.arrangeslots();
+						previeweq.equipalpha = 0.01; /*if equipalpha is 0 countdown number gets rendered at full alpha for some reason*/
+						previeweq.countdown = 0;
+						previeweq.reducecountdownby = 0;
+						previeweq.reducecountdowndelay = 0;
+						previeweq.maxcountdown = 0;
+						
+						for(tag in [\~errorimmune\~|\~cannotsteal\~|\~shockavoid\~|\~weakenavoid\~|\~altpoisonavoid\~|\~cannotreuse\~]) {
+							previeweq.tags.push(tag);
+						}
+						
+						var newprevieweq = null;
+						if(previeweq.hastag(\~powercard\~)) {
+							/*this implementation breaks SUPER BADLY with powercards (button cards) for some reason. so if the equipment to preview is a powercard; make a new slotless card to represent it; then make the first line orange since that might make it clear it's a button??? idk*/
+							newprevieweq = new elements.Equipment(\~Slotless Equipment That Does Nothing\~);
+							newprevieweq.fulldescription = \~[orange]\~ + previeweq.fulldescription;
+							newprevieweq.equipmentcol = previeweq.equipmentcol;
+							newprevieweq.displayname = previeweq.displayname;
+							newprevieweq.upgraded = previeweq.upgraded;
+							newprevieweq.equipalpha = previeweq.equipalpha;
+							newprevieweq.x = previeweq.x;
+							newprevieweq.y = previeweq.y;
+							newprevieweq.tags = previeweq.tags.copy();
+							newprevieweq.removetag(\~powercard\~);
+							newprevieweq.update();
+							self.equipment.push(newprevieweq);
+							self.equipment.remove(previeweq);
+						}
+						if(newprevieweq == null) newprevieweq = previeweq;
+						var previeweq = newprevieweq;
+						
+						var delayedscript = \~eq.slots = []; eq.x = 2940;\~;
+						var interp = new hscript.Interp();
+						var parser = new hscript.Parser();
+						interp.variables.set(\~eq\~|previeweq);
+						interp.variables.set(\~self\~|self);
+						interp.variables.set(\~target\~|target);
+						var actuator1 = new motion.actuators.SimpleActuator(null|0.01|null);
+						actuator1.onComplete(interp.execute|[parser.parseString(delayedscript)]);
+						actuator1.move();
+						var gradualscript = \~eq.equipalpha += 0.05;\~;
+						var actuator2 = new motion.actuators.SimpleActuator(null|0.01|null);
+						actuator2._repeat = 10;
+						actuator2.onRepeat(interp.execute|[parser.parseString(gradualscript)]);
+						actuator2.move();
+						var recurringscript = \~
+							if(self == null # self.hp <= 0 # self.graphic == null # target == null # target.graphic == null # target.hp <= 0) actuator3.stop();
+							else if(self.equipmentused > 0 # self.doendturnnow) {
+								var metaactuator = new motion.actuators.SimpleActuator(null|0.01|null);
+								metaactuator._repeat = 10;
+								var interp = new hscript.Interp();
+								interp.variables.set(\\\~eq\\\~|eq);
+								interp.variables.set(\\\~self\\\~|self);
+								interp.variables.set(\\\~metaactuator\\\~|metaactuator);
+								metaactuator.onRepeat(interp.execute|[new hscript.Parser().parseString(\\\~
+									if(eq.equipalpha <= 0) metaactuator.stop();
+									else {
+										eq.equipalpha -= 0.05;
+										if(eq.equipalpha <= 0) self.equipment.remove(eq);
+									}
+								\\\~)]);
+								metaactuator.move();
+								actuator3.stop();
+							}
+						\~; /*i fucking hated writing this and i hope you hate reading this*/
+						var actuator3 = new motion.actuators.SimpleActuator(null|0.01|null);
+						interp.variables.set(\~actuator3\~|actuator3);
+						actuator3._repeat = -1;
+						actuator3.onRepeat(interp.execute|[parser.parseString(recurringscript)]);
+						actuator3.move();
+					}
+				~;
+				if(c.equipment.scriptonstartturn.indexOf(showpreviewscript) == -1) {
+					c.equipment.scriptonstartturn += showpreviewscript;
+				}
+				break;
+			}
+		}
+	} else { /*nonjesters don't need equipment preview or size correction*/
+		var newfinale = new elements.Equipment(rand(getequipmentlist(null|[~finale~]|[~excludefromrandomlists~|~jesteronly~|~wildcard~]))|e.upgraded);
+		self.equipment[self.equipment.indexOf(e)] = newfinale;
+		self.setvar(~doonthis~|newfinale);
+		var estandardize = ~var e = self.getvar(\~doonthis\~); ~;
+		var doscripts = new elements.Skill(~Against all odds_old~);
+		doscripts.script = estandardize + newfinale.scriptbeforecombat;
+		doscripts.execute(self|target);
+		doscripts.script = estandardize + newfinale.scriptbeforestartturn;
+		doscripts.execute(self|target);
+		newfinale.scriptaftercombat += ~
+			var neweq = new elements.Equipment(\~~ + e.name + e.namemodifier + ~\~);
+			neweq.x = e.x;
+			neweq.y = e.y;
+			neweq.animate(\~flashandshake\~);
+			if(e.size == 1) neweq.y -= 108;
+			self.equipment[self.equipment.indexOf(e)] = neweq;
+		~;
+		newfinale.addtag(~weakenavoid~);
+		newfinale.resetfornewturn('player');
+	}
+	self.resetvar(~doonthis~);
+}

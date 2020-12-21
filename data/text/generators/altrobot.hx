@@ -7,14 +7,11 @@ var goodotherstuff = [];
 
 var brostep = rand([false,true]);
 
-trace(rand([false,true]));
-trace(runscript("ncrmod/coinflip"));
-
-trace("hi");
+var clumporbump = rand(["Clump", "Overbump"]);
 
 //Floor 1:
 var commonlist1 = shuffle(["Toolbox@flip", "Disk Eject", "Pocket Protector", "Welder", "Innovate"]);
-var commonlist2 = shuffle(["Talent Contest", "Blockbuster"]); //"Reckless Piracy"
+var commonlist2 = shuffle([clumporbump, "Talent Contest", "Blockbuster"]); //"Reckless Piracy"
 var sizetwo = ["Sharpened Rosary", "Strange Parcel", "Blast Processing", "Spin Attack", "Snatch", "Throwing Axe", "Extreme Detail Bat", "Crystallize", "Two Handed Spatula", "Powerball", "Gyrate Hook"];
 if(!brostep) { sizetwo.push(rand(["Coil", "Jacob's Ladder"])); }
 shuffle(sizetwo);

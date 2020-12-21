@@ -1,0 +1,11 @@
+Rules.substitute("Powerball", "Bustle");
+Rules.substitute("Extreme Detail Bat", "Occam's Razor");
+Rules.substitute("Uninitialized Behavior", "Magic Dagger");
+Rules.substitute("Crysis", "Baby's First Counting Book");
+Rules.substitute("Decimate", "Prod");
+Rules.substitute("Penultima Weapon", "Slim Jim");
+Rules.substitute("Security Hole", "e.name");
+Rules.substitute("Heaven on Earth", "Bop Bop");
+Rules.substitute("Disk Eject", "Breaking Point");
+Rules.substitute("Blast Processing", "Operator");
+Rules.substitute("Manual Repair", "Virtue Grip");

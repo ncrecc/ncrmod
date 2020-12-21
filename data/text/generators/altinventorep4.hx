@@ -69,12 +69,14 @@ var gimmickwhipgiven = false;
 
 var shielddrops = shuffle(["Industrial Press", "Defense Mechanism", "Rickety Shield"]);  
 
-var commonlist1 = ["Queen of Diamonds", "Sleight of Hand@ncrmod", spearswing, "Sharp Straw", basics.pop(), "Icebox", "Ice Nine", "Sacrificial Blade@3", "Cubby", "Broadkunai"];
+var commonlist1 = ["Bumper Sticker", "Hourglass", "Queen of Diamonds", "Sleight of Hand@ncrmod", spearswing, "Sharp Straw", basics.pop(), "Icebox", "Ice Nine", "Sacrificial Blade@3", "Cubby", "Broadkunai"];
 //if(chance(30)) { commonlist1.remove("Ice Nine"); commonlist1.push("PyrotechnIX"); } //good pun
 if (chance(20)) { commonlist1.push("Cybernetics"); }
 
-var shoplist1 = ["Survivor's Guilt", "Radio Dial", "Autohook", basics.pop(), "Lightstick", "No Pain No Gain", "Berliner", "Tragic Entrance", "Smartwatch", "Wail Bat"];
+var shoplist1 = ["Crush Together", "Survivor's Guilt", "Radio Dial", "Autohook", basics.pop(), "Lightstick", "No Pain No Gain", "Berliner", "Tragic Entrance", "Smartwatch", "Wail Bat", "Crazy Glue", "Generous Crystal"];
+if (chance(75)) { shoplist1.remove("Smartwatch"); shoplist1.push("Stopwatch"); }
 if (chance(50)) shoplist1.push("Warhammer");
+if (chance(50)) shoplist1.push("Mo' Money Mo' Problems");
 commonlist1 = shuffle(commonlist1);
 shoplist1 = shuffle(shoplist1);
 
@@ -102,18 +104,21 @@ trace("floor 2 done");
 
 var superlevel3 = "";
 
-var midtierdrops = shuffle(["Gadsby Gun", "Shudder", "Technology", "Chainsmoke", "Gas Lamp", "Operator", "Sucker Punch", "Hush"]);
+var midtierdrops = shuffle(["Gadsby Gun", "Shudder", "Technology", "Chainsmoke", "Gas Lamp", "Operator", "Sucker Punch", "Hush", rand(["Revolution 9","Revolution 1"]), "Veneer"]);
 if(chance(33)) { midtierdrops.push(rand(["Charity", "Humility"])); }
 if(chance(33)) { midtierdrops.push(rand(["Greed", "Envy"])); }
-if(chance(3)) { midtierdrops.push("Do [sword][d6] damage"); }
+if(chance(6)) { midtierdrops.push(rand(["Do [sword][d6] damage","Cow Tool"])); }
 items = [oobleck.pop()];
 items.push(chance(17.5) ? shielddrops.pop() : pick(["Kale Smoothie", "Starspear", "Biohazard"]));
 gooditems = [oobleck.pop()];
 
+shoplist1.pop();
+shoplist1.pop();
 shoplist1.push("Compact Resonator");
+shoplist1.push("Binoculars");
 shuffle(shoplist1);
 
-var commonlist2 = ["Roman Candle@ncrmod", "Healer Staff", "Gizmotron", "Gag Rule", "Cremator", "Sheer Will", "Revolver@ncrmod", "Tear Down This Wall", "Vanity Mirror", "Gyrate Hook", "Junk Sword", "Bumpbomb", "Heat Pump", scraplist.pop()];
+var commonlist2 = ["Vantablack", "Gravity", "Roman Candle@ncrmod", "Healer Staff", "Gizmotron", "Gag Rule", "Cremator", "Sheer Will", "Revolver@ncrmod", "Tear Down This Wall", "Vanity Mirror", "Gyrate Hook", "Junk Sword", "Bumpbomb", "Heat Pump", scraplist.pop()];
 if(chance(50)) commonlist2.push("Dripping Yellow Madness");
 
 if(gimmickorwhip == 1) { commonlist2.push(whips.pop()); cleanwhips(commonlist1[commonlist1.length - 1], whips); }

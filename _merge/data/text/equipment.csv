@@ -167,3 +167,5 @@ Squawk_downgraded,Silence Enemy,2,inflict(~ncr_silence~); bonus(1000);,Dial Up S
 The Storm_upgraded,Do [shock]<d6> damage[;]|Shock [shock]6 and silence,1,attack(d| SHOCK); inflict(SHOCK | 6); inflict(~ncr_silence~);,Zap,REQUIRE6|FREE6,,YELLOW,,,,,0,NO,NO,,,,,,,,,,,,,
 Marmalade,Get a [dice]6 next turn,1,inflictself(~stash~+6|1); inflictself(~illuminate~);,Magic Six,REQUIRE1,,ORANGE,simplify,doublerequirements,,,0,YES,NO,,,,,,,,,,,,,
 Finders Keepers,After the battle[;] keep|one piece of equipment|[]+6 to count until battle end,2,if(self.finderskeepers == null) { self.finderskeepers = 1; } else if(self.finderskeepers != 999) { self.finderskeepers++; } screenshake(); e.countdown += 6;,Time Stop,COUNTDOWN,12,GRAY,,,,,0,YES,NO,cannotsteal,,e.countdown = 12;,e.countdown = 12;,,,,,,,,,
+Melody,Inflict [weaken]1 weaken,1,inflict(WEAKEN| 1);,,NORMAL,,ORANGE,change_power,complicate,,,0,NO,NO,,,,,,,,,,,,,
+Melody_upgraded,Inflict [weaken]2 weaken,1,inflict(WEAKEN| 2);,,NORMAL,,ORANGE,,,,,0,NO,NO,,,,,,,,,,,,,

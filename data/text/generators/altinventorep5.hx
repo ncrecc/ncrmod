@@ -3,11 +3,11 @@ usestandardenemies();
 var otherstuff = [];
 var goodotherstuff = [];
 
-//getequipmentlist(null,[],['skillcard','excludefromrandomlists','robotonly','witchonly','onceperbattle','alternateversion','testitem','unfinished'])
+//getequipmentlist(null,[],['excludefromrandomlists','robotonly','witchonly','onceperbattle','alternateversion','testitem','unfinished'])
 
 var dummy = new elements.Fighter("Wisp");
 var geteq = new elements.Skill("Against all odds_old");
-geteq.script = "var eqlist = getequipmentlist(null,[],['skillcard','excludefromrandomlists','robotonly','witchonly','onceperbattle','alternateversion']); self.innate = eqlist;";
+geteq.script = "var eqlist = getequipmentlist(null,[],['excludefromrandomlists','robotonly','witchonly','alternateversion']); self.innate = eqlist;";
 geteq.execute(dummy,dummy);
 
 var eqlist = dummy.innate;

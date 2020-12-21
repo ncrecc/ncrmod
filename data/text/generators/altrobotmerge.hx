@@ -9,9 +9,11 @@ var goodotherstuff = [];
 
 var brostep = rand([false,true]);
 
+var clumporbump = rand(["Clump", "Overbump"]);
+
 //Floor 1:
 var commonlist1 = shuffle(["Toolbox@flip", "Disk Eject", "Pocket Protector", "Welder", "Innovate", "Healing Crystal", "Small Shield", "Nudge", rand(["Cheat Code", "Safe Bet"]), (chance(30)?"Iron Armor":"Leather Armor"), "Saw Wave", "Four Leaf Clover"]);
-var commonlist2 = shuffle(["Talent Contest", "Blockbuster", "Juggling Ball", "Spanner", "Spiked Shield", "Doppeldice", "Short Circuit", "Slingshot", "Vise Grip", (chance(30)?"Starspear":"Sword Hilt"), "Ungeradedice"]); //"Reckless Piracy"
+var commonlist2 = shuffle([clumporbump, "Talent Contest", "Blockbuster", "Juggling Ball", "Spanner", "Spiked Shield", "Doppeldice", "Short Circuit", "Slingshot", "Vise Grip", (chance(30)?"Starspear":"Sword Hilt"), "Ungeradedice"]); //"Reckless Piracy"
 var sizetwo = ["Sharpened Rosary", "Strange Parcel", "Blast Processing", "Spin Attack", "Snatch", "Throwing Axe", "Extreme Detail Bat", "Crystallize", "Two Handed Spatula", "Powerball", "Gyrate Hook"];
 if(!brostep) { sizetwo.push(rand(["Coil", "Jacob's Ladder"])); }
 shuffle(sizetwo);

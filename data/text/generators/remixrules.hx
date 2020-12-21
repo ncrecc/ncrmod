@@ -123,13 +123,14 @@ function fillearlytwists(){
   if(player == 'Witch') earlytwists.push('The Witch?'); //countdown
   if(player == 'Jester') earlytwists.push('The Jester?'); //0.13 mechanics
   //if(player == 'Warrior') earlytwists.push('The Warrior?'); //stop shifting skillcard
+  if(player != 'Witch') earlytwists.push('Handyman?'); //witch doesn't get anvils and blueprints would do nothing anyway
   
   earlytwists = shuffle(earlytwists);
   return earlytwists;
 }
 
 function fillmidtwists(){
-  var midtwists = ['Alchemist', 'Mimic?', 'Wizard?', 'Rotten Apple?', 'Cowboy?', 'Magician?', 'Sneezy?']; 
+  var midtwists = ['Alchemist', 'Mimic?', 'Wizard?', 'Rotten Apple?', 'Cowboy?', 'Magician?']; 
   var player = getplayername();
   
   if(player != 'Jester' && player != 'Witch' && player != 'Robot') midtwists.push('Marshmallow?'); //jester and witch would get screwed over hard by this, and it wouldn't even make sense for robot. actually i don't play witch so i'm not sure how hard she would be affected by this? but it sounds like it would majorly limit her start-of-turn options
@@ -162,7 +163,6 @@ function filllatelist(){
   var player = getplayername();
   
   if(player != 'Jester') latelist.push('Buster?'); //managed to get the jester deck to progress properly when a card is errored, but even then this practically does nothing to jester. at worst a nice card you were hoping to see later in the pile gets errored, at best something weak like zoop zoop gets errored
-  if(player == 'Jester' || player == 'Inventor') latelist.push('Handyman?'); //blueprints aren't as useful to other classes as they are to jester and inventor
   if(player != 'Jester' && player != 'Robot') latelist.push('Scathach?'); //shouldn't silenece these two!
   
   if(player == 'Witch' || player == 'Jester'){ //Witch and Jester get offered Paper Knight in the late list
@@ -183,7 +183,10 @@ function fillveryhardlist(){
   
   var player = getplayername();
   
-  if(player != 'Jester') veryhardlist.push('Rhino Beetle?'); //rhino beetle would screw over jester whenever they use their limit break
+  if(player != 'Jester') {
+    veryhardlist.push('Rhino Beetle?'); //rhino beetle would screw over jester whenever they use their limit break
+    veryhardlist.push('Space Marine?'); //likewise
+  }
   
   if(!isenemyindungeon('Scathach')){ //this would be mean, like wizard rule
     veryhardlist.push('Cornelius?');
@@ -203,7 +206,7 @@ function fillveryhardlist(){
 
 function fillveryrare(){
   //Some remixes are very game defining, and it's better if they only come up very occasionally
-  var veryrare = ['Sticky Hands', 'Sorceress?', 'Kraken?', 'Warlock?'];
+  var veryrare = ['Sticky Hands', 'Sorceress?', 'Kraken?'];
   var player = getplayername();
   
   if(player != 'Witch' && player != 'Jester' && !isenemyindungeon('Scathach')) veryrare.push('Copycat?'); //doesn't work with witch and jester, and turns scathach into a pushover
@@ -329,7 +332,9 @@ function addfireshockintermingle(earlytwists) {
   if(isenemyindungeon('Beatrice')) bountycounty += 2;
   if(isenemyindungeon('Madison')) bountycounty += 2;
   if(bountycounty >= 4 && bountycounty <= 7){
+    while(earlytwists.length > 3) earlytwists.pop();
     earlytwists.push('Bounty Hunter?');
+    earlytwists = shuffle(earlytwists);
   }
 }
   
@@ -343,8 +348,42 @@ function addpoisonweakenintermingle(earlytwists) {
   if(isenemyindungeon('Audrey')) draincount += 2;
   if(isenemyindungeon('Drake')) draincount++;
   if(draincount >= 3 && draincount <= 6){
+    while(earlytwists.length > 3) earlytwists.pop();
     earlytwists.push('Drain Monster?');
+    earlytwists = shuffle(earlytwists);
   }	
+}
+
+//should we include sneezy? ?
+function addcountdownrules(midtwists) {
+  if(player != 'Jester'){ //sneezy? benefits jester muuuuch less than other classes
+    var sneezecount = 0;
+    //gather countdown enemies. enemies who would particularly benefit from this rule count as two enemies, and bosses count as 3
+    if(isenemyindungeon('Buster')) sneezecount += 3;
+    if(isenemyindungeon('Beatrice')) sneezecount += 3;
+    if(isenemyindungeon('Sticky Hands')) sneezecount++;
+    if(isenemyindungeon('Dryad')) sneezecount++;
+    if(isenemyindungeon('Wicker Man')) sneezecount++;
+    if(isenemyindungeon('Sneezy')) sneezecount += 2;
+    if(isenemyindungeon('Aurora')) sneezecount += 2;
+    if(isenemyindungeon('Alchemist')) sneezecount += 2;
+    if(isenemyindungeon('Vampire')) sneezecount++;
+    if(isenemyindungeon('Rat King')) sneezecount += 2;
+    if(isenemyindungeon('Crystalina')) sneezecount += 2;
+    if(isenemyindungeon('Rotten Apple')) sneezecount++;
+    if(isenemyindungeon('Cornelius')) sneezecount++;
+    if(isenemyindungeon('Wisp')) sneezecount++;
+    if(isenemyindungeon('Singer')) sneezecount++;
+    if(isenemyindungeon('Audrey')) sneezecount++;
+    if(isenemyindungeon('Aoife')) sneezecount++;
+    if(isenemyindungeon('Cowboy')) sneezecount++;
+    if(isenemyindungeon('Handyman')) sneezecount++;
+    if(isenemyindungeon('Kraken')) sneezecount++;
+    if(sneezecount > 5 && sneezecount < 15) { //if too many enemies would benefit from this rule, drop it. don't be cruel
+      midtwists.push('Sneezy?');
+      midtwists = shuffle(earlytwists);
+    }
+  }
 }
 
 preventclashes();
