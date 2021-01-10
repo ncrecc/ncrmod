@@ -40,6 +40,8 @@ var preventclashes = [
   ['Drain Monster?', 'Drain Monster'] //very silly (!!!), and drain monster probably causes frequent problems with drain monster?.
 ];
 
+for(clashpair in preventclashes) Remix.preventclash(clashpair);
+
 var veryrare = ['Sorceress?', 'Kraken?'];
 if(player != 'Witch' && player != 'Jester' && !isenemyindungeon('Scathach')) veryrare.push('Copycat?'); //doesn't work with witch and jester, and turns scathach into a pushover
 

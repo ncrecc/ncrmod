@@ -2,5 +2,5 @@
 [80%]- Issues created: 2,252
 [80%]- Issues created about: 662
 
-[70%][gray]"Wait, where do I access this data?"
+[70%][gray]"Wait, where'd it get this data?"
 [70%][gray][]

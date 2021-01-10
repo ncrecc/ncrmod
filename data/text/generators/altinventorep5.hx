@@ -7,7 +7,7 @@ var goodotherstuff = [];
 
 var dummy = new elements.Fighter("Wisp");
 var geteq = new elements.Skill("Against all odds_old");
-geteq.script = "var eqlist = getequipmentlist(null,[],['excludefromrandomlists','robotonly','witchonly','alternateversion']); self.innate = eqlist;";
+geteq.script = "var eqlist = getequipmentlist(null,[],['excludefromrandomlists','robotonly','witchonly','alternateversion','skillcard']); self.innate = eqlist;";
 geteq.execute(dummy,dummy);
 
 var eqlist = dummy.innate;

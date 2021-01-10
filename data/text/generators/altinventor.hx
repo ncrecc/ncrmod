@@ -92,6 +92,9 @@ trace("floor 2 done");
 
 //Floor 3:
 
+scraplist.push("Four Movable Steel Plates");
+shuffle(scraplist);
+
 if(gimmickorwhip == 1 && commonlist1.indexOf("Hamment@I") == -1 && commonlist1.indexOf("Hamment@S") == -1 && commonlist1.indexOf("Whisp@F") == -1 && commonlist1.indexOf("Whisp@W") == -1) { gimmickwhipgiven = true; } //aaaaaaaaaaaaaaaaaaaaaaaaaaaa there has to be a better way to do this
 if(gimmickorwhip == 0 && commonlist1.indexOf("Under Pressure") == -1 && commonlist1.indexOf("Whipcrack") == -1 && commonlist1.indexOf("Undermine") == -1) { gimmickwhipgiven = true; }
 

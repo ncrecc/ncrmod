@@ -2,7 +2,7 @@ Rules.setalternate(~all~);
 
 Rules.excludeenemies(getcolumn(loaddata(~diceydungeons/excludedenemies~)[;] ~inventor5~));
 
-if(getequipmentlist(self).length > 0 && getequipmentlist(self)[0] == ~Equipment That Does Nothing~) {
+if(getequipmentlist(self)[0] == ~Equipment That Does Nothing~) {
 	trace(~giving equips~);
 	
 	var randeqa = null; /*hammer equivalent*/
@@ -11,47 +11,26 @@ if(getequipmentlist(self).length > 0 && getequipmentlist(self)[0] == ~Equipment 
 	
 	var allequipmentlarge = shuffle(getequipmentlist(null|['large']|['excludefromrandomlists'|'robotonly'|'witchonly'|'alternateversion']));
 	var allequipmentsmall = shuffle(getequipmentlist(null|['small']|['excludefromrandomlists'|'robotonly'|'witchonly'|'alternateversion']));
-	
-	var randeqadescriptioncheck = false;
-	
 	while(randeqa == null # (
 		(
-			!randeqadescriptioncheck
-		) # (
-			randeqa.getslots()[0] != 'NORMAL'
+			randeqa.fulldescription.indexOf('On 6[;]') == -1 &&
+			randeqa.fulldescription.indexOf(' on 6[;]') == -1 &&
+			randeqa.fulldescription.indexOf('#'.substr(0|1) + 'on 6[;]') == -1
 		) # (
 			(
 				randeqa.script.indexOf('attack(') == -1 #
 				randeqa.script.split('attack(-').join('').indexOf('attack(') == -1
 			) && (
-				randeqa.script.indexOf('drain(') == -1
+				randeqa.script.indexOf('drain(') == -1)
 			)
 		)
-	)) {
-		if(allequipmentlarge.length == 0) trace('hammer failed');
-		randeqadescriptioncheck = false;
+	) {  
 		randeqa = new elements.Equipment(allequipmentlarge.pop());
-		if(
-			randeqa.fulldescription.indexOf('On ') != -1 #
-			randeqa.fulldescription.indexOf(' on ') != -1 #
-			randeqa.fulldescription.indexOf('#'.substr(0|1) + 'on ') != -1
-		) {
-			for(thing in ['6'|'5'|'4'|'3'|'2'|'1'|'<d6>']) {
-				if(
-					randeqa.fulldescription.indexOf('On ' + thing + '[' + ';]') != -1 #
-					randeqa.fulldescription.indexOf(' on ' + thing + '[' + ';]') != -1 #
-					randeqa.fulldescription.indexOf('#'.substr(0|1) + 'on ' + thing + '[' + ';]') != -1
-				) {
-					randeqadescriptioncheck = true;
-					break;
-				}
-			}
-		}
 	}
 	
 	while(randeqb == null # (
 		(
-			(randeqb.countdown <= 0 # randeqb.countdown == null # randeqb.countdown > 6) #
+			randeqb.countdown <= 0 #
 			randeqb.usesleft == 0
 		) # (
 			(
@@ -62,8 +41,6 @@ if(getequipmentlist(self).length > 0 && getequipmentlist(self)[0] == ~Equipment 
 			)
 		)
 	) {  
-		if(allequipmentsmall.length == 0) trace('pea shooter failed');
-		if(allequipmentsmall[allequipmentsmall.length - 1] == ~Super Lockpick~) allequipmentsmall.pop(); /*temporary workaroudn for something really weird: 'Error: Trying to create Equipment 'Super Lockpick' (Super Lockpick) from template but cannot find a matching template in equipment.csv.' it's literally from getequipmentlist though...*/
 		randeqb = new elements.Equipment(allequipmentsmall.pop());
 	}
 	while(randeqc == null # (randeqc.script.indexOf('givedice(') == -1 && randeqc.script.indexOf('.animatereroll') == -1)) {

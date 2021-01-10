@@ -102,6 +102,9 @@ trace("floor 2 done");
 
 //Floor 3:
 
+scraplist.push("Four Movable Steel Plates");
+shuffle(scraplist);
+
 var superlevel3 = "";
 
 var midtierdrops = shuffle(["Gadsby Gun", "Shudder", "Technology", "Chainsmoke", "Gas Lamp", "Operator", "Sucker Punch", "Hush", rand(["Revolution 9","Revolution 1"]), "Veneer"]);

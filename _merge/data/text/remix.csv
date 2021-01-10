@@ -1,0 +1,2 @@
+Name,Description,Image,ImageOffset,Rule Change,Apply On Continue
+Wisp,You and the enemy are both always|inflicted with [vanish]Vanish_all[].,wisp,20|-60,Rules.addplayerinnatestatus(VANISH); Rules.addenemyinnatestatus(VANISH); /*more consistent wording since ncrmod makes vanish have an alternate version*/,YES

@@ -91,6 +91,9 @@ trace("floor 2 done");
 
 //Floor 3:
 
+scraplist.push("Four Movable Steel Plates");
+shuffle(scraplist);
+
 var midtierdrops = shuffle(["Gadsby Gun", "Shudder", "Technology", "Chainsmoke", rand(["Keyhole","Stockpick"]), "Gas Lamp", "Operator", "Sucker Punch", "Hush", "Veneer", rand(["Revolution 9","Revolution 1"])]);
 if(chance(33)) { midtierdrops.push(rand(["Charity", "Humility"])); }
 if(chance(33)) { midtierdrops.push(rand(["Greed", "Envy"])); }

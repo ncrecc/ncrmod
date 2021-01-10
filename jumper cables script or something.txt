@@ -1,0 +1,28 @@
+var thisrunning = ~jumpercablesactuatorrunning~;
+if(e.weakened) thisrunning = ~jumpercables-actuatorrunning~;
+if(!self.getvar(thisrunning)) {
+	var tw = new motion.actuators.SimpleActuator(null|0.01|null);
+	tw._repeat = -1;
+	var interp = new hscript.Interp();
+	var parser = new hscript.Parser();
+	var jumpercablesactuatorscript =
+	'
+		if(self.doendturnnow # self.hp <= 0 # self.graphic == null # target == null # target.graphic == null # target.hp <= 0) {
+			tw.stop();
+			self.setvar(~' + thisrunning + '~|false);
+		}
+		if(target.hp <= ' + (target.hp - (e.weakened ? 16 : 10)) + ') {
+			for(eq in self.equipment) {
+				if(eq.name == ' + e.name + ' && eq.weakened == ' + (e.weakened ? 'true' : 'false') + ' && eq.isready() && eq.shockedsetting == 0 && !eq.varexists(~beingused~)) {
+					eq.doequipmentaction(self|target|e.castdirection|[]|0|false|false);
+					eq.setvar(~beingused~|1);
+				}
+			}
+		}
+	';
+	interp.variables.set(~tw~|tw);
+	interp.variables.set(~self~|self);
+	interp.variables.set(~target~|target);
+	tw.onRepeat(interp.execute|[parser.parseString(jumpercablesactuatorscript)]);
+	tw.move();
+}

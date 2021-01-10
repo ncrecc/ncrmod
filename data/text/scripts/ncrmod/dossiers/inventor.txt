@@ -1,6 +1,6 @@
 [80%]- Favorite color: orange
 [80%]- Patents pending: 56
-[80%]- Total knowledge: 0.0004%
+[80%]- Total knowledge: 0.000004%
 
 [70%][gray]"I didn't know that could happen!"
 [70%][gray][]

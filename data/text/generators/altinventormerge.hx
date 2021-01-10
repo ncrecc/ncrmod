@@ -76,6 +76,9 @@ addfloor("small")
 
 //Floor 3:
 
+commonlist1.push("Four Movable Steel Plates");
+shuffle(commonlist1);
+
 //if(commonlist1.indexOf("Hamment@I") == -1 && commonlist1.indexOf("Hamment@S") == -1 && commonlist1.indexOf("Whisp@F") == -1 && commonlist1.indexOf("Whisp@W") == -1) { gimmickwhipgiven = true; }
 
 var midtierdrops = shuffle(["Gadsby Gun", "Technology", "Chainsmoke", rand(["Keyhole","Stockpick"]), "Gas Lamp", "Operator", "Sucker Punch", "Befuddle", "Mosquito Bite", "Counterfeit", "Electromagnet", "Ray Gun", "Shudder",rand(["Revolution 9","Revolution 1"])]);

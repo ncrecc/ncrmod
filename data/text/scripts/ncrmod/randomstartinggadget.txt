@@ -58,7 +58,6 @@ Magic Six
 Bubble Gun
 Shuriken
 Catapult
-Dramatic Pause
 Quick Thinking
 Random Roll
 Arctic Storm
@@ -147,3 +146,5 @@ Vroom
 Pet Peeve
 Bling
 Improvise
+Fun Fact!
+Dramatic Cackle

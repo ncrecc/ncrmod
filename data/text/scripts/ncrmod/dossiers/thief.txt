@@ -3,4 +3,4 @@
 [80%]- Total friends: zero
 
 [70%][gray]"Hahaha! What a loser!"
-[]
+[70%][gray][]
