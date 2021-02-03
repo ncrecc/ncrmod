@@ -41,7 +41,6 @@ Theremin
 Static Shock
 Very Unlucky Roll
 Tantrum
-Unfocused
 Marble
 Broken Gadget
 Slot Machine
@@ -148,3 +147,5 @@ Bling
 Improvise
 Fun Fact!
 Dramatic Cackle
+Keyring
+WD-40

@@ -20,7 +20,7 @@ haunted jar: chaotic leap guy? (5 dice, two size 1 unrestricted raw damage cards
 
 cactus: that one cactus redesign jacke made. two min4 "get 1 thorns" items, one max5 raw damage item that's reuseable if you have thorns
 
-super wisp: could do something really really hacky and stupid where he has a stripped down wand of wishing that actually guides him to type out a particular equipment. if that's too much effort just give him cfb wisp?... if ai is inclined to use powercards
+super wisp: could do something really really hacky and stupid where it has a stripped down wand of wishing that actually guides it to type out a particular equipment. if that's too much effort just give it cfb wisp?... if ai is inclined to use powercards
 
 
 super hj last words: "fucked up if true"

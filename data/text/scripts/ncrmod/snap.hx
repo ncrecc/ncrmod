@@ -14,7 +14,7 @@ var e = args[0];
 e.shockedsetting = 0;
 e.positionshockslots();
 var slotsFilled = false;
-if (e.countdown > 0 && e.slots.indexOf("COUNTDOWN") == 0) {
+if (e.countdown > 0 && e.slots.indexOf("COUNTDOWN") > -1) {
     if(self == null || !self.isplayer) {
         e.remainingcountdown = 0;
         e.reducecountdownby = 0;
@@ -39,8 +39,8 @@ if (e.slots.length > 0) for (slot in e.slots) {
         case "MIN3": d = 6;
         case "MIN4": d = 6;
         case "MIN5": d = 6;
-        case "MIN6": d = 6;
-        case "MAX6": d = 6;
+        case "MIN6": d = 6; //???
+        case "MAX6": d = 6; //??????
         case "REQUIRE6": d = 6;
         case "EVEN": d = 6;
         case "DOUBLES": d = 6;

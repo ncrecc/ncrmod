@@ -8,15 +8,16 @@ Hell's Bells: Bill Bruford
 Dril: dril
 Warhammer 40K: (duh!)
 Gadsby Gun: Gadsby
-Dripping Yellow Madness, Bustle (as in Hustle and Bustle): Homestar Runner
+Dripping Yellow Madness, Bustle (as in Hustle and Bustle), Dripping Purple Madness: Homestar Runner
 Wall Street Shuffle, Gizmotron: 10CC
 Ashley Bat, Aries Card, Purify, Magic Pipe, Katsuhiro Bat, Clockwork: OFF
 Swing Me Another 6, Fortune Abhors the Cold, Beginner's Luck: Dicey OST
 Manual Turret, Compact Resonator, Five Squirrels, Battle Hax: More Fluff
 Ice Nine: Cat's Cradle
 Freeze Frame, Strange Apparatus: Godley & Creme
-Hammer Up!, Shocking Horror, Lightreaver, Bonecrusher, Hammerpants: Dr. Lunatic
-Technology, Heaven on Earth, Major Malfunction, Portable Generator, Four Movable Steel Plates: Keith LeBlanc
+Hammer Up!, Shocking Horror, Lightreaver, Bonecrusher, Hammerpants, Flamebringer, Freeze Ray, The Cloak Invisible, Scanner: Dr. Lunatic/Adventures of Bouapha
+Technology, Heaven on Earth, Portable Generator, Four Movable Steel Plates, Old Microwave Oven, Long Metal Spike: Keith LeBlanc
+Powerstation: Che
 It's Been: Barenaked Ladies
 Proton Pack, Containment Trap, Awful Pun: Ghostbusters
 Milky Potion, Wand of Wishing, Blessed Wand of Wishing, Cursed Wand of Wishing: NetHack
@@ -37,9 +38,9 @@ Starter, Halftone, San Fransisco, etc.: Platonic Archetypes of Dice
 Strange Parcel: Strange Parcels (shocker!)
 Global Thermonuclear War: WarGames
 Zoop Zoop, Bop Bop, Dee Jay's Dream, Dee Jay's Program: Fats Comet
-Veneer, Fatal Attraction, Passivecation Program, Survival, Anger, Hypnotise, Untitled, We Watch and We Wait: Mark Stewart
+Veneer, Fatal Attraction, Passivecation Program, Survival, Anger, Hypnotise, Untitled, We Watch and We Wait, The Paranoia of Power, Heat Seeking Missiles: Mark Stewart
 Rap God: Eminem
-IC Chip, Chip Socket, Brushfire, Icedeath, Force Field, Chchchips, Chipmine, Southpole, Cellblocked, CANYON.MID, CHIP01.MID, Block Factory, Goldkey, Firetrap, Doublemaze, Paranoia, Time Lapse, Blue Wall: Chip's Challenge
+IC Chip, Chip Socket, Brushfire, Icedeath, Force Field, Chchchips, Chipmine, Southpole, Cellblocked, CANYON.MID, CHIP01.MID, Block Factory, Goldkey, Firetrap, Doublemaze, Paranoia, Time Lapse, Blue Wall, Green Key: Chip's Challenge
 Toggle Chip: Chip's Challenge 2
 This is Fine: Gunshow
 Mirror on a Stick, Ancestral Staff: alpha Dicey content
@@ -56,6 +57,10 @@ Mystery Machine: Scooby-Doo
 Mo' Money Mo' Problems: that one song, who knows
 Big Bill Hell's: Big Bill Hell's
 Revolution 9, Revolution 1: The Beatles
+Face the Music, Face the Facts, Bite the Bullet, Fredhammer: Lemon Demon/Neil Cicierega
+Safety Dance: Men Without Hats
+Sunglasses at Night: whoever this was
+Leroy's Boots: The Barmy Army
 
 === SKILLS ===
 Science: Thomas Dolby
@@ -64,6 +69,5 @@ Install Evony: Evony
 impulse 101: Source Engine
 Everywhere You Look: Full House
 Sustainability: xkcd (Sustainable)
-Rubber Bullet: 10CC
 Rollout: Pokemon
 Super Hexahedron: Super Hexagon

@@ -53,7 +53,7 @@ if(chance(5)) {
 var lockpickvariant1 = lockpickvariants.pop();
 var lockpickvariant2 = lockpickvariants.pop();
 
-var commonlist2 = [pick(["Lightreaver", "Bop Bop"]), "Reverse Emulation", "Forty Cakes", "Software Update", "Honeysuckle", "Gas Lamp", "Telephone", "Cookie Cake", "Blacklight", lockpickvariant1];
+var commonlist2 = [pick(["Lightreaver", "Bop Bop"]), "Reverse Emulation", "Forty Cakes", "Pirate a Better Version", "Honeysuckle", "Gas Lamp", "Telephone", "Cookie Cake", "Blacklight", lockpickvariant1];
 if(chance(20)) commonlist2.push("Survivor's Guilt");
 var rarelist1 = [chance(66) ? "Precious Egg@6" : "Rotten Egg@6", "Arf Arf Arf", chance(50) ? "Jester" : "Call for Backup Robot", "Lotus Swing", "Black Lotus@ncrmod", "Autohook", "Magic Flute", "Combat Roll", "Fool's Fire"];
 if(chance(20)) { rarelist1.push("Metacrowbar"); }

@@ -102,7 +102,7 @@ dontreplaceinstore.push("Spearhead");
 dontreplaceinstore.push("Mirrorang");
 dontreplaceinstore.push("Doppeldfire");
 dontreplaceinstore.push("Distort");
-jester_damage_pool.push("Wonder Gummi");
+jester_damage_pool.push("Glassblowing");
 
 jester_dice_pool = shuffle(jester_dice_pool);
 jester_damage_pool = shuffle(jester_damage_pool);
