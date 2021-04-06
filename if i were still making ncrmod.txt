@@ -1,0 +1,25 @@
+- fix wildcard
+- fix fleeing crash in not just a robot, and occasisonally "(once)" gadgets not working
+- buff revolver to cd6. at that point it's a solid sidegrade to two-handed sword
+- make warrior's starting card closer to conventional sword? currently it's revolver, so in addition to your skillcard changing a bunch you also have to deal with your weapon now being drastically different.
+- figure out enough about git to make ncrmod and ncrmod jr "synced" (new content added to ncrmod is instantly also added to jr, though maybe accounting for the generators being in a new spot, and any tweaks made to ncrmod are also attempted to be merged with jr)
+- release the wispy kaboom smash vanish swaps addon
+- replace all the music with https://ncrecc.itch.io/ncrmusic or remove the music changes and link to ncrmusic
+- finish witch. coming up with her starting spellbook is the difficult part
+- consider whether a witch episode where she gets jester decks as spells (maybe with spellcosts changed) could work. "not quite a jester"
+- finish thief. his starter equipment is also tricky. lots of potential to show off the "every item works for everyone" shtick, e.g. wildcard, cfb inventor.
+- get rid of the damn effort-reward imbalance by making the cool stuff i spent a lot of time on more prevalent. reverse emulation should be a level-up reward for someone. cybernetics could be buffed somehow (make your limit charge way faster somehow?) and given as a level-up reward to inventor.
+- add warrior (or thief!) episode based on never-finished keymaster character
+- add warrior episode where all items are "generic" and shift to other items of a certain type each battle
+- add the grab bags (mentioned in equipment.csv). give trick bag to robot, offense bag to warrior, defense bag to inventor
+- finish the other big swap rules (weaken <> reduce, curse <> lock) or throw them out entirely and somehow salvage the equipment made specifically for it.
+- cross-pollinate item pools more?
+- add the episode 6 arena which has been elaborated upon elsewhere
+- add a more cars episode
+- more vanish items all around
+- promote the mod more
+- this doesn't really have to do with ncrmod, but make a "greatest hits" mod, where all items in starter layouts, level-up rewards, and item pools (and enemy equipment?) are replaced with various items from other mods, specifically curated to include the juciest stuff. maybe also curated custom episodes?
+
+this was meant to be a megaquest-scale mod where every episode is custom. then i got bogged down in the details and failed to actually make progress.
+
+this is just my list of intentions if anyone was curious, or wants to fork the mod and finish it. (which probably won't happen and doesn't need to happen - i've made my fair share of contributions to dicey already.)
