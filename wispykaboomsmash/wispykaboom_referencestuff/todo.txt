@@ -1,0 +1,23 @@
+Fire:
+[done]Bolganone > Agnea's Arrow (https://fireemblem.fandom.com/wiki/Agnea%27s_Arrow) //Fimbulvetr and Bolganone change into each other in the mod
+[done]Burning Agi > Psychic Psi (https://megamitensei.fandom.com/wiki/Psi) //same as above but Frosty Bufu and Burning Agi
+[done]Devilsknife > Reapersknife
+[done]Diamond Flamethrower > Diamond Fog Machine (jinx name: Diamond Flame > Diamond Fog; Diamond Ashes > Diamond Humid)
+[done]Fire Scarf > Ghost Scarf //Fire Scarf only appears from Snow Scarf swap
+[done]Flame Bolt > Psychic Bolt //same as Bolganone but Water Bolt and Flame Bolt
+[done]Summer Harvest > Soul Harvest //only if Winter Harvest gets swapped
+[done]Electric Spark > Electric Light
+
+Fire+Ice:
+[done]Bundle of Rules > Bundle of Swaps
+Megidolaon
+    [done]ice+vanish: > Black Viper (https://megamitensei.fandom.com/wiki/Black_Viper)
+    [done]fire+vanish: > Foul Breath (https://megamitensei.fandom.com/wiki/Foul_Breath)
+Morning Star
+    [done]ice+vanish: > Abyssal Eye (https://megamitensei.fandom.com/wiki/Abyssal_Eye)
+        [done]ice+vanish@marshmallowswap: > Abyssal Eye@marshmallowswap
+    [done]fire+vanish > Stagnant Air (https://megamitensei.fandom.com/wiki/Stagnant_Air)
+        [done]fire+vanish@marshmallowswap: > Stagnant Air@marshmallowswap
+
+Vanish+Ice:
+[done]Soul Wisp > Soul Chimera (https://riskofrain2.gamepedia.com/Lunar_Chimera_(Wisp))

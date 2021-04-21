@@ -1,0 +1,2 @@
+Name,Description,Script
+Soul Scythe,Apply Soul Harvest [gray](once),inflict(~soulharvest~); sfx(~_vanish~); Gadget.changegadget(self[;] ~Soul Scythe~[;] ~Broken Gadget~);

@@ -1,0 +1,2 @@
+Name,Description,Script
+Jumpscare,Inflict [fright]1 fright,inflict(~ncr_fright~); sfx(~_vanish~);
