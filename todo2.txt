@@ -18,7 +18,3 @@
 - more vanish items all around
 - promote the mod more (lol)
 - this doesn't really have to do with ncrmod, but i considered making a "greatest hits" mod, where all items in starter layouts, level-up rewards, and item pools (and enemy equipment?) are replaced with various items from other mods, specifically curated to include the juciest stuff. maybe also curated custom episodes?
-
-this was meant to be a megaquest-scale mod where every episode is custom. then i got bogged down in the details and failed to actually make progress.
-
-this is just my list of intentions if anyone was curious, or wants to fork the mod and finish it. (which probably won't happen and doesn't need to happen - i've made my fair share of contributions to dicey already.)
