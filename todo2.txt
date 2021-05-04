@@ -1,6 +1,5 @@
 - fix wildcard not showing slots. how it used to work is: the card is given slots, then the slots are drawn, then the slots are removed without telling the game to update the card's appearance (it almost never checks to update cards like this after they're created anyway -- not when card alpha is changed, for example). at some point i messed something up and now it updates after the slots were removed.
 - fix fleeing crash in not just a robot, and occasisonally "(once)" gadgets not working
-- buff revolver to cd6. at that point it's a solid sidegrade to two-handed sword
 - make warrior's starting card closer to conventional sword? currently it's revolver, so in addition to your skillcard changing a bunch you also have to deal with your weapon now being drastically different.
 - figure out enough about git to make ncrmod and ncrmod jr "synced" (new content added to ncrmod is instantly also added to jr, though maybe accounting for the generators being in a new spot, and any tweaks made to ncrmod are also attempted to be merged with jr)
 - replace all the music with https://ncrecc.itch.io/ncrmusic or remove the music changes and link to ncrmusic
